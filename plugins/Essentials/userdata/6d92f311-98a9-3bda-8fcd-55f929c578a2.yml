@@ -1,0 +1,22 @@
+lastAccountName: PuppyCute
+timestamps:
+  login: 1643197892453
+  logout: 1643197897888
+  lastteleport: 1643187404416
+ipAddress: 127.0.0.1
+logoutlocation:
+  world: world
+  x: 0.4914040148334345
+  y: 92.0
+  z: -5.403339947661143
+  yaw: 179.82364
+  pitch: 1.2914759
+afk: false
+lastlocation:
+  world: skypvp
+  x: 172.30000001192093
+  y: 51.090159232216344
+  z: 79.69999998807907
+  yaw: -119.5499
+  pitch: 73.8
+money: '180'

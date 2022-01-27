@@ -1,0 +1,18 @@
+%tst_player_total% = tổng số tiền đã nạp của người chơi
+%tst_player_today% = tổng số tiền đã nạp của người chơi trong hôm nay
+%tst_player_month% = tổng số tiền đã nạp của người chơi trong tháng
+%tst_player_year% = tổng số tiền đã nạp của người chơi trong năm
+
+
+
+%tst_total% = tổng số tiền đã nạp toàn máy chủ
+%tst_total_today% = tổng số tiền đã nạp toàn máy chủ trong hôm nay
+%tst_total_month% = tổng số tiền đã nạp toàn máy chủ trong tháng
+%tst_total_year% = tổng số tiền đã nạp toàn máy chủ trong năm
+
+
+
+%tst_top_<số>% = top <số> của tổng số tiền đã nạp của máy chủ
+%tst_top_today_<số>% = top <số> của tổng số tiền đã nạp của máy chủ vào hôm nay
+%tst_top_month_<số>% = top <số> của tổng số tiền đã nạp của máy chủ vào tháng này
+%tst_top_year_<số>% = top <số> của tổng số tiền đã nạp của máy chủ vào năm nay

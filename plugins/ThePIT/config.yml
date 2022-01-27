@@ -1,0 +1,20 @@
+chat-enable: 'true'
+bungeecord: 'false'
+use-vault: false
+chat-format: '&7[&e{level}&7] {player} &8&l- &7{message}'
+NAME-FORMAT: '&7[&e{level}&7] &7'
+SHOP-ID: 6
+UPGRADE-ID: 7
+USE-PRESSURE-PLATE: 'true'
+LEVE-UP-SOUND: LEVEL_UP
+KILL-SOUND: ORB_PICKUP
+ENABLED-WORLDS:
+- world
+- thepit
+KILL-XP: 15
+KILL-GOLD: 10
+ASSIST-XP: 10
+MAX-LEVEL: 120
+ENDER_CHEST-NEED-LEVEL: 50
+PERK-SLOT-2-NEED-LEVEL: 35
+ASSIST-GOLD: 5

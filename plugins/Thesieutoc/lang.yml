@@ -1,0 +1,31 @@
+nap_the_dang_xu_ly: '&aThe cua ban dang duoc xu ly, vui long cho trong giay lat...'
+#{0} là mệnh giá thẻ
+nap_the_thanh_cong: '&aNap the thanh cong voi menh gia {0}đ!'
+nap_the_that_bai: '&cNap the that bai!'
+nap_the_huy: '&cDa huy nap the!'
+sai_menh_gia: '&aThẻ sai mệnh giá, vui lòng liên hệ Admin!'
+
+chat_chon_loai_the: '&aHay chon loai the muon nap:'
+chat_chon_menh_gia: '&aHay chon menh gia muon nap:'
+chat_nhap_seri: '&aHay nhap so seri, go &chuy&a de huy nap the:'
+chat_nhap_pin: '&aHay nhap ma the, go &chuy&a de huy nap the:'
+
+#{0} là loại thẻ
+chat_da_chon_loai_the: '&aDa chon loai the {0}!'
+#{0} là mệnh giá thẻ
+chat_da_chon_menh_gia: '&aDa chon menh gia {0}!'
+
+
+placeholder:
+  # Nếu để là "#,###" thì số tiền sẽ hiển thị là 10,000 20,000... còn nếu để là "#" thì sẽ hiển thị là 10000 20000...
+  value_format: '#,###'
+  #từ placeholder %tst_total%, {0} là số tiền
+  total: '{0}₫'
+  #từ placeholder %tst_player%, {0} là số tiền
+  player: '{0}đ'
+  #từ placeholder %tst_top%, {0} là top, {1} là tên người chơi, {2} là số tiền đã nạp
+  top: '&a&l#{0} &b&l{1} &7&l- &6&l{2}₫'
+  #Nếu như hạng # là trống sẽ xuất dòng này, {0} là stt
+  top_empty: '&a&l#{0} &b&lTrống'
+
+top_empty: '&cKhông có kết quả tìm kiếm!'

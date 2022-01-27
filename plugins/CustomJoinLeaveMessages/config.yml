@@ -1,0 +1,65 @@
+# *-------------------------------*
+# |    CustomJoinLeaveMessages    |
+# |            Config             |
+# *-------------------------------*
+#
+# If set to false, plugin will be disabled.
+# default: true
+enabled: true
+
+# Placeholders:
+#   [playerName]         - player username
+#   [playerDisplayName]  - player display name
+#   [totalUsers]         - number of unique players
+messages:
+  join:
+    # If set to true, custom join messages will be disabled.
+    # default: false
+    disabled: false
+    # Prefix of a join message, players can't change this part of the message.
+    # It will always be displayed before the custom message players can set with /customjoinmessage set [message]
+    # If you want to let players have full control of their join message, set this to ''
+    # default: '[playerName] '
+    prefix: '&8[&2+&8] &f[playerDisplayName] '
+    # Join message, players can change this
+    # default: 'joined the game'
+    message: 'Da vao Server, Server hiện có [totalUsers]'
+    # Max characters allowed for join message
+    # default: 30
+    max-characters: 50
+  leave:
+    # If set to true, custom leave messages will be disabled.
+    # default: false
+    disabled: false
+    # Prefix of a leave message, players can't change this part of the message.
+    # It will always be displayed before the custom message players can set with /customleavemessage set [message]
+    # If you want to let players have full control of their leave message, set this to ''
+    # default: '[playerName] '
+    prefix: '&8[&4-&8] &f[playerDisplayName] '
+    # Leave message, players can change this
+    # default: 'da roi Server, Server hien co [totalUsers]'
+    message: 'left the game'
+    # Max characters allowed for leave message
+    # default: 30
+    max-characters: 50
+  first-join:
+    # If set to true, custom first join messages will be disabled.
+    # default: false
+    disabled: false
+    # First join message that is broadcasted when new player joins the server
+    # default: '&7[playerName] &ahas joined the server for the first time! &8[&d[totalUsers]&8]'
+    message: '&8[&2+&8] &f[playerName] &ada tham gia Server lan dau! Server hien co &d[totalUsers]'
+  user-welcome:
+    # If set to true, user welcome message on first join will be disabled.
+    # default: false
+    disabled: false
+    # User welcome message on first join
+    # default: '&aWelcome to the server, &7[playerName]&a!'
+    message: '&8[&2+&8] &fChào mừng tới Server, &7[playerDisplayName]&a! Server hien co &d[totalUsers]'
+  user-welcome-back:
+    # If set to true, user welcome back message will be disabled.
+    # default: false
+    disabled: false
+    # User welcome back message
+    # default: '&7Welcome back, [playerName]!'
+    message: '&8[&2+&8] &fChao mung da quay tro lai, [playerDisplayName]! Server hien co &d[totalUsers]'

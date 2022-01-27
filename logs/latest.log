@@ -1,0 +1,540 @@
+[10:13:41] [Server thread/INFO]: Starting minecraft server version 1.8.8
+[10:13:42] [Server thread/INFO]: Loading properties
+[10:13:44] [Server thread/INFO]: Default game type: SURVIVAL
+[10:13:45] [Server thread/INFO]: This server is running CraftBukkit version git-Spigot-db6de12-18fbb24 (MC: 1.8.8) (Implementing API version 1.8.8-R0.1-SNAPSHOT)
+[10:13:54] [Server thread/INFO]: Debug logging is disabled
+[10:13:54] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[10:13:55] [Server thread/INFO]: Using 4 threads for Netty based IO
+[10:13:55] [Server thread/INFO]: Generating keypair
+[10:13:57] [Server thread/INFO]: Starting Minecraft server on *:25565
+[10:13:57] [Server thread/INFO]: Using default channel type
+[10:14:04] [Server thread/INFO]: Set PluginClassLoader as parallel capable
+[10:14:22] [Server thread/INFO]: [WorldEdit] Loading WorldEdit v6.1.7-SNAPSHOT;3662-a8d04c2
+[10:14:22] [Server thread/INFO]: [Skript] Loading Skript v2.2-dev27
+[10:14:22] [Server thread/INFO]: [PlaceholderAPI] Loading PlaceholderAPI v2.11.1
+[10:14:22] [Server thread/INFO]: [PerWorldPlugins] Loading PerWorldPlugins v1.2.4
+[10:14:22] [Server thread/INFO]: [PerWorldPlugins] Registering event interceptor...
+[10:14:22] [Server thread/INFO]: [SkQuery] Loading SkQuery v3.6.0-Lime
+[10:14:22] [Server thread/INFO]: [NametagEdit] Loading NametagEdit v4.2.0
+[10:14:22] [Server thread/INFO]: [CustomJoinLeaveMessages] Loading CustomJoinLeaveMessages v1.1.1
+[10:14:22] [Server thread/INFO]: [LaggRemover] Loading LaggRemover v2.0.6
+[10:14:22] [Server thread/INFO]: [WorldGuard] Loading WorldGuard v6.1.3-SNAPSHOT;c904242
+[10:14:22] [Server thread/INFO]: [PerWorldTabList] Loading PerWorldTabList v1.0
+[10:14:22] [Server thread/INFO]: [BroadcastPlus] Loading BroadcastPlus v2.7.0
+[10:14:22] [Server thread/INFO]: [PermissionsEx] Loading PermissionsEx v1.23.4
+[10:14:22] [Server thread/WARN]: [PermissionsEx] This server is in offline mode. Unless this server is configured to integrate with a supported proxy (see http://dft.ba/-8ous), UUIDs *may not be stable*!
+[10:14:22] [Server thread/INFO]: [ViaVersion] Loading ViaVersion v4.1.1
+[10:14:24] [Server thread/INFO]: [ViaVersion] ViaVersion 4.1.1 is now loaded, injecting!
+[10:14:30] [Via-Mappingloader-0/INFO]: [ViaVersion] Loading 1.12 -> 1.13 mappings...
+[10:14:30] [Via-Mappingloader-1/INFO]: [ViaVersion] Loading 1.13 -> 1.13.2 mappings...
+[10:14:31] [Via-Mappingloader-2/INFO]: [ViaVersion] Loading 1.13.2 -> 1.14 mappings...
+[10:14:32] [Via-Mappingloader-0/INFO]: [ViaVersion] Loading block connection mappings ...
+[10:14:32] [Via-Mappingloader-3/INFO]: [ViaVersion] Loading 1.14 -> 1.15 mappings...
+[10:14:33] [Via-Mappingloader-4/INFO]: [ViaVersion] Loading 1.15 -> 1.16 mappings...
+[10:14:33] [Via-Mappingloader-3/INFO]: [ViaVersion] Loading 1.16 -> 1.16.2 mappings...
+[10:14:33] [Via-Mappingloader-4/INFO]: [ViaVersion] Loading 1.16.2 -> 1.17 mappings...
+[10:14:34] [Server thread/INFO]: [Vault] Loading Vault v1.5.6-b49
+[10:14:34] [Server thread/INFO]: [xInventories] Loading xInventories v2.3
+[10:14:34] [Server thread/INFO]: [ViaBackwards] Loading ViaBackwards v4.1.1
+[10:14:34] [Via-Mappingloader-3/INFO]: [ViaVersion] Loading 1.17 -> 1.18 mappings...
+[10:14:34] [Server thread/INFO]: [ViaBackwards] Loading translations...
+[10:14:35] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.10 -> 1.9.4 mappings...
+[10:14:35] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.11 -> 1.10 mappings...
+[10:14:35] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.12 -> 1.11 mappings...
+[10:14:35] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.13 -> 1.12 mappings...
+[10:14:35] [Via-Mappingloader-4/INFO]: [ViaBackwards] Loading 1.13.2 -> 1.13 mappings...
+[10:14:36] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.14 -> 1.13.2 mappings...
+[10:14:36] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.15 -> 1.14 mappings...
+[10:14:36] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.16 -> 1.15 mappings...
+[10:14:36] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.16.2 -> 1.16 mappings...
+[10:14:36] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.17 -> 1.16.2 mappings...
+[10:14:36] [Via-Mappingloader-3/INFO]: [ViaBackwards] Loading 1.18 -> 1.17 mappings...
+[10:14:36] [Server thread/INFO]: [ViaRewind] Loading ViaRewind v2.0.2
+[10:14:36] [Server thread/INFO]: [ShopGUIPlus] Loading ShopGUIPlus v1.6.5
+[10:14:36] [Server thread/INFO]: [Essentials] Loading Essentials v2.0.1-b612
+[10:14:36] [Server thread/INFO]: [UltraCosmetics] Loading UltraCosmetics v2.4.9
+[10:14:36] [Server thread/INFO]: [Thesieutoc] Loading Thesieutoc v#18
+[10:14:36] [Server thread/INFO]: [PlotSquared] Loading PlotSquared v3.5.0-SNAPSHOT-95f8aaa
+[10:14:36] [Server thread/INFO]: [ProtocolLib] Loading ProtocolLib v3.6.5
+[10:14:38] [Server thread/INFO]: [Citizens] Loading Citizens v2.0.16-SNAPSHOT (build 1267)
+[10:14:38] [Server thread/INFO]: [SkinsRestorer] Loading SkinsRestorer v14.1.10
+[10:14:38] [Server thread/INFO]: [ASkyBlock] Loading ASkyBlock v3.0.9.4
+[10:14:38] [Server thread/INFO]: [EssentialsChat] Loading EssentialsChat v2.0.1-b612
+[10:14:38] [Server thread/INFO]: [HideAndCustomPlugins] Loading HideAndCustomPlugins v1.8
+[10:14:38] [Server thread/INFO]: [Multiverse-Core] Loading Multiverse-Core v2.5.0-b727
+[10:14:38] [Server thread/INFO]: [Skellett] Loading Skellett v1.9.6b
+[10:14:38] [Server thread/INFO]: [AuthMe] Loading AuthMe v5.4.0-b1877
+[10:14:38] [Server thread/INFO]: [HolographicDisplays] Loading HolographicDisplays v2.2.6
+[10:14:38] [Server thread/INFO]: [TuSKe] Loading TuSKe v1.8.1
+[10:14:38] [Server thread/INFO]: [skRayFall] Loading skRayFall v1.9.10
+[10:14:38] [Server thread/INFO]: [Skywars] Loading Skywars v3.0
+[10:14:38] [Server thread/INFO]: [CustomJoinLeaveMessages] Enabling CustomJoinLeaveMessages v1.1.1
+[10:14:39] [Server thread/INFO]: [CustomJoinLeaveMessages] Loaded.
+[10:14:39] [Server thread/INFO]: [Vault] Enabling Vault v1.5.6-b49
+[10:14:39] [Server thread/INFO]: [Vault] [Economy] Essentials Economy found: Waiting
+[10:14:39] [Server thread/INFO]: [Vault] [Permission] PermissionsEx found: Waiting
+[10:14:39] [Server thread/INFO]: [Vault] [Permission] SuperPermissions loaded as backup permission system.
+[10:14:39] [Server thread/INFO]: [Vault] [Chat] PermissionsEx found: Waiting
+[10:14:39] [Server thread/INFO]: [Vault] Enabled Version 1.5.6-b49
+[10:14:39] [Server thread/INFO]: [ViaRewind] Enabling ViaRewind v2.0.2
+[10:14:40] [Server thread/INFO]: [PlotSquared] Enabling PlotSquared v3.5.0-SNAPSHOT-95f8aaa
+[10:14:42] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;33;22mMetrics enabled.[m
+[10:14:42] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m [0;33;22mPlotSquared is using online UUIDs[m
+[10:14:47] [Server thread/INFO]: PlotSquared hooked into WorldEdit.[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mplot-expiry[0;31;1m, Value: [0;33;22mfalse[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mkill-road-mobs[0;31;1m, Value: [0;33;22mfalse[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mworldedit-restrictions[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mdatabase-purger[0;31;1m, Value: [0;33;22mfalse[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22meconomy[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mblock-cache[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mkill-road-vehicles[0;31;1m, Value: [0;33;22mfalse[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mpersistent-meta[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mban-deleter[0;31;1m, Value: [0;33;22mfalse[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mupdater[0;31;1m, Value: [0;33;22mfalse[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mdatabase[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mplotme-converter[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mpermission-cache[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mrating-cache[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mcomment-notifier[0;31;1m, Value: [0;33;22mfalse[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mmetrics[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mchunk-processor[0;31;1m, Value: [0;33;22mfalse[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22muuid-cache[0;31;1m, Value: [0;33;22mfalse[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mevents[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;31;1mKey: [0;33;22mcommands[0;31;1m, Value: [0;33;22mtrue[m
+[10:14:47] [Server thread/INFO]: [0;33;1mPlotSquared is now enabled[m
+[10:14:47] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;33;22mMetrics enabled.[m
+[10:14:47] [Server thread/INFO]: [ProtocolLib] Enabling ProtocolLib v3.6.5
+[10:14:47] [Server thread/INFO]: [ProtocolLib] Started structure compiler thread.
+[10:14:47] [Server thread/INFO]: [ASkyBlock] Enabling ASkyBlock v3.0.9.4
+[10:14:49] [Server thread/ERROR]: [ASkyBlock] Filename 'default.yml' is not in the correct format for a locale file - skipping...
+[10:14:54] [Server thread/INFO]: [ASkyBlock] The Nether is disabled
+[10:14:54] [Server thread/INFO]: [ASkyBlock] Loading entity limits
+[10:14:54] [Server thread/INFO]: [ASkyBlock] HOPPER will be limited to 30
+[10:14:54] [Server thread/WARN]: [ASkyBlock] ***********************************************************
+[10:14:54] [Server thread/WARN]: [ASkyBlock] Config file is out of date. See config.new.yml for updates!
+[10:14:54] [Server thread/WARN]: [ASkyBlock] config.yml version is '3.0.8'
+[10:14:54] [Server thread/WARN]: [ASkyBlock] Latest config version is '3.0.9'
+[10:14:54] [Server thread/WARN]: [ASkyBlock] ***********************************************************
+[10:14:55] [Server thread/INFO]: [ASkyBlock] Loaded default island schematic.
+[10:14:55] [Server thread/WARN]: Spawner setting of WITHER_SKELETON is unknown for this server. Skipping.
+[10:14:55] [Server thread/INFO]: [ASkyBlock] Loaded default nether schematic.
+[10:14:55] [Server thread/INFO]: [ASkyBlock] Loading schematic > The Original (island.schematic) for all players, order 1
+[10:14:55] [Server thread/WARN]: Spawner setting of WITHER_SKELETON is unknown for this server. Skipping.
+[10:14:55] [Server thread/INFO]: [ASkyBlock] Loading schematic > NetherBlock Island (nether.schematic) for all players, order 0
+[10:14:55] [Server thread/INFO]: [ASkyBlock] Loading schematic > Island Duo (double.schematic) for all players, order 2
+[10:14:55] [Server thread/INFO]: [ASkyBlock] Loading schematic > Black Diamonds (harder.schematic) for all players, order 3
+[10:14:55] [Server thread/INFO]: [ASkyBlock] Loading offline messages...
+[10:14:55] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[10:14:55] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[10:14:55] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[10:14:55] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[10:14:55] [Server thread/INFO]: **** Beginning UUID conversion, this may take A LONG time ****
+[10:14:55] [Server thread/INFO]: Preparing level "world"
+[10:14:55] [Server thread/INFO]: BukkitPlotGenerator does not fully support: null[m
+[10:14:55] [Server thread/INFO]: Preparing start region for level 0 (Seed: -4216530450634206070)
+[10:14:56] [Server thread/INFO]: BukkitPlotGenerator does not fully support: com.wasteofplastic.askyblock.generators.ChunkGeneratorWorld@76d944aa[m
+[10:14:56] [Server thread/INFO]: Preparing start region for level 1 (Seed: 6711728509610921511)
+[10:14:57] [Server thread/INFO]: Preparing spawn area for skyblock, 0%
+[10:14:58] [Server thread/INFO]: Preparing spawn area for skyblock, 36%
+[10:14:59] [Server thread/INFO]: Preparing spawn area for skyblock, 44%
+[10:14:59] [Server thread/INFO]: Preparing spawn area: 0%
+[10:15:00] [Server thread/INFO]: Preparing spawn area: 3%
+[10:15:01] [Server thread/INFO]: Preparing spawn area: 7%
+[10:15:03] [Server thread/INFO]: Preparing spawn area: 12%
+[10:15:04] [Server thread/INFO]: Preparing spawn area: 26%
+[10:15:05] [Server thread/INFO]: Preparing spawn area: 35%
+[10:15:06] [Server thread/INFO]: Preparing spawn area: 48%
+[10:15:08] [Server thread/INFO]: Preparing spawn area: 48%
+[10:15:09] [Server thread/INFO]: Preparing spawn area: 51%
+[10:15:10] [Server thread/INFO]: Preparing spawn area: 54%
+[10:15:11] [Server thread/INFO]: Preparing spawn area: 73%
+[10:15:12] [Server thread/INFO]: Preparing spawn area: 98%
+[10:15:12] [Server thread/INFO]: Preparing start region for level 1 (Seed: 6711728509610921511)
+[10:15:13] [Server thread/INFO]: [WorldEdit] Enabling WorldEdit v6.1.7-SNAPSHOT;3662-a8d04c2
+[10:15:13] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[10:15:13] [Server thread/INFO]: [WorldEdit] Using com.sk89q.worldedit.bukkit.adapter.impl.Spigot_v1_8_R3 as the Bukkit adapter
+[10:15:13] [Server thread/INFO]: [Skript] Enabling Skript v2.2-dev27
+[10:15:24] [Server thread/INFO]: [Skript] Loaded a total of 689111 english aliases
+[10:15:24] [Server thread/INFO]: [Skript]  ~ created by & © Peter Güttinger aka Njol ~
+[10:15:24] [Server thread/INFO]: [PlaceholderAPI] Enabling PlaceholderAPI v2.11.1
+[10:15:25] [Server thread/INFO]: [PlaceholderAPI] Fetching available expansion information...
+[10:15:25] [Server thread/INFO]: [PerWorldPlugins] Enabling PerWorldPlugins v1.2.4
+[10:15:25] [Server thread/INFO]: [PerWorldPlugins] Enabled, attempting to inject CommandHandler...
+[10:15:25] [Server thread/INFO]: [SkQuery] Enabling SkQuery v3.6.0-Lime
+[10:15:25] [Server thread/INFO]: [skQuery] Snooping enabled from com.w00tmast3r.skquery.SkQuery
+[10:15:25] [Server thread/INFO]: [skQuery] Locating classes from SkQuery...
+[10:15:26] [Server thread/INFO]: [skQuery] Finished snooping of SkQuery with 148 classes.
+[10:15:26] [Server thread/INFO]: [skQuery] Beginning to process a total of 148 from SkQuery
+[10:15:26] [Server thread/INFO]: [skQuery] Out of 148 classes, 144 classes were loaded from SkQuery
+[10:15:26] [Server thread/INFO]: [NametagEdit] Enabling NametagEdit v4.2.0
+[10:15:26] [Server thread/INFO]: [NametagEdit] Found PermissionsEx! Hooking in.
+[10:15:26] [Server thread/INFO]: [LaggRemover] Enabling LaggRemover v2.0.6
+[10:15:26] [Server thread/INFO]: 
+    __                      ____                                         _    _____
+   / /   ____ _____ _____ _/ __ \___  ____ ___  ____ _   _____  _____   | |  / /__ \
+  / /   / __ `/ __ `/ __ `/ /_/ / _ \/ __ `__ \/ __ \ | / / _ \/ ___/   | | / /__/ /
+ / /___/ /_/ / /_/ / /_/ / _, _/  __/ / / / / / /_/ / |/ /  __/ /       | |/ // __/
+/_____/\__,_/\__, /\__, /_/ |_|\___/_/ /_/ /_/\____/|___/\___/_/        |___//____/
+            /____//____/
+
+[10:15:26] [Server thread/INFO]: [LaggRemover] Loaded 0 module(s)
+[10:15:26] [Server thread/INFO]: [LaggRemover] The LaggRemover AI is now active!
+[10:15:26] [Server thread/INFO]: [LaggRemover] LaggRemover has been enabled!
+[10:15:26] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v6.1.3-SNAPSHOT;c904242
+[10:15:27] [Server thread/INFO]: [WorldGuard] (world) TNT ignition is PERMITTED.
+[10:15:27] [Server thread/INFO]: [WorldGuard] (world) Lighters are PERMITTED.
+[10:15:27] [Server thread/INFO]: [WorldGuard] (world) Lava fire is blocked.
+[10:15:27] [Server thread/INFO]: [WorldGuard] (world) Fire spread is UNRESTRICTED.
+[10:15:27] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'world'
+[10:15:27] [Server thread/INFO]: [WorldGuard] (skyblock) TNT ignition is PERMITTED.
+[10:15:27] [Server thread/INFO]: [WorldGuard] (skyblock) Lighters are PERMITTED.
+[10:15:27] [Server thread/INFO]: [WorldGuard] (skyblock) Lava fire is blocked.
+[10:15:27] [Server thread/INFO]: [WorldGuard] (skyblock) Fire spread is UNRESTRICTED.
+[10:15:27] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'skyblock'
+[10:15:27] [Server thread/INFO]: [WorldGuard] Loading region data...
+[10:15:28] [Server thread/INFO]: [PerWorldTabList] Enabling PerWorldTabList v1.0
+[10:15:28] [Server thread/INFO]: [BroadcastPlus] Enabling BroadcastPlus v2.7.0
+[10:15:28] [Server thread/WARN]: [BroadcastPlus] Default system encoding may have misread config.yml from plugin jar
+[10:15:28] [Server thread/INFO]: [PlaceholderAPI] Successfully registered expansion: broadcastplus [1.0.0]
+[10:15:28] [Server thread/INFO]: [BroadcastPlus] §2Successfully hooked into PlaceholderAPI
+[10:15:28] [Server thread/INFO]: [BroadcastPlus] §3GUI List: [Example GUI] Preset List: [example]
+[10:15:28] [Server thread/ERROR]: Error occurred while enabling BroadcastPlus v2.7.0 (Is it up to date?)
+java.lang.BootstrapMethodError: java.lang.NoClassDefFoundError: org/bukkit/util/Consumer
+	at Dev.ScalerGames.BroadcastPlus.Main.onEnable(Main.java:57) ~[?:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:321) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:340) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at us.Myles.PWP.TransparentListeners.PerWorldPluginLoader.enablePlugin(PerWorldPluginLoader.java:145) [PerWorldPlugins.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:405) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.craftbukkit.v1_8_R3.CraftServer.loadPlugin(CraftServer.java:357) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.craftbukkit.v1_8_R3.CraftServer.enablePlugins(CraftServer.java:317) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.s(MinecraftServer.java:414) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.k(MinecraftServer.java:378) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.a(MinecraftServer.java:333) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.DedicatedServer.init(DedicatedServer.java:263) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.run(MinecraftServer.java:525) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_321]
+Caused by: java.lang.NoClassDefFoundError: org/bukkit/util/Consumer
+	... 13 more
+Caused by: java.lang.ClassNotFoundException: org.bukkit.util.Consumer
+	at org.bukkit.plugin.java.PluginClassLoader.findClass(PluginClassLoader.java:91) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.plugin.java.PluginClassLoader.findClass(PluginClassLoader.java:86) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:1.8.0_321]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:1.8.0_321]
+	... 13 more
+[10:15:28] [Server thread/INFO]: [PermissionsEx] Enabling PermissionsEx v1.23.4
+[10:15:28] [Server thread/INFO]: [PermissionsEx] Initializing file backend
+[10:15:28] [Server thread/INFO]: [PermissionsEx] Permissions file successfully reloaded
+[10:15:28] [Server thread/INFO]: WEPIF: PermissionsEx detected! Using PermissionsEx for permissions.
+[10:15:28] [Server thread/INFO]: [Vault][Permission] PermissionsEx hooked.
+[10:15:28] [Server thread/INFO]: [Vault][Chat] PermissionsEx_Chat hooked.
+[10:15:28] [Server thread/INFO]: [ViaVersion] Enabling ViaVersion v4.1.1
+[10:15:28] [Server thread/INFO]: [xInventories] Enabling xInventories v2.3
+[10:15:29] [Server thread/INFO]: [xInventories] Plugin enabled
+[10:15:29] [Server thread/INFO]: [ViaBackwards] Enabling ViaBackwards v4.1.1
+[10:15:29] [Server thread/INFO]: [ShopGUIPlus] Enabling ShopGUIPlus v1.6.5
+[10:15:29] [Server thread/INFO]: [ShopGUIPlus] Permissions support enabled.
+[10:15:29] [Server thread/WARN]: [ShopGUIPlus] Spawners plugin not found, spawners won't be supported.
+[10:15:29] [Server thread/INFO]: [ShopGUIPlus] Vault economy support enabled.
+[10:15:29] [Server thread/INFO]: -______________-[m
+[10:15:29] [Server thread/INFO]: [Essentials] Enabling Essentials v2.0.1-b612
+[10:15:30] [Server thread/INFO]: Attempting to convert old kits in config.yml to new kits.yml
+[10:15:30] [Server thread/INFO]: No kits found to migrate.
+[10:15:30] [Server thread/INFO]: [Essentials] Using 1.8.3+ BlockStateMeta provider as mob spawner provider.
+[10:15:30] [Server thread/INFO]: [Essentials] Using legacy item data provider as spawn egg provider.
+[10:15:30] [Server thread/INFO]: [Essentials] Using legacy potion meta provider as potion meta provider.
+[10:15:30] [Server thread/INFO]: Using locale vi_VN
+[10:15:30] [Server thread/INFO]: [Essentials] Using Spigot 1.7.10+ ServerListPingEvent iterator
+[10:15:30] [Server thread/INFO]: [Essentials] Starting Metrics. Opt-out using the global bStats config.
+[10:15:30] [Server thread/INFO]: [Vault][Economy] Essentials Economy hooked.
+[10:15:30] [Server thread/INFO]: [Essentials] Using Vault based permissions (PermissionsEx)
+[10:15:30] [Server thread/INFO]: [UltraCosmetics] Enabling UltraCosmetics v2.4.9
+[10:15:30] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: -------------------------------------------------------------------
+[10:15:30] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: UltraCosmetics v2.4.9 is loading... (server: 1.8.8)
+[10:15:30] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: Thanks for downloading it!
+[10:15:30] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: Plugin by iSach.
+[10:15:30] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: Link: http://bit.ly/UltraCosmetics
+[10:15:31] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: Initializing module v1_8_R3
+[10:15:31] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: Module initialized
+[10:15:36] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: 
+[10:15:36] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: Morphs require Lib's Disguises!
+[10:15:36] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: 
+[10:15:36] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: Morphs disabled.
+[10:15:36] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: 
+[10:15:36] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: UltraCosmetics successfully finished loading and is now enabled!
+[10:15:36] [Server thread/INFO]: 01/27/2022 - UltraCosmetics [INFO]: -------------------------------------------------------------------
+[10:15:36] [Server thread/INFO]: [Thesieutoc] Enabling Thesieutoc v#18
+[10:15:36] [Server thread/WARN]: [Thesieutoc] Default system encoding may have misread config.yml from plugin jar
+[10:15:36] [Server thread/INFO]: [PlaceholderAPI] Successfully registered expansion: tst [#18]
+[10:15:36] [Server thread/INFO]: [Thesieutoc] Tinh nang menu se bi tat do van de khong tuong thich (khong ho tro 1.8)
+[10:15:36] [Server thread/WARN]: [Thesieutoc] Default system encoding may have misread config.yml from plugin jar
+[10:15:36] [Server thread/INFO]: [Citizens] Enabling Citizens v2.0.16-SNAPSHOT (build 1267)
+[10:15:36] [Server thread/ERROR]: [Citizens] Missing preferred location bundle.
+[10:15:37] [Server thread/INFO]: [SkinsRestorer] Enabling SkinsRestorer v14.1.10
+[10:15:39] [Server thread/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1mDetected Minecraft [0;33;1mv1_8_R3[0;32;1m, using [0;33;1mSpigotSkinRefresher[0;32;1m.[m
+[10:15:58] [Server thread/INFO]: [EssentialsChat] Enabling EssentialsChat v2.0.1-b612
+[10:15:58] [Server thread/INFO]: [HideAndCustomPlugins] Enabling HideAndCustomPlugins v1.8
+[10:15:58] [Server thread/INFO]: [HideAndCustomPlugins] Version: 1.8 Metrics started: http://mcstats.org/plugin/HideAndCustomPlugins
+[10:15:58] [Server thread/INFO]: [HideAndCustomPlugins] Version: 1.8 Successfully reloaded config.yml
+[10:15:58] [Server thread/INFO]: [HideAndCustomPlugins] Version: 1.8 Plugin has been activated successfully.
+[10:15:58] [Server thread/INFO]: [Multiverse-Core] Enabling Multiverse-Core v2.5.0-b727
+[10:15:59] [Server thread/INFO]: Preparing start region for level 2 (Seed: -6805161709319010718)
+[10:15:59] [Server thread/INFO]: [WorldGuard] (skypvp) TNT ignition is PERMITTED.
+[10:15:59] [Server thread/INFO]: [WorldGuard] (skypvp) Lighters are PERMITTED.
+[10:15:59] [Server thread/INFO]: [WorldGuard] (skypvp) Lava fire is blocked.
+[10:15:59] [Server thread/INFO]: [WorldGuard] (skypvp) Fire spread is UNRESTRICTED.
+[10:15:59] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'skypvp'
+[10:16:00] [Server thread/INFO]: Preparing start region for level 3 (Seed: 0)
+[10:16:00] [Server thread/INFO]: [WorldGuard] (PIT) TNT ignition is PERMITTED.
+[10:16:00] [Server thread/INFO]: [WorldGuard] (PIT) Lighters are PERMITTED.
+[10:16:00] [Server thread/INFO]: [WorldGuard] (PIT) Lava fire is blocked.
+[10:16:00] [Server thread/INFO]: [WorldGuard] (PIT) Fire spread is UNRESTRICTED.
+[10:16:00] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'PIT'
+[10:16:01] [Server thread/INFO]: Preparing start region for level 4 (Seed: -4216530450634206070)
+[10:16:01] [Server thread/INFO]: [WorldGuard] (bridge-maps) TNT ignition is PERMITTED.
+[10:16:01] [Server thread/INFO]: [WorldGuard] (bridge-maps) Lighters are PERMITTED.
+[10:16:01] [Server thread/INFO]: [WorldGuard] (bridge-maps) Lava fire is blocked.
+[10:16:01] [Server thread/INFO]: [WorldGuard] (bridge-maps) Fire spread is UNRESTRICTED.
+[10:16:01] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'bridge-maps'
+[10:16:02] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;32;1mDetected world load for 'creative'[m
+[10:16:02] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;36;22m - generator: [0;37;22mPlotSquared>PlotSquared[m
+[10:16:02] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;36;22m - plotworld: [0;37;22mcom.intellectualcrafters.plot.generator.HybridPlotWorld[m
+[10:16:02] [Server thread/INFO]: [0;30;1m[[0;33;1mP2[0;30;1m] [0;37;22m[0;36;22m - manager: [0;37;22mcom.intellectualcrafters.plot.generator.HybridPlotManager[m
+[10:16:03] [Server thread/INFO]: World possibly already loaded: creative[m
+[10:16:03] [Server thread/INFO]: Preparing start region for level 5 (Seed: -3448421881028806934)
+[10:16:03] [Server thread/INFO]: [WorldGuard] (creative) TNT ignition is PERMITTED.
+[10:16:03] [Server thread/INFO]: [WorldGuard] (creative) Lighters are PERMITTED.
+[10:16:03] [Server thread/INFO]: [WorldGuard] (creative) Lava fire is blocked.
+[10:16:03] [Server thread/INFO]: [WorldGuard] (creative) Fire spread is UNRESTRICTED.
+[10:16:03] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'creative'
+[10:16:06] [Server thread/INFO]: Preparing start region for level 6 (Seed: -4216530450634206070)
+[10:16:06] [Server thread/INFO]: [WorldGuard] (luckyrace) TNT ignition is PERMITTED.
+[10:16:06] [Server thread/INFO]: [WorldGuard] (luckyrace) Lighters are PERMITTED.
+[10:16:06] [Server thread/INFO]: [WorldGuard] (luckyrace) Lava fire is blocked.
+[10:16:06] [Server thread/INFO]: [WorldGuard] (luckyrace) Fire spread is UNRESTRICTED.
+[10:16:06] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'luckyrace'
+[10:16:09] [Server thread/INFO]: Preparing start region for level 7 (Seed: -4216530450634206070)
+[10:16:09] [Server thread/INFO]: [WorldGuard] (skywars) TNT ignition is PERMITTED.
+[10:16:09] [Server thread/INFO]: [WorldGuard] (skywars) Lighters are PERMITTED.
+[10:16:09] [Server thread/INFO]: [WorldGuard] (skywars) Lava fire is blocked.
+[10:16:09] [Server thread/INFO]: [WorldGuard] (skywars) Fire spread is UNRESTRICTED.
+[10:16:09] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'skywars'
+[10:16:10] [Server thread/INFO]: [Multiverse-Core] 8 - World(s) loaded.
+[10:16:11] [Server thread/INFO]: [Multiverse-Core] Version 2.5.0-b727 (API v20) Enabled - By Rigby, fernferret, lithium3141, main-- and dumptruckman
+[10:16:11] [Server thread/INFO]: [Skellett] Enabling Skellett v1.9.6b
+[10:16:13] [Server thread/INFO]: [0;30;1m[[0;32;1mSkellett[0;30;1m] [0;33;1mRegistered [0;32;1m10 [0;33;1mEffects, [0;32;1m1[0;33;1m Conditions, [0;32;1m8[0;33;1m Expressions and [0;32;1m3[0;33;1m Events[m
+[10:16:13] [Server thread/INFO]: [0;30;1m[[0;32;1mSkellett[0;30;1m] [0;33;1m[0;32;1mHas been enabled![m
+[10:16:13] [Server thread/INFO]: [AuthMe] Enabling AuthMe v5.4.0-b1877
+[10:16:15] [Server thread/INFO]: [AuthMe] SQLite Setup finished
+[10:16:16] [Server thread/INFO]: [AuthMe] Hooked into PermissionsEx!
+[10:16:16] [Server thread/INFO]: [AuthMe] Hooked successfully into Essentials
+[10:16:16] [Server thread/INFO]: [AuthMe] Hooked successfully into Multiverse-Core
+[10:16:16] [Server thread/INFO]: [AuthMe] Essentials spawn file not found: 'C:\Users\vuicu\Downloads\SERVER V15 - D\plugins\Essentials\spawn.yml'
+[10:16:16] [Thread-13/WARN]: [AuthMe] Could not download GeoLiteAPI database [UnknownHostException]: geolite.maxmind.com
+[10:16:17] [Server thread/INFO]: [AuthMe] Development builds are available on our jenkins, thanks to f14stelt.
+[10:16:17] [Server thread/INFO]: [AuthMe] Do you want a good game server? Look at our sponsor GameHosting.it leader in Italy as Game Server Provider!
+[10:16:17] [Server thread/INFO]: [AuthMe] AuthMe 5.4.0 build n.1877 correctly enabled!
+[10:16:17] [Server thread/INFO]: [HolographicDisplays] Enabling HolographicDisplays v2.2.6
+[10:16:17] [Server thread/INFO]: [HolographicDisplays] Found ProtocolLib, using old version.
+[10:16:17] [Server thread/INFO]: [HolographicDisplays] Enabled player relative placeholders with ProtocolLib.
+[10:16:17] [Server thread/INFO]: [TuSKe] Enabling TuSKe v1.8.1
+[10:16:17] [Server thread/INFO]: [TuSKe]  
+[10:16:17] [Server thread/INFO]: [TuSKe] 
+[10:16:17] [Server thread/INFO]: [TuSKe] 
+[10:16:17] [Server thread/INFO]: [TuSKe]  
+[10:16:18] [Server thread/INFO]: [TuSKe] Loaded 8 events, 12 conditions, 20 effects, 61 expressions and 0 types. Have fun!
+[10:16:18] [Server thread/INFO]: [skRayFall] Enabling skRayFall v1.9.10
+[10:16:18] [Server thread/INFO]: [skRayFall] Yay! You are running skRayFall 1.9.10!
+[10:16:18] [Server thread/INFO]: [skRayFall] Nathan and Lewis <3 you.
+[10:16:18] [Server thread/INFO]: [skRayFall] Cooking Bacon...
+[10:16:18] [Server thread/INFO]: [skRayFall] Getting more bacon for the army of citizens...
+[10:16:18] [Server thread/INFO]: [skRayFall] Got bacon for the EffectLib partical ninjas!
+[10:16:18] [Server thread/INFO]: [skRayFall] No Votifier Found! *Checks oven for finished bacon*
+[10:16:18] [Server thread/INFO]: [skRayFall] Bacon holograms found
+[10:16:18] [Server thread/INFO]: [skRayFall] Client Side bacon holograms enabled
+[10:16:18] [Server thread/INFO]: [skRayFall] Enabling general 1.8 - 1.12 bacon!
+[10:16:18] [Server thread/INFO]: [skRayFall] Getting the extra special 1.8.4 - 1.8.8 bacon!
+[10:16:18] [Server thread/INFO]: [skRayFall] Bacon is ready!
+[10:16:18] [Server thread/INFO]: [Skywars] Enabling Skywars v3.0
+[10:16:18] [Server thread/INFO]: [0;33;1m[21mSKYWARS [0;37;22mLoaded the mystery box settings![m
+[10:16:19] [Server thread/ERROR]: Error occurred while enabling Skywars v3.0 (Is it up to date?)
+java.lang.NoClassDefFoundError: me/clip/placeholderapi/external/EZPlaceholderHook
+	at java.lang.ClassLoader.defineClass1(Native Method) ~[?:1.8.0_321]
+	at java.lang.ClassLoader.defineClass(Unknown Source) ~[?:1.8.0_321]
+	at java.security.SecureClassLoader.defineClass(Unknown Source) ~[?:1.8.0_321]
+	at java.net.URLClassLoader.defineClass(Unknown Source) ~[?:1.8.0_321]
+	at java.net.URLClassLoader.access$100(Unknown Source) ~[?:1.8.0_321]
+	at java.net.URLClassLoader$1.run(Unknown Source) ~[?:1.8.0_321]
+	at java.net.URLClassLoader$1.run(Unknown Source) ~[?:1.8.0_321]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_321]
+	at java.net.URLClassLoader.findClass(Unknown Source) ~[?:1.8.0_321]
+	at org.bukkit.plugin.java.PluginClassLoader.findClass(PluginClassLoader.java:101) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.plugin.java.JavaPluginLoader.getClassByName(JavaPluginLoader.java:195) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.plugin.java.PluginClassLoader.findClass(PluginClassLoader.java:97) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.plugin.java.PluginClassLoader.findClass(PluginClassLoader.java:86) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:1.8.0_321]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:1.8.0_321]
+	at me.wazup.skywars.Skywars.onEnable(Skywars.java:149) ~[?:?]
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:321) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader.java:340) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at us.Myles.PWP.TransparentListeners.PerWorldPluginLoader.enablePlugin(PerWorldPluginLoader.java:145) [PerWorldPlugins.jar:?]
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:405) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.craftbukkit.v1_8_R3.CraftServer.loadPlugin(CraftServer.java:357) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.craftbukkit.v1_8_R3.CraftServer.enablePlugins(CraftServer.java:317) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.s(MinecraftServer.java:414) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.k(MinecraftServer.java:378) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.a(MinecraftServer.java:333) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.DedicatedServer.init(DedicatedServer.java:263) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at net.minecraft.server.v1_8_R3.MinecraftServer.run(MinecraftServer.java:525) [spigot.jar:git-Spigot-db6de12-18fbb24]
+	at java.lang.Thread.run(Unknown Source) [?:1.8.0_321]
+Caused by: java.lang.ClassNotFoundException: me.clip.placeholderapi.external.EZPlaceholderHook
+	at java.net.URLClassLoader.findClass(Unknown Source) ~[?:1.8.0_321]
+	at org.bukkit.plugin.java.PluginClassLoader.findClass(PluginClassLoader.java:101) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at org.bukkit.plugin.java.PluginClassLoader.findClass(PluginClassLoader.java:86) ~[spigot.jar:git-Spigot-db6de12-18fbb24]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:1.8.0_321]
+	at java.lang.ClassLoader.loadClass(Unknown Source) ~[?:1.8.0_321]
+	... 28 more
+[10:16:19] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[10:16:19] [Server thread/INFO]: Done (83,668s)! For help, type "help" or "?"
+[10:16:19] [Server thread/INFO]: Starting GS4 status listener
+[10:16:19] [Query Listener #1/INFO]: Query running on 0.0.0.0:25565
+[10:16:19] [Server thread/INFO]: [ASkyBlock] Silencing command feedback for Ops...
+[10:16:19] [Server thread/INFO]: Game rule has been updated
+[10:16:19] [Server thread/INFO]: [ASkyBlock] If you do not want this, do /gamerule sendCommandFeedback true
+[10:16:19] [Server thread/INFO]: [ASkyBlock] Checking for new updates...
+[10:16:19] [Server thread/INFO]: [Skript] Loading variables...
+[10:16:19] [Server thread/INFO]: [Skript] Loaded 748 variables in 0.2 seconds
+[10:16:20] [Craft Scheduler Thread - 2/WARN]: Exception in thread "Craft Scheduler Thread - 2" 
+[10:16:20] [Craft Scheduler Thread - 2/WARN]: org.apache.commons.lang.UnhandledException: Plugin Skywars v3.0 generated an exception while executing task 73
+	at org.bukkit.craftbukkit.v1_8_R3.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at me.wazup.skywars.Skywars$15.run(Skywars.java:1741)
+	at org.bukkit.craftbukkit.v1_8_R3.scheduler.CraftTask.run(CraftTask.java:71)
+	at org.bukkit.craftbukkit.v1_8_R3.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:53)
+	... 3 more
+
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1m----------------------------------------------[m
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1m    +==================+[m
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1m    |   SkinsRestorer  |[m
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1m    |------------------|[m
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1m    |  [0;34;1m[4m[21mStandalone Mode[0;32;1m |[m
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1m    +==================+[m
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1m----------------------------------------------[m
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;36;1m    Current version: [0;32;1m14.1.10[m
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1m    This is the latest version![m
+[10:16:20] [Craft Scheduler Thread - 19/INFO]: [0;33;1m[[0;32;22mSkinsRestorer[0;33;1m] [m[0;32;1m----------------------------------------------[m
+[10:16:25] [Server thread/INFO]: [0;37;22m[21m--------------------------------------------[m
+[10:16:25] [Server thread/INFO]:  [m
+[10:16:25] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;32;1mLoading [0;33;1mv.0.1.1-C[0;32;1m...[m
+[10:16:26] [Server thread/INFO]: [0;37;22m[21m--------------------------------------------[m
+[10:16:26] [Server thread/INFO]:  [m
+[10:16:26] [Server thread/INFO]: [0;33;22m[21mTHE BRIDGE [0;30;1m[21m- [0;37;22m [0;32;1mLoading [0;33;1mv.0.0.6[0;32;1m...[m
+[10:16:30] [Server thread/INFO]: [0;33;1m[21mTHE PIT [0;30;1m[21m- [0;37;22m [0;32;1mLoaded.[m
+[10:16:32] [Server thread/INFO]: [Skript] All scripts loaded without errors.
+[10:16:32] [Server thread/INFO]: [Skript] Loaded 4 scripts with a total of 59 triggers and 9 commands in 12.29 seconds
+[10:16:32] [Server thread/INFO]: [Skript] Finished loading.
+[10:16:32] [Server thread/INFO]: [ViaVersion] ViaVersion detected server version: 1.8.x (47)
+[10:16:32] [Server thread/WARN]: [ViaVersion] This version of Minecraft is extremely outdated and support for it has reached its end of life. You will still be able to run Via on this Minecraft version, but we are unlikely to provide any further fixes or help with problems specific to legacy Minecraft versions. Please consider updating to give your players a better experience and to avoid issues that have long been fixed.
+[10:16:32] [Server thread/WARN]: [ViaVersion] You are running an outdated Java version, please consider updating it to at least Java 17 (your version is 1.8.0_321). At some point in the future, ViaVersion will no longer be compatible with this version of Java.
+[10:16:33] [Server thread/INFO]: [Citizens] Loaded 6 NPCs.
+[10:16:33] [Server thread/INFO]: [PlaceholderAPI] Placeholder expansion registration initializing...
+[10:16:33] [Server thread/INFO]: [0;33;22m0 placeholder hook(s) registered![m
+[10:16:33] [Server thread/INFO]: [ASkyBlock] Loading island grid...
+[10:16:33] [Server thread/INFO]: [ASkyBlock] Loading islands.yml
+[10:16:33] [Server thread/INFO]: [ASkyBlock] Loading warps...
+[10:16:33] [Server thread/INFO]: [ASkyBlock] Loading warp panel...
+[10:16:33] [Server thread/INFO]: [ASkyBlock] Loading Top Ten
+[10:16:34] [Server thread/INFO]: [ASkyBlock] All files loaded. Ready to play...
+[10:16:34] [Server thread/INFO]: [ASkyBlock] Metrics loaded.
+[10:16:34] [Server thread/INFO]: [ViaVersion] Finished mapping loading, shutting down loader executor!
+[10:16:34] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;33;1m5 [0;32;1mgames loaded![m
+[10:16:34] [Server thread/INFO]: [0;33;22m[21mTHE BRIDGE [0;30;1m[21m- [0;37;22m [0;32;1m[21mPlugin loaded![m
+[10:16:34] [Server thread/INFO]:  [m
+[10:16:34] [Server thread/INFO]: [0;37;22m[21m--------------------------------------------[m
+[10:16:36] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;32;1m[21mPlugin loaded![m
+[10:16:36] [Server thread/INFO]:  [m
+[10:16:36] [Server thread/INFO]: [0;37;22m[21m--------------------------------------------[m
+[10:16:36] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;32;1mReseting [0;33;1m1[m
+[10:16:36] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;33;1m1 [0;32;1mreseted![m
+[10:16:37] [Server thread/INFO]: [0;33;1m[21mSKYWARS [0;37;22mHolographicDisplays has been detected! HolographicDisplays features are now accessible..[m
+[10:16:37] [Server thread/INFO]: [0;33;1m[21mSKYWARS [0;37;22mLoaded [0;36;1m7[0;37;22m arena(s)[0;35;1m  and [0;36;1m0[0;37;22m join sign(s)[0;35;1m and [0;36;1m51[0;37;22m cage(s)[0;35;1m and [0;36;1m2[0;37;22m chest type(s)[0;35;1m and [0;36;1m22[0;37;22m kit(s)[0;35;1m and [0;36;1m22[0;37;22m trail(s)[0;35;1m and [0;36;1m4[0;37;22m shop(s)[0;35;1m and [0;36;1m53[0;37;22m achievement(s)[0;35;1m and [0;36;1m7[0;37;22m broadcaster message(s)[m
+[10:16:37] [Server thread/INFO]: [0;33;1m[21mSKYWARS [0;37;22mUpdating leaderboards...[m
+[10:16:37] [Server thread/INFO]: [0;33;1m[21mSKYWARS [0;37;22mCouldn't find any valid top sign to update![m
+[10:16:37] [Server thread/INFO]: [0;33;1m[21mSKYWARS [0;37;22mNo Holographic leaderboard was set either, cancelling the task![m
+[10:16:38] [Server thread/INFO]: [ASkyBlock] No update available.
+[10:16:38] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;32;1mReseting [0;33;1m2[m
+[10:16:38] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;33;1m2 [0;32;1mreseted![m
+[10:16:38] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;32;1mReseting [0;33;1m3[m
+[10:16:38] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;33;1m3 [0;32;1mreseted![m
+[10:16:39] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;32;1mReseting [0;33;1m4[m
+[10:16:40] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;32;1mReseting [0;33;1m5[m
+[10:16:40] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;33;1m5 [0;32;1mreseted![m
+[10:16:43] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;33;1m4 [0;32;1mreseted![m
+[10:25:06] [Server thread/INFO]: Stopping the server
+[10:25:06] [Server thread/INFO]: Stopping server
+[10:25:06] [Server thread/INFO]: [Skywars] Disabling Skywars v3.0
+[10:25:06] [Server thread/INFO]: [0;33;1m[21mSKYWARS [0;37;22mPlugin has been disabled![m
+[10:25:06] [Server thread/INFO]: [skRayFall] Disabling skRayFall v1.9.10
+[10:25:06] [Server thread/INFO]: [skRayFall] Bacon has been eaten. Make some more soon!
+[10:25:06] [Server thread/INFO]: [TuSKe] Disabling TuSKe v1.8.1
+[10:25:06] [Server thread/INFO]: [HolographicDisplays] Disabling HolographicDisplays v2.2.6
+[10:25:06] [Server thread/INFO]: [AuthMe] Disabling AuthMe v5.4.0-b1877
+[10:25:06] [Server thread/INFO]: [AuthMe] Waiting for 0 tasks to finish
+[10:25:06] [Server thread/INFO]: [AuthMe] AuthMe 5.4.0-b1877 disabled!
+[10:25:06] [Server thread/INFO]: [Skellett] Disabling Skellett v1.9.6b
+[10:25:06] [Server thread/INFO]: [Multiverse-Core] Disabling Multiverse-Core v2.5.0-b727
+[10:25:06] [Server thread/INFO]: [HideAndCustomPlugins] Disabling HideAndCustomPlugins v1.8
+[10:25:06] [Server thread/INFO]: [HideAndCustomPlugins] Version: 1.8 Plugin was disabled successfully.
+[10:25:06] [Server thread/INFO]: [EssentialsChat] Disabling EssentialsChat v2.0.1-b612
+[10:25:06] [Server thread/INFO]: [ASkyBlock] Disabling ASkyBlock v3.0.9.4
+[10:25:06] [Server thread/INFO]: [ASkyBlock] Saving offline messages...
+[10:25:06] [Server thread/INFO]: [SkinsRestorer] Disabling SkinsRestorer v14.1.10
+[10:25:06] [Server thread/INFO]: [Citizens] Disabling Citizens v2.0.16-SNAPSHOT (build 1267)
+[10:25:06] [Server thread/INFO]: [ProtocolLib] Disabling ProtocolLib v3.6.5
+[10:25:06] [Server thread/INFO]: [PlotSquared] Disabling PlotSquared v3.5.0-SNAPSHOT-95f8aaa
+[10:25:06] [Server thread/INFO]: [0;33;1mAll DB transactions during this session are being validated (This may take a while if corrections need to be made)[m
+[10:25:06] [Server thread/INFO]: [Thesieutoc] Disabling Thesieutoc v#18
+[10:25:06] [Server thread/INFO]: [UltraCosmetics] Disabling UltraCosmetics v2.4.9
+[10:25:07] [Server thread/INFO]: [Essentials] Disabling Essentials v2.0.1-b612
+[10:25:07] [Server thread/INFO]: [Vault][Economy] Essentials Economy unhooked.
+[10:25:07] [Server thread/INFO]: [ShopGUIPlus] Disabling ShopGUIPlus v1.6.5
+[10:25:07] [Server thread/INFO]: [ViaRewind] Disabling ViaRewind v2.0.2
+[10:25:07] [Server thread/INFO]: [ViaBackwards] Disabling ViaBackwards v4.1.1
+[10:25:07] [Server thread/INFO]: [xInventories] Disabling xInventories v2.3
+[10:25:07] [Server thread/INFO]: [xInventories] Plugin disabled
+[10:25:07] [Server thread/INFO]: [Vault] Disabling Vault v1.5.6-b49
+[10:25:07] [Server thread/INFO]: [ViaVersion] Disabling ViaVersion v4.1.1
+[10:25:07] [Server thread/INFO]: [ViaVersion] ViaVersion is disabling, if this is a reload and you experience issues consider rebooting.
+[10:25:07] [Server thread/INFO]: [PermissionsEx] Disabling PermissionsEx v1.23.4
+[10:25:07] [Server thread/INFO]: WEPIF: PermissionsEx detected! Using PermissionsEx for permissions.
+[10:25:07] [Server thread/INFO]: [BroadcastPlus] Disabling BroadcastPlus v2.7.0
+[10:25:07] [Server thread/INFO]: [PerWorldTabList] Disabling PerWorldTabList v1.0
+[10:25:07] [Server thread/INFO]: [WorldGuard] Disabling WorldGuard v6.1.3-SNAPSHOT;c904242
+[10:25:07] [Server thread/INFO]: [WorldGuard] Shutting down executor and waiting for any pending tasks...
+[10:25:07] [Server thread/INFO]: [LaggRemover] Disabling LaggRemover v2.0.6
+[10:25:07] [Server thread/INFO]: [LaggRemover] LaggRemover has been disabled!
+[10:25:07] [Server thread/INFO]: [CustomJoinLeaveMessages] Disabling CustomJoinLeaveMessages v1.1.1
+[10:25:07] [Server thread/INFO]: [CustomJoinLeaveMessages] Stopped.
+[10:25:07] [Server thread/INFO]: [NametagEdit] Disabling NametagEdit v4.2.0
+[10:25:07] [Server thread/INFO]: [SkQuery] Disabling SkQuery v3.6.0-Lime
+[10:25:07] [Server thread/INFO]: [PerWorldPlugins] Disabling PerWorldPlugins v1.2.4
+[10:25:07] [Server thread/INFO]: [PlaceholderAPI] Disabling PlaceholderAPI v2.11.1
+[10:25:07] [Server thread/INFO]: [Skript] Disabling Skript v2.2-dev27
+[10:25:07] [Server thread/INFO]: [0;37;22m[21m--------------------------------------------[m
+[10:25:07] [Server thread/INFO]:  [m
+[10:25:07] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;32;1mDisabling [0;33;1mv.0.1.1-C[0;32;1m...[m
+[10:25:07] [Server thread/INFO]: [0;33;22m[21mLuckyRace [0;30;1m[21m»[0;37;22m [0;33;1mv.0.1.1-C [0;32;1mdisabled![m
+[10:25:07] [Server thread/INFO]:  [m
+[10:25:07] [Server thread/INFO]: [0;37;22m[21m--------------------------------------------[m
+[10:25:07] [Server thread/INFO]: [0;37;22m[21m--------------------------------------------[m
+[10:25:07] [Server thread/INFO]:  [m
+[10:25:07] [Server thread/INFO]: [0;33;22m[21mTHE BRIDGE [0;30;1m[21m- [0;37;22m [0;32;1mDisabling [0;33;1mv.0.0.6[0;32;1m...[m
+[10:25:07] [Server thread/INFO]: [0;33;22m[21mTHE BRIDGE [0;30;1m[21m- [0;37;22m [0;33;1mv.0.0.6 [0;32;1mdisabled![m
+[10:25:07] [Server thread/INFO]:  [m
+[10:25:07] [Server thread/INFO]: [0;37;22m[21m--------------------------------------------[m
+[10:25:07] [Server thread/INFO]: [WorldEdit] Disabling WorldEdit v6.1.7-SNAPSHOT;3662-a8d04c2
+[10:25:07] [Server thread/INFO]: Saving players
+[10:25:07] [Server thread/INFO]: Saving worlds
+[10:25:07] [Server thread/INFO]: Saving chunks for level 'world'/Overworld

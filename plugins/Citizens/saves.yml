@@ -1,0 +1,175 @@
+# Citizens NPC Storage
+
+last-created-npc-id: 3
+npc:
+  '0':
+    name: "\xa7aKIT SELECTOR"
+    uuid: 07d94cb8-481b-4f9e-b4e3-c975eac2b9b2
+    traits:
+      age:
+        age: 0
+        locked: true
+      spawned: true
+      type: Villager
+      location:
+        world: skypvp
+        x: '71.94904061877864'
+        y: '129.0'
+        z: '116.85021845325282'
+        yaw: '269.39996337890625'
+        pitch: '0.0'
+      owner:
+        owner: UzumakiYT
+        uuid: a6171976-d57a-4556-be56-6987215863fe
+    traitnames: spawned,location,owner,age,type
+    navigator:
+      pathfindingrange: '25.0'
+      stationaryticks: -1
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '1':
+    metadata:
+      player-skin-textures: eyJ0aW1lc3RhbXAiOjE1MTc1MTkzNDg1MzYsInByb2ZpbGVJZCI6ImY4ZmZhYjkxNDU5ODQxYWQ5YTE2MDg0ZTEwNzVmYmM4IiwicHJvZmlsZU5hbWUiOiJIaW5hdGFZVCIsInNpZ25hdHVyZVJlcXVpcmVkIjp0cnVlLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMGEwYmFjM2NmODFmNGY3MWVkM2I4M2VhNjE1NTI2M2QzZjFhYmU2NGQ3NGE5MDNmYTk2ZGJlMmRkNWNmOTIifX19
+      cached-skin-uuid-name: hinatayt
+      cached-skin-uuid: f8ffab91-4598-41ad-9a16-084e1075fbc8
+      player-skin-name: hinatayt
+      player-skin-signature: E6336sYEMd1idnpGx3lK1RCDQZGvmvhaM+6n1m5SaG9qalDlxrFsMx/XxrhWVZ8t17x4xCmIWaMMHQ6TQeVwJ5nynv1rylKT9wYH/WEkzad12VAGJw7vxndsdGK3Wpx+bnBhWzWL4LMGM6MOkhfVF1r9VUulWhVuu59zPN4uJCxWLoqIvrjjAATbk2mfoR56iJxej0edtw8zGBf9ZRXDXSF4Cr2pChxvre7vQmxuWHS7emMwcDU7lzhaQP0cKTOBqxwVex5DY9P7aUpngwU/4JHGqNIPrDNQTIf9mQ21KIXzURqe5XK0Z+1pQgWSv1jyRhD8/4WtNJl34yjQSMB+ufXaxqHXArzFZ9jqWOboHZkBcZ10cbYE9KUcPAs7UqmizQVwSux7+XFxQ03VP3IFmc9QYE9fPttxerSD5rGOyeJEdqx+i5tLTVaxtnnIR7QN8T0hiljHzXoSURrqev74vGVE+2iX0uhCbJ7bs4YQnntlsi/Rco1SeQC/2iXQE56GanPwwdGKP8J8lDn3/0n5N89V91nDW78JlCKwYej5PCnY6Wx6rc1CWNLrJVyBML0JiQP7DFdPh1+4c7rkJHkZDxpvtA3MLEANXk0FrfjfYexfyj3uqxrTdEU/qdyehiejRwy/UmJIX8n3cTwGo5F3U352ue8YDjUz4hYrF6Ej4dg=
+    name: "\xa7aSHOP"
+    uuid: 7b8ac57c-dc3d-40e6-94e0-c4545b36e5f1
+    traits:
+      spawned: true
+      inventory: {}
+      location:
+        world: survival
+        x: '1000599.7037172938'
+        y: '81.0'
+        z: '1.000034152663779E7'
+        yaw: '269.54571533203125'
+        pitch: '1.132005214691162'
+      owner:
+        owner: HinataYT
+        uuid: f8ffab91-4598-41ad-9a16-084e1075fbc8
+    traitnames: spawned,location,owner,inventory,type
+    navigator:
+      pathfindingrange: '25.0'
+      stationaryticks: -1
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '3':
+    metadata:
+      player-skin-textures: eyJ0aW1lc3RhbXAiOjE1MjI0MzkwNTQ0ODgsInByb2ZpbGVJZCI6IjBhNGU3YzVmOGU0MjRjNDI5M2M3MzZjNTI4ZjRjOTM3IiwicHJvZmlsZU5hbWUiOiJOb29ieSIsInNpZ25hdHVyZVJlcXVpcmVkIjp0cnVlLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjRmZWE3OTkzMWIzM2U4OWM5ZTRmZGEwMjkxOWMwNmYzYWMyMWRkNDE3NDZiNjAyODVhMmM1NzU2YmE3In19fQ==
+      cached-skin-uuid-name: nooby
+      cached-skin-uuid: 0a4e7c5f-8e42-4c42-93c7-36c528f4c937
+      player-skin-name: nooby
+      player-skin-signature: KuSwDHzgdktna5eRpz/oeLeTgtVkBKJvZjsaXui9uGXKbyolTghg/f1uQlsSMsXcPVbKbkRF39BPKwQgak5zr6TrRJWWvn7NBnX4JF9brcMcsXi6dLy2SV43ruHwDkZdtRxyyCF5u6moMu36Z3iU8lH9rxDjz859UEkx34jJwC8dZx2vFb08j/rfWzhaRDM+dSZdSiSjpbwbolGyPeEjV3xK+0inMNAE2Co7bBMQP9W2Fc55aoHcleaQcQ6j+yFHGOo7hh8RXtirkFO1uiOdaOs2ASConOXMqc3JDX2FW86ampyxZx/RiPNZwH1ymh4CXYwOE+ObQKfvYyUYDuOs2lZGkDP1Aao7OUSLUX8pVsWjuVbyDvS4ccP7eedpZ12XJcuVPmkmTdnpUOTi/0XsoNoHLqXz8eyogqzT5KkfEAWB8zaasX/9QUvtxxsgknOJOUaWoscNALRQlAEoheRsJN9Rk19H1I2505/D59eiZt8G9uLuE/Nz+ZmLqVzjO6NFX+M/MYQNUJCaJD8Vi6vy56VS/q3HCxI2G4H4CsMiGf8KUzZ8IB1Bh1VpMsvG/VL7a7KAi8sDqV0yXp0q/FreOkd6RF3ECV+qU7ecawdZDqRTbfwKSOQ+uIdbUDsa3yY34TtRAfycApQlADgUiBy8FPYwfVR8tEK1zgMPGn6wGbA=
+    name: "\xa7e\xa7lARENAS LIST"
+    uuid: b7cf2af9-36ab-4f8c-9abc-02dc6c098a3b
+    traits:
+      location:
+        world: bedwars
+        x: '5011.750895071062'
+        y: '99.0'
+        z: '984.5780055698626'
+        yaw: '0.3885449469089508'
+        pitch: '0.5999395847320557'
+      spawned: true
+      inventory: {}
+      owner:
+        owner: HinataYT
+        uuid: ed09f74a-4743-3595-8285-2a165ea93335
+    traitnames: spawned,location,owner,inventory,type
+    navigator:
+      pathfindingrange: '25.0'
+      stationaryticks: -1
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '2':
+    metadata:
+      player-skin-textures: eyJ0aW1lc3RhbXAiOjE1MjI0MzkwNTQ0ODgsInByb2ZpbGVJZCI6IjBhNGU3YzVmOGU0MjRjNDI5M2M3MzZjNTI4ZjRjOTM3IiwicHJvZmlsZU5hbWUiOiJOb29ieSIsInNpZ25hdHVyZVJlcXVpcmVkIjp0cnVlLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjRmZWE3OTkzMWIzM2U4OWM5ZTRmZGEwMjkxOWMwNmYzYWMyMWRkNDE3NDZiNjAyODVhMmM1NzU2YmE3In19fQ==
+      cached-skin-uuid-name: nooby
+      cached-skin-uuid: 0a4e7c5f-8e42-4c42-93c7-36c528f4c937
+      player-skin-name: nooby
+      player-skin-signature: KuSwDHzgdktna5eRpz/oeLeTgtVkBKJvZjsaXui9uGXKbyolTghg/f1uQlsSMsXcPVbKbkRF39BPKwQgak5zr6TrRJWWvn7NBnX4JF9brcMcsXi6dLy2SV43ruHwDkZdtRxyyCF5u6moMu36Z3iU8lH9rxDjz859UEkx34jJwC8dZx2vFb08j/rfWzhaRDM+dSZdSiSjpbwbolGyPeEjV3xK+0inMNAE2Co7bBMQP9W2Fc55aoHcleaQcQ6j+yFHGOo7hh8RXtirkFO1uiOdaOs2ASConOXMqc3JDX2FW86ampyxZx/RiPNZwH1ymh4CXYwOE+ObQKfvYyUYDuOs2lZGkDP1Aao7OUSLUX8pVsWjuVbyDvS4ccP7eedpZ12XJcuVPmkmTdnpUOTi/0XsoNoHLqXz8eyogqzT5KkfEAWB8zaasX/9QUvtxxsgknOJOUaWoscNALRQlAEoheRsJN9Rk19H1I2505/D59eiZt8G9uLuE/Nz+ZmLqVzjO6NFX+M/MYQNUJCaJD8Vi6vy56VS/q3HCxI2G4H4CsMiGf8KUzZ8IB1Bh1VpMsvG/VL7a7KAi8sDqV0yXp0q/FreOkd6RF3ECV+qU7ecawdZDqRTbfwKSOQ+uIdbUDsa3yY34TtRAfycApQlADgUiBy8FPYwfVR8tEK1zgMPGn6wGbA=
+    name: "\xa7e\xa7lRANDOM JOIN"
+    uuid: 4198e377-b26a-48ad-acbe-2f4ededfe6c5
+    traits:
+      location:
+        world: bedwars
+        x: '5018.29929732619'
+        y: '99.0'
+        z: '989.4087394885509'
+        yaw: '-249.44805908203125'
+        pitch: '-2.7001209259033203'
+      spawned: true
+      inventory: {}
+      owner:
+        owner: HinataYT
+        uuid: ed09f74a-4743-3595-8285-2a165ea93335
+    traitnames: spawned,location,owner,inventory,type
+    navigator:
+      pathfindingrange: '25.0'
+      stationaryticks: -1
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '6':
+    metadata:
+      player-skin-textures: eyJ0aW1lc3RhbXAiOjE1MjA1OTg5MjU1MjQsInByb2ZpbGVJZCI6IjY4NWI5OTczODk3YjQzMWViMWY5OGVhZTFjMmI4ZjJmIiwicHJvZmlsZU5hbWUiOiJJdGVtcyIsInNpZ25hdHVyZVJlcXVpcmVkIjp0cnVlLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODVjMWQ2ZDI0YjFmMjE1OGE2ODY5YmNiODdhZjhhZjdhYmFhNjU3ZjY1NzdkMzQ5ZmE2NGI2NGFiN2QxMmUifX19
+      cached-skin-uuid-name: items
+      cached-skin-uuid: 685b9973-897b-431e-b1f9-8eae1c2b8f2f
+      player-skin-signature: bz2U00kelih8VtEJNOVfSnnbatg4BNZz2RzympnI+ZLRM1L5ILQwbLRBN9r/tYy3dqMZJFq1PbD5hggNOjiW4aR4qKH4L2DAr06c78Wwpzsy7+8ccJybOpzSpG+laV76OHwfAja4jc/LFbIYrFhdTbG2DGer9h+O9tjtrxjTaVhHTA+tM47kIlMLArBKiNmmlrFdMzyydNkFOvVhqbyTmCHZWS8nQwqokPxEuIq5BRdx4CNll/ajW+Upmhd5+AruxK7Nge+bVWtQdOV1xALVkPehOSsY4k8HS44rKGguLpTqnJJVNCjHTcdXogXvJtI2C3V3APs91md1fl2VbSdcRday3GtIs3IF9mADiI+WDA5wv4ukbBpztPr6jwnRA6xDblYCpERiyNRQQVcSkKRaWyhjTUAwZNm2DGRtEA9rbT4hlpKF89z2jqe7ukaUzoTA+ez8NRrkYRA/fK9tZEXic5QmN+7AyO1A3Xv44JS3/moVL03iZKCmh74gNB6NhroCQzHjpeqC5vvK1+Po9pCIg3f1iEeN8CczQklee9tpcvLHs0hSrJmC7K32WEy4SevQAwZxJwLU5IwwlcAmbU+njekhqk7PeJyeJjQNz09sutWr3fFJRTWN4a0KdSJqLYro6H0q4/k+siL7N7jk+qyDI+HAKkmtsJt66ABqkIdjn+o=
+    name: "\xa77"
+    uuid: 51652df6-d922-4cab-b119-bf3aecaac556
+    traits:
+      location:
+        world: PIT
+        x: '1.4699349779882882'
+        y: '83.0'
+        z: '15.438329162222914'
+        yaw: '179.54891967773438'
+        pitch: '0.0'
+      type: Villager
+      spawned: true
+      inventory: {}
+      owner:
+        owner: UzumakiYT
+        uuid: 37a9b123-c587-3180-9614-aa425f00c61e
+    traitnames: location,spawned,owner,inventory,type
+    navigator:
+      pathfindingrange: '25.0'
+      stationaryticks: -1
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '7':
+    metadata:
+      player-skin-textures: eyJ0aW1lc3RhbXAiOjE1MjA2MDA0NzQzNTksInByb2ZpbGVJZCI6ImE3OTFhM2JjNDIzZjQxMmM5ZTkyODdiMzA5Yjk1Y2U3IiwicHJvZmlsZU5hbWUiOiJVcGdyYWRlcyIsInNpZ25hdHVyZVJlcXVpcmVkIjp0cnVlLCJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjY2NzQ0NjIyYzY1MzVhZGUwOTEyNDJhZjJjMWFjNzUxMzczMWZhNTk4MGFiOTRkNjU3NTI1ZTFiZGJhMzUifX19
+      cached-skin-uuid-name: upgrades
+      cached-skin-uuid: a791a3bc-423f-412c-9e92-87b309b95ce7
+      player-skin-signature: s+z+MVGNgnfXKPvXznWexSiQdOkN+ivZRykdQEQcd3FPESk+PBjh2nYq5IEJ+bDGVJ7OvnXmfBnKq2XRwxTJkRt3bSmGWY01+YajH6JCdJhZUNj0VmWR9ERuEhi5eQYLOV7Nf8aXlQocHasMS8jsFZL94R+CmSh5V73RNPxD/ccpxTji6a1ZJTctbhXTw7sHxbDDmxQ+FLas7VKbZO05Zz5r3rXrmTrwxXxh/KceilGsgbUQBGbMj/MXLAWDgA/Rk7v+hDjmOKm9soqXndeVGgGE4c0K2Fz5iG77EMMV3guCqmhpjXai9IsvHrK8ewm3rjAdtMRxyUNsH/oQoVuU3VEXbVJiC3d3cJnwNCuaLhLoHFF0oEyXO0ehM+JvM0lcjQc9Min9B+FyDxDDhaNuqZui9d3vDJVHD43ymRjsliPIbViRF2skh1ISpQOdCKpK22UHAQ0Y9FenKQJb6uc91jUM9RXWedhOKVhpJdl9YfXMSbkHBHUDYct/R5jzGHirRAetrJwlUdFhw1MrVDP/B/JvzDcPyWZr4982vQuMFV6L08EqpBlqtCV9Hx2/8RKTGT6kc9rrvMtHKOmfLBRF8+oiKjnRI8/fIqfcrE0VTjLiyeHjYy8MzcTPkdfIqUBpA+VQfpnsVIXKsJ8XNRKq1vIq9Dt5snyj4vYOyXPt/n8=
+    name: "\xa77"
+    uuid: 5e83d34f-a357-42e5-b604-847deef264e8
+    traits:
+      location:
+        world: PIT
+        x: '-2.5031293025303736'
+        y: '83.0'
+        z: '15.440458084709936'
+        yaw: '180.90052795410156'
+        pitch: '0.0'
+      type: Villager
+      inventory: {}
+      spawned: true
+      owner:
+        owner: UzumakiYT
+        uuid: 37a9b123-c587-3180-9614-aa425f00c61e
+    traitnames: location,spawned,owner,inventory,type
+    navigator:
+      pathfindingrange: '25.0'
+      stationaryticks: -1
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true

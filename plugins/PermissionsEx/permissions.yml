@@ -1,0 +1,245 @@
+groups:
+  USER:
+    options:
+      default: 'true'
+      prefix: '&2&l[MEMBER] &7'
+    permissions:
+    - essentials.msg
+    - ultracosmetics.openmenu
+    - ultracosmetics.command.menu
+    - ultracosmetics.gadgets.*
+    - ultracosmetics.pets.*
+    - ultracosmetics.suits.*
+    - ultracosmetics.emotes.*
+    worlds:
+      skyblock:
+        permissions:
+        - shopguiplus.shop
+        - shopguiplus.shops.*
+        inheritance:
+        - USER
+      skypvp:
+        permissions:
+        - essentials.kit
+        - essentials.kits
+        - essentials.kit.Noob
+        - essentials.kits.Noob
+        - essentials.kit.Newbie
+        - essentials.kits.Newbie
+        - essentials.signs.use.balance
+        - essentials.signs.use.buy
+        - essentials.signs.use.disposal
+        - essentials.signs.use.enchant
+        - essentials.signs.use.free
+        - essentials.signs.use.heal
+        - essentials.signs.use.kit
+        - essentials.signs.use.repair
+        - essentials.signs.use.sell
+        - essentials.signs.use.trade
+        - essentials.signs.use.warp
+        - essentials.recipe
+        - essentials.pay
+        - essentials.balance
+        - essentials.warps.skypvp
+        - essentials.warp
+        - essentials.warp.list
+        inheritance:
+        - USER
+      creative:
+        permissions:
+        - essentials.pay
+        - essentials.balance
+        - plots.use
+        - plots.permpack.basic
+        - plots.plot.2
+        - plots.permpack.basicinbox
+        - plots.permpack.basicflags
+        inheritance:
+        - USER
+      has:
+        permissions:
+        - hideandseek.join
+        inheritance:
+        - USER
+    inheritance: []
+  VIP:
+    options:
+      default: 'false'
+      prefix: '&d&l[VIP] &7'
+    permissions:
+    - essentials.msg.color
+    - essentials.nick
+    - ultracosmetics.mounts.*
+    - ultracosmetics.hats.*
+    - ultracosmetics.particleeffects.*
+    worlds:
+      skypvp:
+        permissions:
+        - essentials.kit.Recruit
+        - essentials.kits.Recruit
+        inheritance:
+        - USER
+    inheritance:
+    - USER
+  VIP+:
+    options:
+      default: 'false'
+      prefix: '&a&l[VIP+] &7'
+    permissions:
+    - essentials.msg.color
+    - essentials.nick
+    - ultracosmetics.mounts.*
+    - ultracosmetics.hats.*
+    - essentials.tempute
+    - ultracosmetics.particleeffects.*
+    worlds:
+      skypvp:
+        permissions:
+        - essentials.kit.Recruit
+        - essentials.kits.Recruit
+        inheritance:
+        - USER
+    inheritance:
+    - USER
+  VIP++:
+    options:
+      default: 'false'
+      prefix: '&5&l[VIP++] &7'
+    permissions:
+    - essentials.msg.color
+    - essentials.nick
+    - ultracosmetics.mounts.*
+    - ultracosmetics.hats.*
+    - essentials.tempute
+    - ultracosmetics.particleeffects.*
+    worlds:
+      skypvp:
+        permissions:
+        - essentials.kit.Recruit
+        - essentials.kits.Recruit
+        inheritance:
+        - USER
+    inheritance:
+    - USER
+  DONATION:
+    options:
+      default: 'false'
+      prefix: '&6&l[DONATOR] &7'
+    permissions:
+    - essentials.msg.color
+    - essentials.nick
+    - ultracosmetics.mounts.*
+    - ultracosmetics.hats.*
+    - essentials.tempute
+    - ultracosmetics.particleeffects.*
+    worlds:
+      skypvp:
+        permissions:
+        - essentials.kit.Recruit
+        - essentials.kits.Recruit
+        inheritance:
+        - USER
+    inheritance:
+    - USER
+  POLICE:
+    options:
+      default: 'false'
+      prefix: '&1&l[POLICE] &7'
+    permissions:
+    - server.staff
+    - essentials.tempban
+    - essentials.mute
+    - essentials.tempute
+    - essentials.kick
+    - essentials.banip
+    inheritance:
+    - USER
+  MOD:
+    options:
+      default: 'false'
+      prefix: '&b&l[MOD] &7'
+    permissions:
+    - server.staff
+    - essentials.ban
+    - essentials.tempban
+    - essentials.mute
+    - essentials.tempute
+    - essentials.kick
+    - essentials.banip
+    - essentials.vanish
+    inheritance:
+    - USER
+  ADMIN:
+    options:
+      default: 'false'
+      prefix: '&e&l[ADMIN] &7'
+    permissions:
+    - server.staff
+    - essentials.ban
+    - essentials.tempban
+    - essentials.mute
+    - essentials.tempute
+    - essentials.kick
+    - essentials.banip
+    - essentials.vanish
+    inheritance:
+    - USER
+  ONWER:
+    options:
+      default: 'false'
+      prefix: '&4&l[OWNER] &7'
+    permissions:
+    - '*'
+    inheritance:
+    - USER
+schema-version: 2
+users:
+  1f345ce8-e3e8-39e2-aa4d-e6ed61defc67:
+    permissions: []
+    options:
+      name: PuppyCute_YTB
+  6d92f311-98a9-3bda-8fcd-55f929c578a2:
+    group:
+    - Onwer
+    options:
+      name: PuppyCute
+    permissions:
+    - '*'
+  1dc6fc35-f5ac-341a-af50-954faa0448c5:
+    group:
+    - VIP
+    options:
+      name: FriezaGm_YTB
+  noname:
+    group:
+    - VIP
+  45e5ac30-459f-3092-bf18-72ff7530a626:
+    group:
+    - VIP++
+    options:
+      name: __Kazuto
+  9edcf540-93e3-3db1-bb00-2a42e0b94d54:
+    group:
+    - VIP+
+    options:
+      name: foximod
+  5ad20b9c-5e32-3b0c-afb4-80b3389e4db0:
+    group:
+    - POLICE
+    options:
+      name: GrrZen
+  a2878276-2e8e-3f27-b3e5-a99f482ee29b:
+    group:
+    - VIP
+    options:
+      name: GiaProMC
+  7a4dc017-9d0a-32f0-8938-9fd1d4669dde:
+    group:
+    - VIP
+    options:
+      name: vvippro
+  692c51c1-fcbf-34da-bf10-643b7ca21217:
+    group:
+    - VIP
+    options:
+      name: p0psy

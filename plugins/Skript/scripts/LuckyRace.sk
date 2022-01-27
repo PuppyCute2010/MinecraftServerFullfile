@@ -1,0 +1,1165 @@
+#BY UZUMAKI
+#- https://www.youtube.com/c/uzumaki
+
+
+options:
+	plugin-version: 0.1.1-C
+	
+	
+	
+#
+# ● SETTINGS ●
+#	
+	
+	prefix: &6&lLuckyRace &8&l»&7
+	
+	only-in-game-commands: true
+	in-game-commands: "leave" or "lobby" or "hub" or "msg" or "tell" or "w" or "lucky"
+
+	
+#Timers
+	waiting-time: 10      #seconds, before game starts
+	game-minutes: 10      #minutes, in game time 	
+	win-lenght: 8         #seconds, until arena restart after win.
+	short-time-to: 30      #seconds, after first player reach to finish.
+	
+#Coins
+	
+	coins-per-kill: 5
+	coins-per-win: 100
+	reach-final: 50
+		
+	
+#Chat	
+	normal-chat: "&7%player's displayname% &8&l» &7%message%"
+	spec-chat: "&7%player's displayname% &8&l» &7 %message%"
+	
+#Mix	
+
+
+#	commands
+
+	kill-command: eco give %attacker% 5
+	win-command: eco give %{_p}% 50
+	arena-reset-command: ""
+	
+	
+	disable-hunger-loss: true
+	
+	
+
+	
+#
+# ● SCOREBOARD ●
+#	
+
+	website-name: &e&lMC.SERVER.NET
+
+
+
+#
+# ● SOUNDS ●
+#	
+
+	#Sounds List for 1.8 http://docs.codelanx.com/Bukkit/1.8/org/bukkit/Sound.html
+	#Sounds List for 1.9 and greater https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+	
+	checkpoint-sound: LEVEL_UP
+	join-sound: LEVEL_UP
+	kill-sound: LEVEL_UP
+	death-sound: ANVIL_BREAK
+
+
+#
+# ● GAME STAGE NAMES ●
+#	
+	
+	waiting: &a&lLobby
+	ingame: &aInGame
+	starting: &a&lStarting
+	deathmatch: &a&lDeathmatch
+	restarting: &c&lEndGame
+	full: &c&lFULL
+	
+	
+#
+# ● TITLES ●
+#	
+
+	winner-title: &3&lYOU WON!
+	winner-subtitle: &7You are the last man standing!
+	death-title: &4&lYOU LOST...
+	death-subtitle: &7
+	starting-title: &c&l%{_sec}%
+	starting-subtitle: &eBefore game starts!
+	finish-title: &6&lYou finished the race!
+	finish-subtitle: &cWait for the final stage!
+
+	
+#
+# ● MESSAGESS ●
+#
+		
+
+	starting-in: &7Starting in %{_sec}% &7seconds!
+	
+	start-message: &a&lGAME STARTED, GOOD LUCK EVERYONE!
+	
+	join-message: &7%{_p}'s displayname% &6Joined
+
+	left-message: &7%{_p}'s displayname% &6has left
+				
+	death-message: &c&l» &7%victim's displayname% &ehas been killed by &7%{_attacker}%
+		
+	deathmatch-started: &cDEATHMATCH STARTED!
+	
+	checkpoint: &e&l» &a&lCheckpoint Reached &9● &6&l! &e&l«
+	
+	finish-message: &e&l» &a&l%{_p}'s displayname% &6&lfinished the race &9● &6&l! &e&l«
+	
+	full-arena-msg: &cThis arena is full.
+	
+#
+# ● ITEM NAMES ●
+#
+
+
+	leave-item: magma_cream	
+	leave-item-name: &6&lLeave The Game	
+
+	
+#
+# ● GUIS ●
+#		
+	
+	arenas-list-name: LUCKY ARENAS
+	
+
+on skript load:
+	clear {LUCKY.BLOCKS::*}
+	wait 1 seconds	
+	
+	
+#
+# ● LUCKY BLOCKS LOOT ●
+#	
+	
+	add 1 iron_sword, stone_sword, stone_pickaxe, iron_pickaxe, iron_axe, 1 golden_apple, 2 golden_apple,1 fishing_rod, 1 bow, 16 exp_bottle, 6 cooked_beef, 16 arrows , 1 iron_helmet, 1 iron_chestplate , 1 iron_leggings, 1 iron_boots, 1 diamond_helmet, 1 diamond_chestplate, diamond_sword of sharpness, diamond_helmet of protection 1, diamond_boots of protection 1, diamond_leggings of protection 1 and diamond_chestplate of protection 1, 1 diamond_leggings and 1 diamond_sword to {LUCKY.BLOCKS::*}
+
+	
+
+	
+	
+		
+
+command /lucky [<text>] [<text>] [<integer>] [<player>]:
+	executable by: players
+	trigger:
+		if arg-1 is not set:	
+			make player execute command "lucky help"
+			stop
+		if arg-1 is "help":
+			send "&7&l■■■■■■■■■&8[ {@prefix} &8]&7&l■■■■■■■■■                    "
+			send "&8&l» &7/lucky list                                               "
+			send "&8&l» &7/lucky join &8(&7arena_name&8)                            "
+			send "&8&l» &7/lucky stats                                              "
+			send "&8&l» &7/lucky autojoin                                           "
+			send "&8&l» &7/lucky leave                                              "									
+			send "&7&l■■■■■■■■■■■■■■■■■■■■■■■■■■"			
+			if player have permission "lucky.admin":
+				send "&8&l» &c/lucky setlobby                                           "
+				send "&8&l» &c/lucky createArena &8(&7arena_name&8)                     "
+				send "&8&l» &c/lucky deleteArena &8(&7arena_name&8)                     "
+				send "&8&l» &c/lucky addSpawn &8(&7arena_name&8)                        "
+				send "&8&l» &c/lucky removeSpawn &8(&7arena_name&8)                     "
+				send "&8&l» &c/lucky adddmSpawn &8(&7arena_name&8)                      "
+				send "&8&l» &c/lucky removedmSpawn &8(&7arena_name&8)                   "					              
+				send "&8&l» &c/lucky saveArena &8(&7arena_name&8)                       "
+				send "&8&l» &c/lucky setarenalobby &8(&7arena_name&8)                   "						
+				send "&8&l» &c/lucky Max &8(&7arena_name&8) &8(&7number&8)              "
+				send "&8&l» &c/lucky Min &8(&7arena_name&8) &8(&7number&8)              "	
+				send "&8&l» &c/lucky coins take/set/give &8(&7player&8)                "							
+				send "&8&l» &c/lucky resetstats &8(&7player&8)                          "										
+				send "&7&l■■■■■■■■■■■■■■■■■■■■■■■■■■                                 "
+				stop															
+		if arg-1 is not "autojoin" or "list" or "setLobby" or "join" or "createArena" or "deleteArena" or "addSpawn" or "removeSpawn" or "saveArena" or "max" or "min" or "resetstats" or "stats" or "leave" or "adddmSpawn" or "removedmSpawn" or "setarenalobby":
+			make player execute the command "lucky"
+			stop
+		if arg-1 is "join" or "autojoin" or "list":
+			if player's world is not "luckyrace":
+				stop
+		if arg-1 is "join":
+			if {lucky.player::%uuid of player%.playing} is not set:
+				if arg-2 is set:
+					if {lucky.arena.%arg-2%.created} is true:
+						if {lucky.arena.%arg-2%.saved} is true:
+							if {lucky.arena.%arg-2%.status} is "{@waiting}" or "{@starting}":								
+								lucky_join(player, arg-2)	
+								stop
+							if {lucky.arena.%arg-2%.status} is "{@ingame}":
+								send "&cThis arena already started!"
+								stop
+							if {lucky.arena.%arg-2%.status} is "{@restarting}":
+								send "&cThis arena is currently being restarted!"
+								stop
+							else:
+								send "{@prefix} &7Error founded!"
+								send "&8&l● &3Error 5.0.2 RasenShuriken"
+								stop
+						else:
+							send "&cThis arena hasn't been saved!"
+							stop
+					else:
+						send "&cThis arena doesn't exists!"
+						stop
+				else:
+					send "&cYou must specify an arena name!"
+					stop
+			else:
+				send "&cYou can't execute this command while playing!"
+				stop	
+		if arg-1 is "autojoin":	
+			loop {lucky.arenas::*}:
+				if {lucky.arena.%loop-value%.status} is "{@waiting}" or "{@starting}":
+					make player execute the command "/lucky join %loop-value%"
+					stop loop
+					stop					
+		if arg-1 is "list":							
+			open virtual chest inventory with size 6 named "{@arenas-list-name}" to player
+			wait a tick
+			make a gui slot 0, 1, 2, 3, 4, 5, 6, 7, 17, 26, 35, 44, 18, 27, 36, 9, 45, 46, 47, 48, 49, 50, 51, 52, 53 and 8 of player with green glass pane named "&8 " to do nothing
+			set {_slot} to 10
+			loop {lucky.arenas::*}:
+				if {lucky.arena.%loop-value%.status} is "{@ingame}" or "{@restarting}":
+					make a gui slot {_slot} of player with red clay named "&8 " with lore "&8&l» &7Name&8: &e&l%loop-value%||||&8&l» &7Status&8: %{lucky.arena.%loop-value%.status}%||||&8&l» &7Players&8: &7%size of {lucky.arena.%loop-value%.players.alive::*}%/%{lucky.arena.%loop-value%.max}%||||&8&l● &7&lClick to spectate!" to run player command "lucky join %loop-value%"
+				else:
+					make a gui slot {_slot} of player with green clay named "&8 " with lore "&8&l» &7Name&8: &e&l%loop-value%||||&8&l» &7Status&8: %{lucky.arena.%loop-value%.status}%||||&8&l» &7Players&8: &7%size of {lucky.arena.%loop-value%.players.alive::*}%/%{lucky.arena.%loop-value%.max}%||||&8&l● &7&lClick to join!" to run player command "lucky join %loop-value%"                                          
+				add 1 to {_slot}
+				if {_slot} is 17 or 26 or 35:
+					add 2 to {_slot}	
+		if arg-1 is "setlobby" or "createArena" or "deleteArena" or "adddmSpawn" or "addSpawn" or "removeSpawn" or "removedmSpawn" or "setarenalobby" or "saveArena" or "resetstats" or "min" or "max":	
+			if player have permission "lucky.admin":
+				if arg-1 is "setlobby":
+					if {lucky.player::%uuid of player%.playing} is not set:
+						set {lucky.lobby} to the player's location
+						send "&c&lSETUP &e&l» &7Setted the &aLobby &7to your current location!"
+						stop
+					else:
+						send "&cYou can't change the Lobby location while playing!"
+						stop				
+				if arg-1 is "createArena":
+					if arg-2 is set:
+						if {lucky.player::%uuid of player%.playing} is not set:
+							if {lucky.arena.%arg-2%.created} is not set:
+								set {lucky.arena.%arg-2%.created} to true
+								set {lucky.arena.%arg-2%.saved} to false
+								set {lucky.arena.%arg-2%.spawn.id} to 0
+								set {lucky.arena.%uuid of player%.creating} to text arg-2
+								clear player's inventory
+								send "&c&lSETUP &e&l» &7The arena &a%arg-2% &7has been successfully created!"
+								set slot 0 of player to yellow clay named "&7ADD SPAWN &aAND &7REMOVE SPAWN" 
+								set slot 1 of player to green clay named "&7ADD &cDM SPAWN &aAND &7REMOVE &cDM &7SPAWN" 		
+								set slot 2 of player to clay ball named "&7SET ARENA &cLOBBY" 			 									
+								set slot 4 of player to yellow clay named "&7SET &cMIN PLAYERS" 
+								set slot 5 of player to yellow clay named "&7SET &cMAX PLAYERS" 							
+								set slot 7 of player to green clay named "&7ARENA &c%{lucky.arena.%uuid of player%.creating}%" 							
+								set slot 8 of player to red clay named "&c&lSAVE ARENA" 								
+								stop
+							else:
+								send "&cThis arena has already been created!"
+								stop
+						else:
+							send "&cYou can't do this while playing!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop
+				if arg-1 is "deleteArena":
+					if arg-2 is set:
+						if {lucky.player::%uuid of player%.playing} is not set:
+							if {lucky.arena.%arg-2%.created} is true:
+								if {lucky.arena.%arg-2%.playing} is 0:
+									delete {lucky.arena.%arg-2%.created}
+									delete {lucky.arena.%arg-2%.saved}
+									delete {lucky.arena.%arg-2%.status}
+									delete {lucky.arena.%arg-2%.max}
+									delete {lucky.arena.%arg-2%.min}
+									delete {lucky.arena.%arg-2%.spawn.id}
+									delete {lucky.arena.%arg-2%.players.alive::*}
+									delete {lucky.arena.%arg-2%.players.death::*}
+									delete {lucky.arena.%arg-2%.created}
+									delete {lucky.arena.%arg-2%.saved}
+									delete {lucky.arena.%arg-2%.lobby}										
+									delete {lucky.arena.%arg-2%.gametime::*}	
+									delete {lucky.arena.%arg-2%.dm.id}
+									delete {lucky.lives.%arg-2%::*}
+									delete {lucky.checkpoints.%arg-2%::*}
+									delete {lucky.gamekills.%arg-2%::*}
+									delete {lucky.arena.%arg-2%.CHEST::*}							
+									remove arg-2 from {lucky.arenas::*}
+									send "&c&lSETUP &e&l» &7The arena &c%arg-2% &7has been successfully deleted!"
+									stop
+								else:
+									send "&cThere are still players playing in the arena!"
+									stop
+							else:
+								send "&cThis arena doesn't even exists!"
+								stop
+						else:
+							send "&cYou can't do this while playing!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop
+				if arg-1 is "adddmSpawn":
+					if arg-2 is set:
+						if integer arg 1 is not set:
+							if {lucky.player::%uuid of player%.playing} is not set:
+								if {lucky.arena.%arg-2%.created} is true:
+									add 1 to {lucky.arena.%arg-2%.dm.id}
+									set {lucky.arena.%arg-2%.dm.%{lucky.arena.%arg-2%.dm.id}%} to location of player
+									send "&c&lSETUP &e&l» &7DM,Spawn &anº%{lucky.arena.%arg-2%.dm.id}% &7has been set!"
+									stop
+								else:
+									send "&cThis arena doesn't even exists!"
+									stop
+							else:
+								send "&cYou can't do this while playing!"
+								stop
+						else:
+							send "&cYou don't need to specify a number!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop
+				if arg-1 is "removedmSpawn":
+					if arg-2 is set:
+						if integer arg 1 is not set:
+							if {lucky.player::%uuid of player%.playing} is not set:
+								if {lucky.arena.%arg-2%.created} is true:
+									if {lucky.arena.%arg-2%.dm.id} is not 0:
+										send "&c&lSETUP &e&l» &7DM, Spawn &anº%{lucky.arena.%arg-2%.dm.id}% &7has been deleted!"
+										delete {lucky.arena.%arg-2%.dm.%{lucky.arena.%arg-2%.dm.id}%}
+										remove 1 from {lucky.arena.%arg-2%.dm.id}
+										stop
+									else:
+										send "&cThere is no more spawns to remove!"
+										stop
+								else:
+									send "&cThis arena doesn't even exists!"
+									stop
+							else:
+								send "&cYou can't do this while playing!"
+								stop
+						else:
+							send "&cYou don't need to specify a number!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop		
+				if arg-1 is "addSpawn":
+					if arg-2 is set:
+						if integer arg 1 is not set:
+							if {lucky.player::%uuid of player%.playing} is not set:
+								if {lucky.arena.%arg-2%.created} is true:
+									add 1 to {lucky.arena.%arg-2%.spawn.id}
+									set {lucky.arena.%arg-2%.spawn.%{lucky.arena.%arg-2%.spawn.id}%} to location of player
+									send "&c&lSETUP &e&l» &7Spawn &anº%{lucky.arena.%arg-2%.spawn.id}% &7has been set!"
+									stop
+								else:
+									send "&cThis arena doesn't even exists!"
+									stop
+							else:
+								send "&cYou can't do this while playing!"
+								stop
+						else:
+							send "&cYou don't need to specify a number!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop
+				if arg-1 is "removeSpawn":
+					if arg-2 is set:
+						if integer arg 1 is not set:
+							if {lucky.player::%uuid of player%.playing} is not set:
+								if {lucky.arena.%arg-2%.created} is true:
+									if {lucky.arena.%arg-2%.spawn.id} is not 0:
+										send "&c&lSETUP &e&l» &7Spawn &anº%{lucky.arena.%arg-2%.spawn.id}% &7has been deleted!"									
+										delete {lucky.arena.%arg-2%.spawn.%{lucky.arena.%arg-2%.spawn.id}%}
+										remove 1 from {lucky.arena.%arg-2%.spawn.id}
+										stop
+									else:
+										send "&cThere is no more spawns to remove!"
+										stop
+								else:
+									send "&cThis arena doesn't even exists!"
+									stop
+							else:
+								send "&cYou can't do this while playing!"
+								stop
+						else:
+							send "&cYou don't need to specify a number!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop
+				if arg-1 is "setarenalobby":
+					if arg-2 is set:
+						if integer arg 1 is not set:
+							if {lucky.player::%uuid of player%.playing} is not set:
+								if {lucky.arena.%arg-2%.created} is true:
+									set {lucky.arena.%arg-2%.lobby} to location of player
+									send "&c&lSETUP &e&l» &7Setted the &aArena Lobby &7to your current location!"
+									stop
+								else:
+									send "&cThis arena doesn't even exists!"
+									stop
+							else:
+								send "&cYou can't do this while playing!"
+								stop
+						else:
+							send "&cYou don't need to specify a number!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop							
+				if arg-1 is "saveArena":
+					if arg-2 is set:
+						if integer arg 1 is not set:
+							if {lucky.player::%uuid of player%.playing} is not set:
+								if {lucky.arena.%arg-2%.created} is true:
+									if {lucky.arena.%arg-2%.saved} is false:
+										if {lucky.arena.%arg-2%.max} is set:
+											if {lucky.arena.%arg-2%.min} is set:	
+												if {lucky.arena.%arg-2%.lobby} is set:
+													if {lucky.arena.%arg-2%.spawn.id} = {lucky.arena.%arg-2%.max}:
+														if {lucky.arena.%arg-2%.dm.id} = {lucky.arena.%arg-2%.max}:
+															send "&7Saving the arena this will take a while..."
+															wait 10 ticks															
+															send "&c&lSETUP &e&l» &7The arena &a%arg-2%&7 has been saved!"
+															add arg-2 to {lucky.arenas::*}
+															set {lucky.arena.%arg-2%.saved} to true
+															set {lucky.arena.%arg-2%.status} to "{@restarting}"
+															clear player's inventory
+															clear {lucky.arena.%uuid of player%.creating}
+															lucky_resetarena(arg-2)
+															stop
+														else:
+															send "&cDeathmatch spawns need to be same count as spawns!"
+															stop																	
+													else:
+														send "&cYou not set spawns correctly!"
+														stop
+												else:
+													send "&cYou need to set the arena lobby!"
+													stop														
+											else:
+												send "&cYou need to set the minimum players!"
+												stop
+										else:
+											send "&cYou need to set the maximum players!"
+											stop
+									else:
+										send "&cYou have already saved this arena!"
+										stop
+								else:
+									send "&cThis arena doesn't even exists!"
+									stop
+							else:
+								send "&cYou can't do this while playing!"
+								stop
+						else:
+							send "&cYou don't need to specify a number!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop
+				if arg-1 is "max":
+					if arg-2 is set:
+						if integer arg 1 is set:
+							if {lucky.player::%uuid of player%.playing} is not set:
+								if {lucky.arena.%arg-2%.created} is true:
+									if {lucky.arena.%arg-2%.saved} is false:
+										if integer arg 1 > 0:
+											set {lucky.arena.%arg-2%.max} to integer arg 1
+											send "&c&lSETUP &e&l» &7Setted the &amaximum players &7to &a%integer arg 1%&7!"
+											stop
+										else:
+											send "&cYou can't use negative number!"
+											stop
+									else:
+										send "&cThis arena is saved! That means that it is not open to any kind of modifications."
+										stop
+								else:
+									send "&cThis arena doesn't even exists!"
+									stop
+							else:
+								send "&cYou can't do this while playing!"
+								stop
+						else:
+							send "&cYou must specify a number!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop
+				if arg-1 is "min":
+					if arg-2 is set:
+						if integer arg 1 is set:
+							if {lucky.player::%uuid of player%.playing} is not set:
+								if {lucky.arena.%arg-2%.created} is true:
+									if {lucky.arena.%arg-2%.saved} is false:
+										if integer arg 1 > 0:
+											set {lucky.arena.%arg-2%.min} to integer arg 1
+											send "&c&lSETUP &e&l» &7Setted the &aminimum players &7to &a%integer arg 1%&7!"
+											stop
+										else:
+											send "&cYou can't use negative number!"
+											stop
+									else:
+										send "&cThis arena is saved! That means that it is not open to any kind of modifications."
+										stop
+								else:
+									send "&cThis arena doesn't even exists!"
+									stop
+							else:
+								send "&cYou can't do this while playing!"
+								stop
+						else:
+							send "&cYou must specify a number!"
+							stop
+					else:
+						send "&cYou must specify an arena name!"
+						stop	
+				if arg-1 is "resetstats":
+					if arg-2 is set:
+						set {_player} to arg-2 parsed as player
+						set {_uuid} to uuid of {_player}
+						set {lucky.stats.kills.%{_uuid}%} to 0
+						set {lucky.stats.deaths.%{_uuid}%} to 0
+						set {lucky.stats.wins.%{_uuid}%} to 0	
+						set {lucky.stats.coins.%{_uuid}%} to 0					
+						send "&3&l» &c&lYou reset &c&l%arg-2%&c&l's stats"
+					else:
+						send "&3&l» &c&l/lucky resetstats <player>"									
+			else:
+				send "&cYou don't have permission to execute this command!"
+				stop				
+		if arg-1 is "stats":
+			if arg-2 is not set:
+				send "&8&l●&7&l&m----------------------&8&l●" 
+				send ""
+				send "&3&l» &7&lKILLS &c%{lucky.stats.kills.%uuid of player%}%" 
+				send "&3&l» &7&lDEATHS &c%{lucky.stats.deaths.%uuid of player%}%" 
+				send "&3&l» &7&lWINS &c%{lucky.stats.wins.%uuid of player%}%"
+				send "&3&l» &7&lCOINS &c%{lucky.stats.coins.%uuid of player%}%"		
+				send ""
+				send "&8&l●&7&l&m----------------------&8&l●"	
+			if arg-2 is set:
+				set {_uuid} to uuid of arg-2 parsed as player
+				if {lucky.stats.kills.%{_uuid}%} is set:
+					send "&8&l●&7&l&m----------------------&8&l●"
+					send ""
+					send "&3&l» &7&lKILLS &c%{lucky.stats.kills.%{_uuid}%}%"
+					send "&3&l» &7&lDEATHS &c%{lucky.stats.deaths.%{_uuid}%}%"
+					send "&3&l» &7&lWINS &c%{lucky.stats.wins.%{_uuid}%}%"
+					send "&3&l» &7&lCOINS &c%{lucky.stats.coins.%{_uuid}%}%"			
+					send ""
+					send "&8&l●&7&l&m----------------------&8&l●"
+				else:
+					send "&3&l» &7No data found for &c%arg-2%"						
+		if arg-1 is "leave":
+			if {lucky.player::%uuid of player%.playing} is "InGame" or "InGameSPEC":
+				lucky_leave(player)
+								
+function lucky_leave(p: player):
+	lucky_clear_player({_p})	
+	deleteBoard({_p})
+	set {_uuid} to uuid of {_p}
+	set {_arena} to {lucky.player::%{_uuid}%.arena}
+	send_player_to({_p}, "luckyrace")		
+	if {lucky.player::%{_uuid}%.playing} is "InGame":
+		remove {_p} from {lucky.arena.%{_arena}%.players.alive::*} and {lucky.arena.%{_arena}%.players.death::*}				
+		send "{@left-message} &7(%size of {lucky.arena.%{_arena}%.players.alive::*}%&7/%{lucky.arena.%{_arena}%.max}%&7)" to {lucky.arena.%{_arena}%.players.alive::*} and {lucky.arena.%{_arena}%.players.death::*}	
+		if {lucky.arena.%{_arena}%.status} is "{@ingame}" or "{@deathmatch}":
+			size of {lucky.arena.%{_arena}%.players.alive::*} < 2
+			loop {lucky.arena.%{_arena}%.players.alive::*}:
+				lucky_winner(loop-value)
+		if {lucky.arena.%{_arena}%.status} is "{@starting}":		
+			if size of {lucky.arena.%{_arena}%.players.alive::*} = 0:	
+				set {lucky.arena.%{_arena}%.status} to "{@waiting}"	
+	if {lucky.player::%{_uuid}%.playing} is "InGameSPEC":
+		remove {_p} from {lucky.arena.%{_arena}%.players.death::*}					
+	delete {lucky.player::%{_uuid}%.playing}	
+	delete {lucky.gamekills.%{_arena}%::%{_p}%}
+	delete {lucky.player::%{_uuid}%.arena}
+	delete {lucky.arena.%{_uuid}%.creating}	
+								
+on chat:
+	if {lucky.player::%uuid of player%.playing} is "InGame" or "InGameSPEC":
+		cancel event
+		if {lucky.player::%uuid of player%.playing} is "InGameSPEC":
+			send {@spec-chat} to {lucky.arena.%{lucky.player::%uuid of player%.arena}%.players.death::*}		
+		if {lucky.player::%uuid of player%.playing} is "InGame":
+			send {@normal-chat} to {lucky.arena.%{lucky.player::%uuid of player%.arena}%.players.alive::*} and {lucky.arena.%{lucky.player::%uuid of player%.arena}%.players.death::*} 
+			
+
+on command:
+	if {@only-in-game-commands} is true:
+		if {lucky.player::%uuid of player%.playing} is set:
+			if command is {@in-game-commands}:
+				stop	
+			if player is op:
+				stop	
+			if player has permission "lucky.admin":
+				stop			
+			else:
+				cancel event
+				send "{@prefix} You can't use this command in game!"
+		
+
+on break:
+	if {lucky.player::%uuid of player%.playing} is "InGame":
+		if event-block is sponge:
+			if {lucky.arena.%{lucky.player::%uuid of player%.arena}%::BREAKBLOCKS::%location of event-block%} is not set:
+				set {lucky.arena.%{lucky.player::%uuid of player%.arena}%::BREAKBLOCKS::%location of event-block%} to location of event-block
+				set {lucky.arena.%{lucky.player::%uuid of player%.arena}%::BREAKBLOCKSTYPE::%location of event-block%} to type of event-block
+				cancel event
+				set event-block to air	
+				show mob spawner flames at the event-block	
+				set {_drop} to random element out of {LUCKY.BLOCKS::*}
+				drop {_drop} at location of event-block without velocity
+		else:
+			cancel event
+	
+on place:
+	if {lucky.player::%uuid of player%.playing} is "InGame":
+		cancel event
+	if {lucky.arena.%uuid of player%.creating} is set:
+		name of item is "&7ADD SPAWN &aAND &7REMOVE SPAWN" or "&7ADD &cDM SPAWN &aAND &7REMOVE &cDM &7SPAWN" or "&7SET ARENA &cLOBBY" or "&7SET &cMIN PLAYERS" or "&7SET &cMAX PLAYERS" or "&c&lSAVE ARENA"
+		cancel event		
+		
+
+on hunger bar change:
+	if {lucky.player::%uuid of player%.playing} is set:
+		if {@disable-hunger-loss} is true:
+			set player's hunger to 20
+		
+on chunk unload:
+	loop entities of event-chunk:
+		loop-value is a dropped item
+		loop {lucky.arenas::*}:
+			distance between loop-value-1 and {lucky.arena.%loop-value-2%.spawn.1} < 5000
+			if {lucky.arena.%loop-value-2%.status} is "{@ingame}" or "{@deathmatch}":
+				cancel event	
+			else:
+				delete loop-value-1
+								
+on drop:
+	if {lucky.player::%uuid of player%.playing} is "InGame":
+		if {lucky.arena.%{lucky.player::%uuid of player%.arena}%.status} is "{@waiting}" or "{@starting}":
+			cancel event
+		else:
+			if event-item is crafting table named "&aCrafting Table":
+				cancel event
+
+		
+on right click:	
+	if {lucky.player::%uuid of player%.playing} is "InGame":
+		if name of item is "{@leave-item-name}":				
+			lucky_leave(player)
+		if event-item is crafting table:
+			open crafting table to player				
+		stop			
+	if {lucky.arena.%uuid of player%.creating} is set:			
+		if name of item is "&7ADD SPAWN &aAND &7REMOVE SPAWN":
+			cancel event
+			make player execute command "lucky addspawn %{lucky.arena.%uuid of player%.creating}%"			
+		if name of item is "&7ADD &cDM SPAWN &aAND &7REMOVE &cDM &7SPAWN":
+			cancel event
+			make player execute command "lucky adddmSpawn %{lucky.arena.%uuid of player%.creating}%"				
+		if name of item is "&7SET ARENA &cLOBBY":
+			cancel event
+			make player execute command "lucky setarenalobby %{lucky.arena.%uuid of player%.creating}%"							
+		if name of item is "&7SET &cMIN PLAYERS":	
+			open virtual chest inventory with size 6 named "&cSET MIN" to player
+			wait 3 ticks
+			set {_amount} to -1			
+			loop 55 times:
+				make a gui slot {_amount} of player with clay ball named "&7&l%loop-value%" with lore "||&8&l● &7&lClick to Set!||" to run player command "lucky min %{lucky.arena.%uuid of player%.creating}% %loop-value%"
+				add 1 to {_amount}
+			stop	
+		if name of item is "&7SET &cMAX PLAYERS":	
+			open virtual chest inventory with size 6 named "&cSET MAX" to player
+			wait 3 ticks
+			set {_amount} to -1			
+			loop 55 times:
+				make a gui slot {_amount} of player with clay ball named "&7&l%loop-value%" with lore "||&8&l● &7&lClick to Set!||" to run player command "lucky max %{lucky.arena.%uuid of player%.creating}% %loop-value%"
+				add 1 to {_amount}
+			stop				
+		if name of item is "&c&lSAVE ARENA":
+			cancel event		
+			make player execute command "lucky saveArena %{lucky.arena.%uuid of player%.creating}%"	
+		if name of item is "&c&l» &7&lARENA &c&l%{lucky.arena.%uuid of player%.creating}%":	
+			cancel event
+			
+on left click:	
+	if name of item is "&7ADD SPAWN &aAND &7REMOVE SPAWN":	
+		cancel event		
+		make player execute command "lucky removespawn %{lucky.arena.%uuid of player%.creating}%"	
+	if name of item is "&7ADD &cDM SPAWN &aAND &7REMOVE &cDM &7SPAWN":
+		cancel event	
+		make player execute command "lucky removedmSpawn %{lucky.arena.%uuid of player%.creating}%"	
+		
+on pressure plate:
+	if {lucky.player::%uuid of player%.playing} is "InGame":
+		if {lucky.arena.%{lucky.player::%uuid of player%.arena}%.status} is "{@ingame}":
+			cancel event
+			if event-block is iron pressure plate:
+				block below event-block is redstone block
+				lucky_finish(player)	
+				if {lucky.arena.%{lucky.player::%uuid of player%.arena}%::BREAKBLOCKS::%location of block at event-location%} is not set:
+					set {lucky.arena.%{lucky.player::%uuid of player%.arena}%::BREAKBLOCKS::%location of block at event-location%} to location of block at event-location
+					set {lucky.arena.%{lucky.player::%uuid of player%.arena}%::BREAKBLOCKSTYPE::%location of block at event-location%} to type of block at event-location	
+				set block at event-location to air					
+			if event-block is golden pressure plate:	
+				if {lucky.arena.%{lucky.player::%uuid of player%.arena}%::BREAKBLOCKS::%location of block at event-location%} is not set:
+					set {lucky.arena.%{lucky.player::%uuid of player%.arena}%::BREAKBLOCKS::%location of block at event-location%} to location of block at event-location
+					set {lucky.arena.%{lucky.player::%uuid of player%.arena}%::BREAKBLOCKSTYPE::%location of block at event-location%} to type of block at event-location	
+				set block at event-location to air	
+				set {lucky.arena.%{lucky.player::%uuid of player%.arena}%.PLATES::%location of event-block%} to location of block at event-location		
+				set {lucky.arena.%{lucky.player::%uuid of player%.arena}%.respawnpoint::%uuid of player%} to location of player			
+				play sound "{@checkpoint-sound}" to player with volume 100.0 and pitch 100.0
+				add 1 to {lucky.checkpoints.%{lucky.player::%uuid of player%.arena}%::%player%}
+				send "{@prefix} {@checkpoint}"	
+				create an animated ball effect at location of event-block with id uuid of player with particle redstone	
+				wait a second
+				delete effect uuid of player		
+
+		
+			
+on damage of player:
+	if {lucky.player::%uuid of victim%.playing} is "InGame":	
+		if {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.status} is "{@starting}" or "{@waiting}":
+			cancel event
+			if damage cause is void:
+				teleport victim to {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.lobby}
+		if {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.status} is "{@restarting}":
+			cancel event	
+		if {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.status} is "{@ingame}":
+			if damage cause is fall:
+				cancel event	
+			if damage cause is void:
+				cancel event
+				teleport victim to {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.respawnpoint::%uuid of victim%}
+				heal victim						
+		if {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.status} is "{@deathmatch}":
+			damage is greater than or equal to health of victim
+			cancel event
+			remove 1 from {lucky.lives.%{lucky.player::%uuid of victim%.arena}%::%uuid of victim%}	
+			create an animated ball effect at location of victim with id uuid of victim with particle flame
+			play sound "{@death-sound}" to victim with volume 100.0 and pitch 100.0			
+			if attacker is online:
+				add 1 to {lucky.gamekills.%{lucky.player::%uuid of attacker%.arena}%::%attacker%}
+				add 1 to {lucky.stats.kills.%uuid of attacker%}					
+				add 1 to {lucky.stats.deaths.%uuid of victim%}
+				add {@coins-per-kill} to {lucky.stats.coins.%uuid of attacker%}	
+				play sound "{@kill-sound}" to attacker with volume 100.0 and pitch 100.0	
+				if "{@kill-command}" is not """":
+					make console execute command "{@kill-command}"
+			if {lucky.lives.%{lucky.player::%uuid of victim%.arena}%::%uuid of victim%} is 0:
+				drop all items in victim's inventory at block 1 above victim			
+				set victim's gamemode to spectator
+				set {lucky.player::%uuid of victim%.playing} to "InGameSPEC"	
+				set {_victim} to victim
+				remove {_victim} from {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.players.alive::*}					
+				add {_victim} to {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.players.death::*}							
+				send {_victim} title "{@death-title}" with subtitle "{@death-subtitle}" for 4 seconds		
+				set {_alive} to size of {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.players.alive::*}
+				set {_spec} to size of {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.players.death::*}
+			if size of {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.players.alive::*} is 1:
+				loop {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.players.alive::*}:							
+					lucky_winner(loop-value)						
+			else:
+				set {_spawn} to random integer between 1 and {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.max}
+				heal victim
+				teleport victim to {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.dm.%{_spawn}%}	
+				if attacker is online:
+					set {_attacker} to attacker
+				else:
+					set {_attacker} to "unknown"
+				send "{@prefix} {@death-message}" to {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.players.alive::*} and {lucky.arena.%{lucky.player::%uuid of victim%.arena}%.players.death::*}
+			wait a second
+			delete effect uuid of victim
+				
+
+					
+on quit:
+	lucky_leave(player)	
+	
+	
+function lucky_scoreboard(p: player, sb: text):
+	set {_uuid} to uuid of {_p}
+	deleteBoard({_p})
+	if {_sb} is "GAME":
+		if stylish scoreboard "LUCKYGAME-%{_p}%" does not exist:
+			create new stylish scoreboard named "LUCKYGAME-%{_p}%"
+			loop 15 times:
+				create a new id based score "LUCKYGAME-%{_p}%Slot%loop-number%" with text "&%loop-number%" slot loop-number for stylish scoreboard "LUCKYGAME-%{_p}%"	
+		while {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.status} is "{@ingame}":	
+			if {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::seconds} < 10:
+				set {_game-time} to "%{lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::minutes}%:0%{lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::seconds}%"
+			else:
+				set {_game-time} to "%{lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::minutes}%:%{lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::seconds}%"
+			if stylish scoreboard "LUCKYGAME-%{_p}%" exists:	
+				set title of stylish scoreboard "LUCKYGAME-%{_p}%" to "&6&lLUCKY RACE"
+				set stylish scoreboard of {_p} to "LUCKYGAME-%{_p}%"
+				set the text of id "LUCKYGAME-%{_p}%Slot15" to "&7%now%"					
+				set the text of id "LUCKYGAME-%{_p}%Slot14" to "&8&l&m---------------"									
+				set the text of id "LUCKYGAME-%{_p}%Slot13" to "&8&l● &6TIME LEFT"	
+				set the text of id "LUCKYGAME-%{_p}%Slot12" to "&8&l● &c&l%{_game-time}%"		
+				set the text of id "LUCKYGAME-%{_p}%Slot11" to "&1&e&9"
+				set the text of id "LUCKYGAME-%{_p}%Slot10" to "&7&l» &e&lMap"		
+				set the text of id "LUCKYGAME-%{_p}%Slot9" to "&3&8&l● &6&l%{lucky.player::%{_uuid}%.arena}%"	
+				set the text of id "LUCKYGAME-%{_p}%Slot8" to "&3&4"				
+				set the text of id "LUCKYGAME-%{_p}%Slot7" to "&7&l» &e&lCheckpoints"		
+				set the text of id "LUCKYGAME-%{_p}%Slot6" to "&4&8&l● &6&l%{lucky.checkpoints.%{lucky.player::%{_uuid}%.arena}%::%{_p}%}%"					
+				set the text of id "LUCKYGAME-%{_p}%Slot5" to "&1&4"	
+				set the text of id "LUCKYGAME-%{_p}%Slot4" to "&7&l» &e&lPLAYERS"	
+				set the text of id "LUCKYGAME-%{_p}%Slot3" to "&2&8&l● &6&lInGame: %size of {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.players.alive::*}%"							
+				set the text of id "LUCKYGAME-%{_p}%Slot2" to "&8&m&l---------------"						
+				set the text of id "LUCKYGAME-%{_p}%Slot1" to "{@website-name}"	
+			wait a second				
+	if {_sb} is "DEATHMATCH":		
+		if stylish scoreboard "LUCKYDM-%{_p}%" does not exist:
+			create new stylish scoreboard named "LUCKYDM-%{_p}%"
+			loop 12 times:
+				create a new id based score "LUCKYDM-%{_p}%Slot%loop-number%" with text "&%loop-number%" slot loop-number for stylish scoreboard "LUCKYDM-%{_p}%"	
+		while {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.status} is "{@deathmatch}":		
+			if {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::seconds} < 10:
+				set {_game-time} to "%{lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::minutes}%:0%{lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::seconds}%"
+			else:
+				set {_game-time} to "%{lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::minutes}%:%{lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::seconds}%"		
+			if stylish scoreboard "LUCKYDM-%{_p}%" exists:					
+				set title of stylish scoreboard "LUCKYDM-%{_p}%" to "&6&lLUCKY RACE"
+				set stylish scoreboard of {_p} to "LUCKYDM-%{_p}%"
+				set the text of id "LUCKYDM-%{_p}%Slot12" to "&7%now%"					
+				set the text of id "LUCKYDM-%{_p}%Slot11" to "&8&l&m---------------"									
+				set the text of id "LUCKYDM-%{_p}%Slot10" to "&8&l● &6TIME LEFT"	
+				set the text of id "LUCKYDM-%{_p}%Slot9" to "&8&l● &c&l%{_game-time}%"		
+				set the text of id "LUCKYDM-%{_p}%Slot8" to "&1&e&9"
+				set the text of id "LUCKYDM-%{_p}%Slot7" to "&7&l» &c❤ &6&lLEFT"		
+				set the text of id "LUCKYDM-%{_p}%Slot6" to "&3&8&l● &6&l%{lucky.lives.%{lucky.player::%{_uuid}%.arena}%::%{_uuid}%}%"	
+				set the text of id "LUCKYDM-%{_p}%Slot5" to "&3&4"								
+				set the text of id "LUCKYDM-%{_p}%Slot4" to "&7&l» &e&lPLAYERS"	
+				set the text of id "LUCKYDM-%{_p}%Slot3" to "&2&8&l● &6&lInGame: %size of {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.players.alive::*}%"							
+				set the text of id "LUCKYDM-%{_p}%Slot2" to "&8&m&l---------------"						
+				set the text of id "LUCKYDM-%{_p}%Slot1" to "{@website-name}"	
+			wait a second			
+	if {_sb} is "LOBBY":	
+		if stylish scoreboard "LUCKYLOBBY-%{_p}%" does not exist:
+			create new stylish scoreboard named "LUCKYLOBBY-%{_p}%"
+			loop 12 times:
+				create a new id based score "LUCKYLOBBY-%{_p}%Slot%loop-number%" with text "&%loop-number%" slot loop-number for stylish scoreboard "LUCKYLOBBY-%{_p}%"	
+		while {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.status} is "{@waiting}" or "{@starting}":	
+			if stylish scoreboard "LUCKYLOBBY-%{_p}%" exists:			
+				set title of stylish scoreboard "LUCKYLOBBY-%{_p}%" to "&6&lLUCKY RACE"
+				set stylish scoreboard of {_p} to "LUCKYLOBBY-%{_p}%"
+				set the text of id "LUCKYLOBBY-%{_p}%Slot12" to "&7%now%"	
+				set the text of id "LUCKYLOBBY-%{_p}%Slot11" to "&8&l&m---------------"				
+				set the text of id "LUCKYLOBBY-%{_p}%Slot10" to "&8&l● &6STARTING IN"	
+				set the text of id "LUCKYLOBBY-%{_p}%Slot9" to "&9&8&l● &e%{lucky.arena.%{lucky.player::%{_uuid}%.arena}%.seconds}%"		
+				set the text of id "LUCKYLOBBY-%{_p}%Slot8" to "&1&e&9"
+				set the text of id "LUCKYLOBBY-%{_p}%Slot7" to "&7&l» &e&lMap"		
+				set the text of id "LUCKYLOBBY-%{_p}%Slot6" to "&1&8&l● &6&l%{lucky.player::%{_uuid}%.arena}%"	
+				set the text of id "LUCKYLOBBY-%{_p}%Slot5" to "&1&4"	
+				set the text of id "LUCKYLOBBY-%{_p}%Slot4" to "&7&l» &e&lPLAYERS"	
+				set the text of id "LUCKYLOBBY-%{_p}%Slot3" to "&8&l● &6&lLobby: %size of {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.players.alive::*}%"						
+				set the text of id "LUCKYLOBBY-%{_p}%Slot2" to "&8&m&l---------------"					
+				set the text of id "LUCKYLOBBY-%{_p}%Slot1" to "{@website-name}"	
+			wait a second
+		
+
+
+on load:
+	send "&7&l--------------------------------------------" to console
+	send " " to console
+	send "{@prefix} &aLoading &ev.{@plugin-version}&a..." to console
+	wait 1 tick
+	send "{@prefix} &e%size of {lucky.arenas::*}% &agames loaded!" to console
+	wait 1 tick
+	send "{@prefix} &a&lPlugin loaded!" to console
+	send " " to console
+	send "&7&l--------------------------------------------" to console
+	delete {lucky.player::*}
+	loop {lucky.arenas::*}:
+		lucky_resetarena(loop-value)
+		wait 1 seconds	
+
+on unload:
+	send "&7&l--------------------------------------------" to console
+	send " " to console
+	send "{@prefix} &aDisabling &ev.{@plugin-version}&a..." to console
+	send "{@prefix} &ev.{@plugin-version} &adisabled!" to console
+	send " " to console
+	send "&7&l--------------------------------------------" to console
+	stop
+
+	
+			
+function lucky_resetarena(arena: text):
+	set {lucky.arena.%{_arena}%.status} to "{@restarting}"
+	send "{@prefix} &aReseting &e%{_arena}%" to console
+	delete {lucky.arena.%{_arena}%.CHEST::*}
+	delete {lucky.arena.%{_arena}%.players.death::*}
+	delete {lucky.arena.%{_arena}%.players.alive::*}	
+	delete {lucky.arena.%{_arena}%.gametime::*}
+	delete {lucky.gamekills.%{_arena}%::*}
+	delete {lucky.lives.%{_arena}%::*}	
+	delete {lucky.arena.%{_arena}%.respawnpoint::*} 
+	delete {lucky.checkpoints.%{_arena}%::*} 		
+	set {lucky.arena.%{_arena}%.seconds} to {@waiting-time}
+	set {lucky.arena.%{_arena}%.status} to "{@waiting}"	
+	loop {lucky.arena.%{_arena}%::BREAKBLOCKS::*}:
+		set block at location of {lucky.arena.%{_arena}%::BREAKBLOCKS::%loop-index%} to {lucky.arena.%{_arena}%::BREAKBLOCKSTYPE::%loop-index%}
+		wait 1 ticks
+	loop all entities:
+		world of loop-entity is {lucky.arena.%{_arena}%.spawn.1}'s world
+		loop-entity is dropped item
+		clear loop-entity
+	delete {lucky.arena.%{_arena}%::BREAKBLOCKS::*} and {lucky.arena.%{_arena}%::BREAKBLOCKSTYPE::*}		
+	if "{@arena-reset-command}" is not """":
+		make console execute command "{@arena-reset-command}"			
+	lucky_refreshmenu()
+	send "{@prefix} &e%{_arena}% &areseted!" to console		
+	stop	
+	
+function lucky_join(p: player, arena: text):	
+	if size of {lucky.arena.%{_arena}%.players.alive::*} >= {lucky.arena.%{_arena}%.max}:
+		send "{@prefix} {@full-arena-msg}" to {_p}
+		stop
+	set {_uuid} to uuid of {_p}
+	lucky_clear_player({_p})
+	set {lucky.player::%{_uuid}%.playing} to "InGame"
+	set {lucky.player::%{_uuid}%.arena} to {_arena}		
+	add {_p} to {lucky.arena.%{_arena}%.players.alive::*}	
+	teleport {_p} to {lucky.arena.%{_arena}%.lobby}							
+	set {_p}'s slot 8 to {@leave-item} named "{@leave-item-name}"
+	send "{@join-message}" to {lucky.arena.%{_arena}%.players.alive::*}								
+	set {lucky.gamekills.%{lucky.player::%{_uuid}%.arena}%::%{_p}%} to 0	
+	lucky_scoreboard({_p}, "LOBBY")
+	lucky_refreshmenu()		
+	if size of {lucky.arena.%{_arena}%.players.alive::*} = {lucky.arena.%{_arena}%.min}:												
+		set {lucky.arena.%{_arena}%.status} to "{@starting}"
+		set {_sec} to {lucky.arena.%{_arena}%.seconds}
+		send "{@prefix} {@starting-in}" to {lucky.arena.%{_arena}%.players.alive::*}
+		loop {lucky.arena.%{_arena}%.seconds} times:
+			remove 1 from {lucky.arena.%{_arena}%.seconds}
+			set {_sec} to {lucky.arena.%{_arena}%.seconds}
+			wait 1 seconds	
+			if {_sec} <= 5:
+				if {_sec} is greater than 0:													
+					send {lucky.arena.%{_arena}%.players.alive::*} title "{@starting-title}" with subtitle "{@starting-subtitle}" for 0.8 seconds		
+					send "{@prefix} {@starting-in}" to {lucky.arena.%{_arena}%.players.alive::*}	
+					play sound "{@join-sound}" to {lucky.arena.%{_arena}%.players.alive::*} with volume 100.0 and pitch 100.0
+					
+			if {_sec} <= 0:
+				if size of {lucky.arena.%{_arena}%.players.alive::*} >= 2:
+					send "{@prefix} {@start-message}" to {lucky.arena.%{_arena}%.players.alive::*}
+					set {lucky.arena.%{_arena}%.status} to "{@ingame}"	
+					lucky_gametime({_arena})					
+					set {_spawn} to 1	
+					loop {lucky.arena.%{_arena}%.players.alive::*}:
+						lucky_clear_player(loop-value-2)
+						teleport loop-value-2 to {lucky.arena.%{_arena}%.spawn.%{_spawn}%}
+						set {lucky.arena.%{_arena}%.respawnpoint::%uuid of loop-value-2%} to {lucky.arena.%{_arena}%.spawn.%{_spawn}%}
+						set {lucky.checkpoints.%{lucky.player::%uuid of loop-value-2%.arena}%::%loop-value-2%} to 0	
+						set slot 0 of loop-value-2 to iron_sword
+						set slot 1 of loop-value-2 to iron_pickaxe					
+						set slot 8 of loop-value-2 to crafting table named "&aCrafting Table"
+						lucky_scoreboard(loop-value-2, "GAME")
+						add 1 to {_spawn}
+						wait 1 tick						
+				else:
+					set {lucky.arena.%{_arena}%.seconds} to {@waiting-time}
+					set {lucky.arena.%{_arena}%.status} to "{@waiting}"
+					send "{@prefix} &cThere are not enought players to start!" to {lucky.arena.%{_arena}%.players.alive::*}
+					stop							
+
+		
+function lucky_gametime(arena: text):
+	set {lucky.arena.%{_arena}%.gametime::minutes} to {@game-minutes}-1
+	set {lucky.arena.%{_arena}%.gametime::seconds} to 60	
+	while {lucky.arena.%{_arena}%.status} is "{@ingame}":
+		remove 1 from {lucky.arena.%{_arena}%.gametime::seconds}
+		
+		if {lucky.arena.%{_arena}%.gametime::seconds} is 0:
+			set {lucky.arena.%{_arena}%.gametime::seconds} to 59				
+			remove 1 from {lucky.arena.%{_arena}%.gametime::minutes}	
+											
+		if {lucky.arena.%{_arena}%.gametime::minutes} = 0:
+			if {lucky.arena.%{_arena}%.gametime::seconds} <= 1:								
+				set {lucky.arena.%{_arena}%.gametime::seconds} to 0
+				set {lucky.arena.%{_arena}%.gametime::minutes} to 0
+				lucky_deathmatch({_arena})
+				stop
+		wait 1 second
+			
+function lucky_deathmatch(arena: text):	
+	set {lucky.arena.%{_arena}%.gametime::minutes} to 2
+	set {lucky.arena.%{_arena}%.gametime::seconds} to 60
+	set {lucky.arena.%{_arena}%.status} to  "{@deathmatch}"
+	
+	loop {lucky.arena.%{_arena}%.players.alive::*}:
+		add 1 to {_spawn}
+		set loop-value's gamemode to spectator
+		teleport loop-value to {lucky.arena.%{_arena}%.dm.%{_spawn}%}
+		set {lucky.lives.%{lucky.player::%uuid of loop-value%.arena}%::%uuid of loop-value%} to 3
+		set loop-value's gamemode to survival
+		lucky_scoreboard(loop-value, "DEATHMATCH")
+	
+	while {lucky.arena.%{_arena}%.status} = "{@deathmatch}":
+		remove 1 from {lucky.arena.%{_arena}%.gametime::seconds}
+		if {lucky.arena.%{_arena}%.gametime::seconds} = 0:
+			set {lucky.arena.%{_arena}%.gametime::seconds} to 59				
+			remove 1 from {lucky.arena.%{_arena}%.gametime::minutes}		
+		if {lucky.arena.%{_arena}%.gametime::minutes} = 0:				
+			if {lucky.arena.%{_arena}%.gametime::seconds} <= 1:	
+				lucky_endgame({_arena})
+				stop
+		wait 1 second
+															
+					
+		
+	
+function lucky_endgame(arena: text):
+	while {lucky.arena.%{_arena}%.status} is "{@deathmatch}":
+		size of {lucky.arena.%{_arena}%.players.alive::*} > 1
+		set {_p} to random element out of {lucky.arena.%{_arena}%.players.alive::*}
+		make safe explosion with power 1 at {_p}
+		wait 1 second
+		
+				
+		
+function lucky_finish(p: player):
+	set {_uuid} to uuid of {_p}	
+	send {_p} title "{@finish-title}" with subtitle "{@finish-subtitle}" for 5 seconds	
+	send "{@finish-message}" to {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.players.alive::*}
+	set {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::minutes} to 0
+	if {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::seconds} > {@short-time-to}:
+		set {lucky.arena.%{lucky.player::%{_uuid}%.arena}%.gametime::seconds} to {@short-time-to}
+	add {@reach-final} to {lucky.stats.coins.%{_uuid}%}	
+	loop 5 times:
+		if {lucky.player::%{_uuid}%.playing} is "InGame":
+			launch trailing flickering star coloured purple and red fading to yellow at {_p}'s location timed 1
+			wait 10 ticks
+		else:
+			stop loop
+			stop
+
+
+
+function lucky_refreshmenu():
+	loop all players:	
+		if inventory name of loop-player-1's current inventory is "{@arenas-list-name}":
+			set {_slot} to 10
+			loop {lucky.arenas::*}:
+				if {lucky.arena.%loop-value-2%.status} is "{@ingame}" or "{@restarting}":
+					make a gui slot {_slot} of loop-player-1 with red clay named "&8 " with lore "&8&l» &7Name&8: &e&l%loop-value-2%||||&8&l» &7Status&8: %{lucky.arena.%loop-value-2%.status}%||||&8&l» &7Players&8: &7%size of {lucky.arena.%loop-value-2%.players.alive::*}%/%{lucky.arena.%loop-value-2%.max}%||||&8&l● &7&lClick to spectate!" to run loop-player-1 command "lucky join %loop-value-2%"
+				else:
+					make a gui slot {_slot} of loop-player-1 with green clay named "&8 " with lore "&8&l» &7Name&8: &e&l%loop-value-2%||||&8&l» &7Status&8: %{lucky.arena.%loop-value-2%.status}%||||&8&l» &7Players&8: &7%size of {lucky.arena.%loop-value-2%.players.alive::*}%/%{lucky.arena.%loop-value-2%.max}%||||&8&l● &7&lClick to join!" to run loop-player-1 command "lucky join %loop-value-2%"                                          
+				add 1 to {_slot}
+				if {_slot} is 17 or 26 or 35:
+					add 2 to {_slot}
+
+	
+function lucky_clear_player(p: player):
+	milk {_p}
+	heal {_p}
+	extinguish {_p}
+	set {_p}'s food to 20	
+	clear {_p}'s level
+	clear {_p}'s inventory
+	close {_p}'s inventory
+	set {_p}'s gamemode to survival
+	set {_p}'s flight mode to false
+	
+function lucky_winner(p: player):
+	set {_uuid} to uuid of {_p}
+	set {_arena} to {lucky.player::%{_uuid}%.arena}
+	set {lucky.arena.%{_arena}%.status} to "{@restarting}"			
+	lucky_summary({_p}, {_arena})
+	lucky_clear_player({_p})
+	send {_p} title "{@winner-title}" with subtitle "{@winner-subtitle}" for 7 seconds		
+	add 1 to {lucky.stats.wins.%{_uuid}%}
+	add {@coins-per-win} to {lucky.stats.coins.%{_uuid}%}	
+	if "{@win-command}" is not """":
+		make console execute command "{@win-command}"	
+	loop 15 times:
+		if {lucky.player::%{_uuid}%.playing} is "InGame":
+			launch trailing flickering star coloured purple and red fading to yellow at {_p}'s location timed 1
+			wait 10 ticks
+	wait {@win-lenght} seconds
+	loop {lucky.arena.%{_arena}%.players.alive::*} and {lucky.arena.%{_arena}%.players.death::*}:
+		lucky_clear_player(loop-value)
+		teleport loop-value to {lucky.lobby}
+		send_player_to(loop-value, "luckyrace")
+		delete {lucky.player::%uuid of loop-value%.playing}			
+		deleteBoard(loop-value)
+	lucky_resetarena({_arena})
+	stop
+	
+	
+function lucky_summary(p: player, arena: text):
+	set {_uuid} to uuid of {_p}	
+	loop {lucky.gamekills.%{_arena}%::*}:
+		set {_backup::%loop-index%} to loop-value
+	loop 3 times:
+		delete {_first.player}
+		delete {_first.number}
+		loop {_backup::*}:
+			if {_first.player} is not set:
+				set {_first.number} to loop-value-2
+				set {_first.player} to loop-index
+			else:
+				if loop-value-2 > {_first.number}:
+					set {_first.number} to loop-value-2
+					set {_first.player} to loop-index
+		add {_first.number} to {_list::*}
+		add {_first.player} to {_list2::*}
+		delete {_backup::%{_first.player}%}	
+	if {_list::1} is not set:
+		set {_list::1} to 0 
+	if {_list::2} is not set:
+		set {_list::2} to 0 
+	if {_list::3} is not set:
+		set {_list::3} to 0 
+	if {_list2::1} is not set:	
+		set {_list2::1} to "Nobody"
+	if {_list2::2} is not set:	
+		set {_list2::2} to "Nobody"
+	if {_list2::3} is not set:	
+		set {_list2::3} to "Nobody"	
+	if {lucky.checkpoints.%{_arena}%::%{_list2::2}%} is not set:
+		set {lucky.checkpoints.%{_arena}%::%{_list2::2}%} to 0		
+	if {lucky.checkpoints.%{_arena}%::%{_list2::3}%} is not set:
+		set {lucky.checkpoints.%{_arena}%::%{_list2::3}%} to 0
+	set {_players.total::*} to {lucky.arena.%{_arena}%.players.alive::*} and {lucky.arena.%{_arena}%.players.death::*}
+	wait a tick
+	send "&3&l■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                             " to {_players.total::*}
+	send "                                                                         " to {_players.total::*}
+	send "                                        &8&l● &f&lLucky Race &8&l●                    " to {_players.total::*}
+	send "                                                                         " to {_players.total::*}
+	send "                                   &eWinner &f- &3%{_p}'s displayname%           " to {_players.total::*}
+	send "                                                                         " to {_players.total::*}
+	send "  &c&l» &e&l1st Place &8&l» &3%{_list2::1}%" to {_players.total::*}
+	send "      &a&l● &6&lKills &8&l┃&7%{_list::1}%&8&l┃ &6&lCheckpoints &8&l┃&7%{lucky.checkpoints.%{_arena}%::%{_list2::1}%}%&8&l┃" to {_players.total::*}	
+	send "  &c&l» &e&l2nd Place &8&l» &7%{_list2::2}%" to {_players.total::*}
+	send "      &a&l● &6&lKills &8&l┃&7%{_list::2}%&8&l┃ &6&lCheckpoints &8&l┃&7%{lucky.checkpoints.%{_arena}%::%{_list2::2}%}%&8&l┃" to {_players.total::*}
+	send "  &c&l» &e&l3rd Place &8&l» &7%{_list2::3}%" to {_players.total::*}
+	send "      &a&l● &6&lKills &8&l┃&7%{_list::3}%&8&l┃ &6&lCheckpoints &8&l┃&7%{lucky.checkpoints.%{_arena}%::%{_list2::3}%}%&8&l┃" to {_players.total::*}	
+	send "                                                                         " to {_players.total::*}	
+	send "&3&l■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                             " to {_players.total::*}
+		
+	
+	
+		

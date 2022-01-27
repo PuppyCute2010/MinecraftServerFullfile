@@ -1,0 +1,414 @@
+#BY UZUMAKI
+#- https://www.youtube.com/c/uzumaki
+
+
+
+
+options:
+
+	motdline1: &6&lMinigames Server
+	
+	website: &2&eWWW.MYSERVER.ORG
+	
+	HUBCOMPASS: &8● &c&lSELECT MINIGAME &8●
+	
+	GADGETS: &8● &9&lGADGETS &8●
+
+	CREATIVE-ITEM: &8● &a&lNAVIGATOR &8●
+
+	SKYBLOCK-ITEM: &8● &a&lNAVIGATOR &8●	
+	
+command cmc:
+	trigger:
+		loop 100 times:
+			send ""
+
+
+on right click:
+	if event-world is "world":
+		if name of event-item is "{@HUBCOMPASS}":
+			open virtual chest inventory with size 6 named "&3&l» &7&lGAME SELECTOR" to player
+			wait a tick
+			make a gui slot 0, 1, 2, 3, 4, 5, 6, 7, 17, 26, 35, 44, 18, 27, 36, 9, 45, 46, 47, 48, 49, 50, 51, 52, 53 and 8 of player with gray glass pane named "&8 " to do nothing	
+			make a gui slot 22 of player with bowl named "&8&l» &e&lTHE PIT &8&l«" with lore "&7" to run function send_player_to(player, "pit")	
+			make a gui slot 32 of player with blue clay named "&8&l» &e&lTHE BRIDGE &8&l«" with lore "&7" to run function send_player_to(player, "bridge")					
+			make a gui slot 20 of player with feather named "&8&l» &e&lSKYPVP &8&l«" with lore "&7" to run function send_player_to(player, "skypvp")		
+			make a gui slot 24 of player with bow named "&8&l» &e&lSKYWARS &8&l«" with lore "&7" to run function send_player_to(player, "skywars")
+			make a gui slot 30 of player with birch sapling named "&8&l» &a&lSKYBLOCK &8&l«" with lore "&7" to run function send_player_to(player, "skyblock")	
+			make a gui slot 28 of player with painting named "&8&l» &6&lCREATIVE &8&l«" with lore "&7" to run function send_player_to(player, "creative")
+			make a gui slot 34 of player with nether_star named "&8&l» &e&lLUCK RACE &8&l«" with lore "&7" to run function send_player_to(player, "luckyrace")				
+
+	if event-world is "world" or "creative":		
+		if name of event-item is "{@GADGETS}":
+			make player execute command "uc menu main"
+			
+	if event-world is "creative":
+		if name of event-item is "{@CREATIVE-ITEM}":	
+			open virtual chest inventory with size 5 named "&3&l» &7&lCREATIVE MENU" to player
+			wait a tick		
+			loop numbers between 0 and 45:			
+				make a gui slot loop-number of player with black glass pane named "&7 " with lore "&7" to do nothing			
+			make a gui slot 10 of player with green glass pane named "&3&l» &e&lCLAIM A PLOT" with lore "&7" to run player command "plot auto"
+			make a gui slot 19 of player with green glass pane named "&3&l» &e&lCLAIM THIS PLOT" with lore "&7" to run player command "plot claim"
+			
+			make a gui slot 14 of player with red glass pane named "&c&l» &9&lCLEAR THIS PLOT &7(&c&l!&7)" with lore "&7" to run:
+				make player execute command "plot clear"
+				close player's inventory
+			
+			make a gui slot 8 of player with barrier named "&3&l» &c&lCLOSE MENU" with lore "&7" to run:
+				close player's inventory
+			make a gui slot 44 of player with chest named "&3&l» &e&lTELEPORT TO YOUR PLOT" with lore "&7" to run player command "plot home"		
+	if event-world is "skyblock":
+		if name of event-item is "{@SKYBLOCK-ITEM}":	
+			open virtual chest inventory with size 5 named "&3&l» &7&lSKYBLOCK MENU" to player
+			wait a tick		
+			loop numbers between 0 and 45:				
+				make a gui slot loop-number of player with black glass pane named "&7 " with lore "&7" to do nothing				
+			make a gui slot 10 of player with green glass pane named "&3&l» &e&lSHOP" with lore "&7" to run player command "shop"	
+			make a gui slot 19 of player with green glass pane named "&3&l» &e&lISLAND WARPS" with lore "&7" to run player command "is warps"								
+			make a gui slot 12 of player with blue glass pane named "&3&l» &e&lCHANGE BIOME" with lore "&7" to run player command "is biomes"				
+			make a gui slot 14 of player with red glass pane named "&c&l» &9&lRESET ISLAND &7(&c&l!&7)" with lore "&7" to run:
+				close player's inventory
+				wait 0.1 seconds
+				make player execute command "is reset"
+			make a gui slot 23 of player with orange glass pane named "&3&l» &e&lTOP 10 ISLANDS" with lore "&7" to run:
+				close player's inventory		
+				wait 0.1 seconds				
+				make player execute command "is top"					
+			
+			make a gui slot 8 of player with barrier named "&3&l» &c&lCLOSE MENU" with lore "&7" to run:
+				close player's inventory
+			make a gui slot 44 of player with chest named "&3&l» &e&lTELEPORT TO YOUR ISLAND" with lore "&7" to run player command "is go"				
+			
+	if event-world is "bridge-maps":
+		if name of event-item is "&8&l» &7ARENAS":
+			make player execute command "bridge list"
+		if name of event-item is "&8&l» &7STATS":	
+			make player execute command "bridge stats"			
+		if name of event-item is "&8&l» &6Leave":	
+			make player execute command "hub"					
+			
+	if event-world is "luckyrace":
+		if name of event-item is "&8&l» &7ARENAS":
+			make player execute command "lucky list"
+		if name of event-item is "&8&l» &7STATS":	
+			make player execute command "lucky stats"			
+		if name of event-item is "&8&l» &6Leave":	
+			make player execute command "hub"				
+	
+on inventory click:
+	name of event-item is "{@GADGETS}" or "{@CREATIVE-ITEM}" or "{@SKYBLOCK-ITEM}" or "&8&l» &7ARENAS" or "&8&l» &7STATS" or "&8&l» &6Leave"
+	cancel event
+	
+on drop:
+	name of event-item is "{@GADGETS}" or "{@CREATIVE-ITEM}" or "{@SKYBLOCK-ITEM}" or "&8&l» &7ARENAS" or "&8&l» &7STATS" or "&8&l» &6Leave"
+	cancel event
+		
+on right click on entity:
+	if event-world is "skypvp":
+		name of event-entity is "&aKIT SELECTOR"
+		open virtual chest inventory with size 3 named "&7&lKITS" to player
+		wait 1 ticks	
+		make a gui slot 11 of player with bow named "&8● &a&lNOOB &8●" with lore "&7" to close then run player command "kit noob"	
+		make a gui slot 13 of player with bow named "&8● &a&lNewbie &8●" with lore "&7" to close then run player command "kit newbie"
+		make a gui slot 15 of player with bow named "&8● &a&lRecruit &8●" with lore "&7" to close then run player command "kit recruit"
+
+		
+on player world change:
+	if "%past changed world%" is "skywars":
+		wait 0.1 seconds
+		if player's world is "world":
+			hub(player)
+			
+command /spawn:
+	trigger:
+		if player's world is "skyblock":
+			make player execute command "warp skyblock"
+		if player's world is "skypvp":
+			make player execute command "warp skypvp"			
+		if player's world is "skypvp":
+			make player execute command "pit spawn"	
+		if player's world is "world":
+			make console execute command "mvtp %player% world"				
+	
+function clear_player(p: player):
+	clear {_p}'s inventory
+	clear {_p}'s level
+	set {_p}'s hunger to 20
+	heal {_p}
+	milk {_p}
+	
+	
+function hub(p: player):
+	make console execute command "mvtp %{_p}% world"
+	wait 5 ticks
+	if {_p}'s world is "world":
+		clear_player({_p})
+	set slot 0 of {_p} to compass named "{@HUBCOMPASS}"
+	set slot 8 of {_p} to enderchest named "{@GADGETS}"	
+	make console execute command "nte player %{_p}% prefix %{_p}'s prefix%"
+	setScoreboard({_p}, "world")
+	
+		
+function send_player_to(p: player, loc: text):	
+	set {_uuid} to uuid of {_p}
+	clear_player({_p})
+	deleteBoard({_p})
+	if {_loc} is "skypvp":
+		{_p}'s world is "world"
+		if {skypvp.kills.%{_uuid}%} is not set:
+			set {skypvp.kills.%{_uuid}%} to 0
+		if {skypvp.deaths.%{_uuid}%} is not set:			
+			set {skypvp.deaths.%{_uuid}%} to 0
+		make console execute command "mvtp %{_p}% skypvp"
+		setScoreboard({_p}, "skypvp")
+		stop
+	if {_loc} is "skyblock":	
+		if {skyblock.kills.%{_uuid}%} is not set:
+			set {skyblock.kills.%{_uuid}%} to 0
+		if {skyblock.deaths.%{_uuid}%} is not set:			
+			set {skyblock.deaths.%{_uuid}%} to 0	
+		make console execute command "mvtp %{_p}% skyblock"
+		set slot 8 of {_p} to nether_star named "{@SKYBLOCK-ITEM}"	
+		setScoreboard({_p}, "skyblock")		
+		stop
+	if {_loc} is "creative":	
+		make console execute command "mvtp %{_p}% creative"
+		set slot 8 of {_p} to enderchest named "{@GADGETS}"	
+		set slot 7 of {_p} to nether_star named "{@CREATIVE-ITEM}"
+		setScoreboard({_p}, "creative")	
+	if {_loc} is "pit":	
+		pit_join({_p})
+		stop
+	if {_loc} is "bridge":	
+		make console execute command "mvtp %{_p}% bridge-maps"
+		setScoreboard({_p}, "bridge")	
+		set slot 0 of {_p} to book named "&8&l» &7ARENAS"
+		set slot 4 of {_p} to paper named "&8&l» &7STATS"	
+		set slot 8 of {_p} to magma_cream named "&8&l» &6Leave"	
+		stop
+	if {_loc} is "luckyrace":	
+		make console execute command "mvtp %{_p}% luckyrace"
+		set slot 0 of {_p} to book named "&8&l» &7ARENAS"
+		set slot 4 of {_p} to paper named "&8&l» &7STATS"	
+		set slot 8 of {_p} to magma_cream named "&8&l» &6Leave"	
+		stop
+	if {_loc} is "skywars":		
+		make {_p} execute colored "sw join"
+		stop
+
+
+	
+on join:
+	set join message to ""	
+	set tab header to "&7&m-------------]&m--------------[&m--------------%nl%" and footer to "%nl%&7&m-------------]&m--------------[&m--------------" for player
+	hub(player)
+	if {bridge.stats.goals::%uuid of player%} is not set:	
+		bridge_reset_stats(player)	
+	loop "kills", "wins", "coins" and "deaths":
+		if {lucky.stats.%loop-value%.%uuid of player%} is not set:
+			set {lucky.stats.%loop-value%.%uuid of player%} to 0		
+
+on quit:
+	set quit message to ""
+	deleteBoard(player)
+	
+on death of player:
+	set death message to ""
+	if victim's world is "skypvp":	
+		if attacker is online:
+			add 1 to {skypvp.kills.%uuid of attacker%}
+		add 1 to {skypvp.deaths.%uuid of victim%}
+	if victim's world is "survival":	
+		if attacker is online:
+			add 1 to {skyblock.kills.%uuid of attacker%}
+		add 1 to {skyblock.deaths.%uuid of victim%}
+		
+			
+command /glist:
+	trigger:
+		send "&7&l&m-------------------------"
+		send ""
+		send "&8&l➡ &7PLAYERS ONLINE &8(&c%number of all players%&8)"					
+		send ""	
+		send "&8&l➡ &7PLAYERS AT YOUR SECTION &8(&c%number of players in player's world%&8)"		
+		send ""		
+		send "&7&l&m-------------------------"		
+
+
+command hub:
+	trigger:
+		if player's world is "world":	
+			send "&7You are already in hub"
+			stop
+		if player's world is "pit":	
+			pit_leave(player)
+			stop
+		if player's world is "pit":	
+			make player execute command "pit leave"
+		if player's world is "luckyrace":	
+			make player execute command "lucky leave"
+		if player's world is "bridge-maps":	
+			make player execute command "bridge leave"			
+		if player's world is "skywars":
+			make player execute command "sw leave"		
+			make player execute command "sw leave"				
+			clear player's inventory
+		hub(player)						
+
+
+on chat:
+	cancel event
+	if player's world is not "pit":
+		broadcast "%colored player's prefix% &7%player% %message%" in player's world
+	
+command /setrank [<offline player>] [<text>]:
+	permission: staff.owner
+	permission message: &c&lSetRank &8> &7You Don't have permission!
+	trigger:
+		if arg-2 is not set:
+			send "&c&lSetRank &8> &7Use:"
+			send "&c/setrank &7<player> <rank>"
+		if arg-2 is set:
+			execute console command "pex user %arg-1% group set %arg-2%"
+			send "&c&lSetRank &8> &7%arg-1% Is now a %arg-2%"
+			send "&c&lSetRank &8> &7Your rank is now %arg-2%!" to arg 1	
+
+
+command /alert [<text>]:
+	aliases: /broadcast,/bc,/a
+	permission: staff.alert
+	permission message: &c&8┃ &bBroadCast &8┃ &cYou don't have Permission !
+	trigger:
+		if arg 1 is not set:
+			send "&cUse /alert (message)"
+		if arg 1 is set:
+			broadcast "&8┃ &bBroadCast &8┃ &8» &6%arg-1%"
+
+function createBoard(p: player, t: text, size: integer = 15):
+	add "&a", "&b", "&c", "&d", "&e", "&1", "&2", "&3", "&4", "&5", "&6", "&7", "&8", "&9" and "&f" to {_d::*}
+	if stylish scoreboard "%{_t}%-%{_p}%" does not exist:
+		create new stylish scoreboard named "%{_t}%-%{_p}%"
+		loop {_size} times:
+			create a new id based score "%{_p}%Slot%loop-number%" with text "%{_d::%loop-number%}%" slot loop-number for stylish scoreboard "%{_t}%-%{_p}%"
+		wait a tick
+		set stylish scoreboard of {_p} to "%{_t}%-%{_p}%"
+		
+function deleteBoard(p: player):
+	loop "skypvp", "world", "skyblock", "creative", "bridge", "BR1", "BR2", "LUCKYGAME", "LUCKYDM" and "LUCKYLOBBY":
+		if stylish scoreboard "%loop-value%-%{_p}%" exists:
+			loop 15 times:
+				delete the id based score "%{_p}%Slot%loop-number-2%" in stylish scoreboard "%loop-value-1%-%{_p}%"
+			delete stylish scoreboard "%loop-value-1%-%{_p}%"
+function setSlot(p: player, board: text, slot: integer, t: text):
+    add "&a", "&b", "&c", "&d", "&e", "&1", "&2", "&3", "&4", "&5", "&6", "&7", "&8", "&9" and "&f" to {_d::*}
+    if {_slot} is between 1 and 15:
+        set text of id "%{_p}%Slot%{_slot}%" to "%{_d::%{_slot}%}%%{_t}%"    
+		
+function setScoreboard(p: player, board: text):
+	set {_uuid} to uuid of {_p} 
+	deleteBoard({_p})
+	wait a tick
+	if {_board} is "skypvp":
+		createBoard({_p}, {_board}, 12)
+		set title of stylish scoreboard "%{_board}%-%{_p}%" to "&7 &7&lSKYPVP &7"
+		while {_p}'s world is "skypvp":
+			if stylish scoreboard "%{_board}%-%{_p}%" exists:
+				setSlot({_p}, {_board}, 12, "")			
+				setSlot({_p}, {_board}, 11, "&e&l» &7&lPROFILE")			
+				setSlot({_p}, {_board}, 10, "")			
+				setSlot({_p}, {_board}, 9, "&8&l➡ &7&lNick &c%{_p}%")				
+				setSlot({_p}, {_board}, 8, "&8&l➡ &7&lRank %colored {_p}'s prefix%")			
+				setSlot({_p}, {_board}, 7, "&8&l➡ &7&lKills &c%{skypvp.kills.%{_uuid}%}%")			
+				setSlot({_p}, {_board}, 6, "&8&l➡ &7&lDeaths &c%{skypvp.deaths.%{_uuid}%}%")		
+				setSlot({_p}, {_board}, 5, "")	
+				setSlot({_p}, {_board}, 4, "&e&l» &7&lSERVER")		
+				setSlot({_p}, {_board}, 3, "")	
+				setSlot({_p}, {_board}, 2, "&8&l➡ &7&lSKYPVP &c%number of players in world ""skypvp""%")		
+				setSlot({_p}, {_board}, 1, "")	
+			else:
+				stop				
+			wait a second			
+	if {_board} is "world":	
+		createBoard({_p}, {_board}, 13)
+		set title of stylish scoreboard "%{_board}%-%{_p}%" to "&e&lSERVER NAME"	
+		while {_p}'s world is "world":
+			if stylish scoreboard "%{_board}%-%{_p}%" exists:
+				setSlot({_p}, {_board}, 13, "")			
+				setSlot({_p}, {_board}, 12, "&e&l» &7&lPROFILE")			
+				setSlot({_p}, {_board}, 11, "")			
+				setSlot({_p}, {_board}, 10, "&8&l➡ &7&lNick &c%{_p}%")				
+				setSlot({_p}, {_board}, 9, "&8&l➡ &7&lRank %colored {_p}'s prefix%")			
+				setSlot({_p}, {_board}, 8, "")			
+				setSlot({_p}, {_board}, 7, "&e&l» &7&lSERVER")		
+				setSlot({_p}, {_board}, 6, "")	
+				setSlot({_p}, {_board}, 5, "&8&l➡ &7&lHUB &c%number of players in world ""world""%")		
+				setSlot({_p}, {_board}, 4, "")	
+				setSlot({_p}, {_board}, 3, "&8&l➡ &7&lGLOBAL &c%number of all players%")		
+				setSlot({_p}, {_board}, 2, "")	
+				setSlot({_p}, {_board}, 1, "&e&lMC.SERVER-NAME.NET")					
+			else:
+				stop
+			wait a second
+	if {_board} is "skyblock":	
+		createBoard({_p}, {_board}, 12)
+		set title of stylish scoreboard "%{_board}%-%{_p}%" to "&1&8&l● &b&lSKYBLOCK &1&8&l●"	
+		while {_p}'s world is "skyblock":
+			if stylish scoreboard "%{_board}%-%{_p}%" exists:
+				setSlot({_p}, {_board}, 12, "")			
+				setSlot({_p}, {_board}, 11, "&e&l» &7&lPROFILE")			
+				setSlot({_p}, {_board}, 10, "")			
+				setSlot({_p}, {_board}, 9, "&8&l➡ &7&lNick &c%{_p}%")				
+				setSlot({_p}, {_board}, 8, "&8&l➡ &7&lRank %colored {_p}'s prefix%")			
+				setSlot({_p}, {_board}, 7, "&8&l➡ &7&lKills &c%{skyblock.kills.%{_uuid}%}%")			
+				setSlot({_p}, {_board}, 6, "&8&l➡ &7&lDeaths &c%{skyblock.deaths.%{_uuid}%}%")		
+				setSlot({_p}, {_board}, 5, "")	
+				setSlot({_p}, {_board}, 4, "&e&l» &7&lSERVER")		
+				setSlot({_p}, {_board}, 3, "")	
+				setSlot({_p}, {_board}, 2, "&8&l➡ &7&lSKYBLOCK &c%number of players in world ""skyblock""%")		
+				setSlot({_p}, {_board}, 1, "")	
+			else:
+				stop				
+			wait a second	
+	if {_board} is "creative":	
+		createBoard({_p}, {_board}, 10)
+		set title of stylish scoreboard "%{_board}%-%{_p}%" to "&1&8&l● &6&lCREATIVE &1&8&l●"	
+		while {_p}'s world is "creative":
+			if stylish scoreboard "%{_board}%-%{_p}%" exists:
+				setSlot({_p}, {_board}, 10, "")			
+				setSlot({_p}, {_board}, 9, "&e&l» &7&lPROFILE")			
+				setSlot({_p}, {_board}, 8, "")			
+				setSlot({_p}, {_board}, 7, "&8&l➡ &7&lNick &c%{_p}%")				
+				setSlot({_p}, {_board}, 6, "&8&l➡ &7&lRank %colored {_p}'s prefix%")				
+				setSlot({_p}, {_board}, 5, "")	
+				setSlot({_p}, {_board}, 4, "&e&l» &7&lSERVER")		
+				setSlot({_p}, {_board}, 3, "")	
+				setSlot({_p}, {_board}, 2, "&8&l➡ &7&lCREATIVE &c%number of players in world ""creative""%")		
+				setSlot({_p}, {_board}, 1, "")
+			else:
+				stop				
+			wait a second	
+	if {_board} is "bridge":	
+		createBoard({_p}, {_board}, 10)
+		set title of stylish scoreboard "%{_board}%-%{_p}%" to "&e&lTHE BRIDGE"	
+		while {_p}'s world is "bridge-maps":
+			if stylish scoreboard "%{_board}%-%{_p}%" exists:
+				setSlot({_p}, {_board}, 10, "")			
+				setSlot({_p}, {_board}, 9, "&8&l➡ &2&7NICK &e%{_p}%")			
+				setSlot({_p}, {_board}, 8, "&8&l➡ &2&7RANK &e%colored {_p}'s prefix%")			
+				setSlot({_p}, {_board}, 7, "")				
+				setSlot({_p}, {_board}, 6, "&8&l➡ &2&7WINS &e%{bridge.stats.wins::%{_uuid}%}%")				
+				setSlot({_p}, {_board}, 5, "&8&l➡ &2&7GOALS &e%{bridge.stats.goals::%{_uuid}%}%")	
+				setSlot({_p}, {_board}, 4, "&8&l➡ &2&7DEATHS &e%{bridge.stats.deaths::%{_uuid}%}%")		
+				setSlot({_p}, {_board}, 3, "")	
+				setSlot({_p}, {_board}, 2, "&e&l» &7&lTHE BRIDGE &c%number of players in world ""bridge-maps""%")		
+				setSlot({_p}, {_board}, 1, "")	
+			else:
+				stop				
+			wait a second
+				
+
+on server ping:
+	set motd to "{@motdline1}"	
+		
+		

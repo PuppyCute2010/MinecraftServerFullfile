@@ -1,0 +1,20 @@
+lastAccountName: UzumakiYT
+timestamps:
+  login: 1537551820541
+  logout: 1537551716535
+ipAddress: 127.0.0.1
+money: '50'
+logoutlocation:
+  world: world
+  x: 0.4914040148334345
+  y: 92.0
+  z: -5.403339947661143
+  yaw: 179.82364
+  pitch: 1.2914759
+lastlocation:
+  world: bridge-maps
+  x: 99975.952410278
+  y: 99.0
+  z: 1.0999990949606488E7
+  yaw: 58.949905
+  pitch: 40.200005

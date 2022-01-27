@@ -1,0 +1,28 @@
+# *-------------------------------*
+# |    CustomJoinLeaveMessages    |
+# |             Data              |
+# *-------------------------------*
+#  Placeholders:
+#   [player]   - player name
+#   [message]  - custom message
+
+info:
+  total-users: 0
+lang:
+  PLUGIN_PREFIX: '&8[&bCJLM&8] '
+  TOO_FEW_ARGS: '&cToo few arguments!'
+  TOO_MANY_ARGS: '&cToo many arguments!'
+  UNKNOWN_ARG: '&cUnknown argument!'
+  MSG_TOO_LONG: '&cMessage too long!'
+  MSG_NOT_SET: '&cMessage not set!'
+  NO_PERM: '&cYou don''t have permission!'
+  NOT_PLAYER: '&cOnly a player can do this command!'
+  RELOAD_SUCCESS: '&aReload successful.'
+  CJM_ADMIN: '&aCustom join message for &e[player] &ahas been set to &7[message]'
+  CLM_ADMIN: '&cCustom leave message for &e[player] &chas been set to &7[message]'
+  CJM_PLAYER: '&aYour custom join message has been set to &7[message]'
+  CLM_PLAYER: '&cYour custom leave message has been set to &7[message]'
+  CJM_DISPLAY_MSG_ADMIN: '&aCustom join message for &e[player] &ais &7[message]'
+  CJM_DISPLAY_MSG_PLAYER: '&aYour custom join message is &7[message]'
+  CLM_DISPLAY_MSG_ADMIN: '&cCustom leave message for &e[player] &cis &7[message]'
+  CLM_DISPLAY_MSG_PLAYER: '&cYour custom leave message is &7[message]'

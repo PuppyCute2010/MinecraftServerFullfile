@@ -1,0 +1,9 @@
+groups:
+- skypvp
+- skyblock
+- other
+worlds:
+  world: other
+  skypvp: skypvp
+  skyblock: survival
+respect-gamemode: false

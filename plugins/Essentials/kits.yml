@@ -1,0 +1,44 @@
+# EssentialsX new Kit configuration.
+# If you don't have any kits defined in this file, the plugin will try to copy them from the config.yml
+
+# Note: All items MUST be followed by a quantity!
+# All kit names should be lower case, and will be treated as lower in permissions/costs.
+# Syntax: - itemID[:DataValue/Durability] Amount [Enchantment:Level].. [itemmeta:value]...
+# For Item Meta information visit http://wiki.ess3.net/wiki/Item_Meta
+# 'delay' refers to the cooldown between how often you can use each kit, measured in seconds.
+# Set delay to -1 for a one time kit.
+# For more information, visit http://wiki.ess3.net/wiki/Kits
+kits:
+  Noob:
+    delay: 60
+    items:
+      - 272 1 name:&eNoob
+      - 261 1 name:&eNoob
+      - 262 16 name:&eNoob
+      - 298 1 name:&eNoob
+      - 299 1 name:&eNoob
+      - 300 1 name:&eNoob
+      - 301 1 name:&eNoob
+      - 322 2 name:&eNoob
+  Newbie:
+    delay: 300
+    items:
+      - 272 1 sharpness:2 name:&eNewbie
+      - 261 1 power:1 name:&eNewbie
+      - 262 16 name:&eNewbie
+      - 298 1 protection:2 name:&eNewbie
+      - 299 1 protection:2 1 name:&eNewbie
+      - 300 1 protection:2 name:&eNewbie
+      - 301 1 protection:2 1 name:&eNewbie
+      - 322 4 name:&eNewbie
+  Recruit:
+    delay: 350
+    items:
+      - 272 1 name:&eRecruit
+      - 261 1 name:&eRecruit
+      - 262 16 name:&eRecruit
+      - 302 1 name:&eRecruit
+      - 303 1 name:&eRecruit
+      - 304 1 name:&eRecruit
+      - 305 1 name:&eRecruit
+      - 322 6 name:&eRecruit

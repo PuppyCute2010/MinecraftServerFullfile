@@ -1,0 +1,15 @@
+items:
+  location: PIT, 1.395, 85.801, 15.700
+  lines:
+  - '&7NON-PERMANENT'
+  - '&6&lITEMS'
+upgrades:
+  location: PIT, -2.570, 85.801, 15.424
+  lines:
+  - '&7PERMANENT'
+  - '&a&lUPGRADES'
+jump:
+  location: PIT, 0.633, 85.384, 0.523
+  lines:
+  - '&e&lTHE PIT'
+  - '&a&lJUMP! &c&lFIGHT!'  

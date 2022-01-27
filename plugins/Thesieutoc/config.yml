@@ -1,0 +1,59 @@
+TheSieuToc-API:
+  key: FE85F9C70F2FE0091B02475449D60240
+  secret: 69ACD41A4D53F94D297316C21BE981F0
+mysql:
+  enable: false
+  host: localhost
+  port: 3306
+  user: root
+  password: root
+  database: napthe
+menu: false
+card:
+  enable:
+  - Viettel
+  - Vinaphone
+  - Vietnamobile
+  - Mobifone
+  - Gate
+  - Garena
+  - Vcoin
+  - Zing
+  command:
+    '10000':
+    - console:points give {player} 10
+    - "op:broadcast chat {player} v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 10k!"
+    - "me v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 server 10k!"
+    '20000':
+    - console:points give {player} 20
+    - "op:broadcast {player} v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 20k!"
+    - "me v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 server 20k!"
+    '30000':
+    - console:points give {player} 30
+    - "op:broadcast {player} v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 30k!"
+    - "me v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 server 30k!"
+    '50000':
+    - console:points give {player} 50
+    - "op:broadcast {player} v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 50k!"
+    - "me v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 server 50k!"
+    '100000':
+    - console:points give {player} 100
+    - "op:broadcast {player} v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 100k!"
+    - "me v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 server 100k!"
+    '200000':
+    - console:points give {player} 200
+    - "op:broadcast {player} v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 200k!"
+    - "me v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 server 200k!"
+    '300000':
+    - console:points give {player} 300
+    - "op:broadcast {player} v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 300k!"
+    - "me v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 server 300k!"
+    '500000':
+    - console:points give {player} 500
+    - "op:broadcast {player} v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 500k!"
+    - "me v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 server 500k!"
+    '1000000':
+    - console:points give {player} 1000
+    - "op:broadcast {player} v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 1 tri\xe1\
+      \xbb\u2021u!"
+    - "me v\xe1\xbb\xaba \xe1\xbb\xa7ng h\xe1\xbb\u2122 server 1tr!"

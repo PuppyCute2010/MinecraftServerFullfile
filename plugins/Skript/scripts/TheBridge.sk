@@ -1,0 +1,779 @@
+#BY UZUMAKI
+#- https://www.youtube.com/c/uzumaki
+
+
+options:
+
+	plugin-version: 0.0.6
+	
+	config-loc: plugins/TheBridge/config.yml
+	
+	messages-loc: plugins/TheBridge/messages.yml
+
+		
+on script load:	
+	set {_&} to "&"	
+	if yaml value "chat-format" from file "{@config-loc}" is not set:	
+		set yaml value "chat-format" from file "{@config-loc}" to "{team} %{_&}%3{player} %{_&}%8%{_&}%l- %{_&}%7{message}"	
+		
+	if yaml value "auto-join-on-end" from file "{@config-loc}" is not set:	
+		set yaml value "auto-join-on-end" from file "{@config-loc}" to false			
+		
+	if yaml value "kill-cmd" from file "{@config-loc}" is not set:	
+		set yaml value "kill-cmd" from file "{@config-loc}" to "eco give {player} 5"		
+
+	if yaml value "win-cmd" from file "{@config-loc}" is not set:	
+		set yaml value "win-cmd" from file "{@config-loc}" to "eco give {player} 20"	
+
+	if yaml value "goal-cmd" from file "{@config-loc}" is not set:	
+		set yaml value "goal-cmd" from file "{@config-loc}" to "eco give {player} 10"				
+		
+	if yaml value "leave-item" from file "{@config-loc}" is not set:	
+		set yaml value "leave-item" from file "{@config-loc}" to "bed_item"	
+		
+	if yaml value "leave-item-name" from file "{@config-loc}" is not set:	
+		set yaml value "leave-item-name" from file "{@config-loc}" to "%{_&}%c%{_&}%lLEAVE"	
+		
+	if yaml value "prefix" from file "{@messages-loc}" is not set:
+		set yaml value "prefix" from file "{@messages-loc}" to "%{_&}%6%{_&}%lTHE BRIDGE %{_&}%8%{_&}%l- %{_&}%7"		
+
+	if yaml value "join-message" from file "{@messages-loc}" is not set:	
+		set yaml value "join-message" from file "{@messages-loc}" to "%{_&}%a{player} %{_&}%ehas joined to the game."	
+
+	if yaml value "left-message" from file "{@messages-loc}" is not set:	
+		set yaml value "left-message" from file "{@messages-loc}" to "%{_&}%a{player} %{_&}%ehas left the game."	
+		
+	if yaml value "starting-message" from file "{@messages-loc}" is not set:	
+		set yaml value "starting-message" from file "{@messages-loc}" to "%{_&}%e%{_&}%lStarting in %{_&}%6{seconds} %{_&}%eseconds"		
+		
+	if yaml value "ingame-status" from file "{@messages-loc}" is not set:	
+		set yaml value "ingame-status" from file "{@messages-loc}" to "%{_&}%cINGAME"
+		
+	if yaml value "starting-status" from file "{@messages-loc}" is not set:	
+		set yaml value "starting-status" from file "{@messages-loc}" to "%{_&}%3STARTING..."
+		
+	if yaml value "waiting-status" from file "{@messages-loc}" is not set:	
+		set yaml value "waiting-status" from file "{@messages-loc}" to "%{_&}%aWAITING"		
+		
+	if yaml value "in-game" from file "{@messages-loc}" is not set:		
+		set yaml value "in-game" from file "{@messages-loc}" to "%{_&}%cYou are already in game."	
+		
+	if yaml value "not-in-game" from file "{@messages-loc}" is not set:		
+		set yaml value "not-in-game" from file "{@messages-loc}" to "%{_&}%c%{_&}%lYou are not in game."	
+		
+		
+	if yaml value "kill-message" from file "{@messages-loc}" is not set:		
+		set yaml value "kill-message" from file "{@messages-loc}" to "%{_&}%c{victim} %{_&}%ewas killed by %{_&}%c{killer}"			
+		
+	delete {THEBRIDGE::*}
+	set {THEBRIDGE::CONFIG::CHAT-FORMAT} to yaml value "chat-format" from file "{@config-loc}"	
+	set {THEBRIDGE::CONFIG::LEAVE-ITEM} to yaml value "leave-item" from file "{@config-loc}"
+	set {THEBRIDGE::CONFIG::LEAVE-ITEM-NAME} to yaml value "leave-item-name" from file "{@config-loc}"
+	set {THEBRIDGE::CONFIG::AUTO-JOIN-ON-END} to yaml value "auto-join-on-end" from file "{@config-loc}"	
+	set {THEBRIDGE::CONFIG::LEAVE-ITEM} to {THEBRIDGE::CONFIG::LEAVE-ITEM} parsed as item
+	set {THEBRIDGE::CONFIG::KILL-CMD} to yaml value "kill-cmd" from file "{@config-loc}"
+	set {THEBRIDGE::CONFIG::WIN-CMD} to yaml value "win-cmd" from file "{@config-loc}"		
+	set {THEBRIDGE::CONFIG::GOAL-CMD} to yaml value "goal-cmd" from file "{@config-loc}"		
+	set {THEBRIDGE::MESSAGES::PREFIX} to yaml value "prefix" from file "{@messages-loc}"
+	set {THEBRIDGE::MESSAGES::JOIN} to yaml value "join-message" from file "{@messages-loc}"	
+	set {THEBRIDGE::MESSAGES::LEFT} to yaml value "left-message" from file "{@messages-loc}"	
+	set {THEBRIDGE::MESSAGES::IN-GAME} to yaml value "in-game" from file "{@messages-loc}"	
+	set {THEBRIDGE::MESSAGES::STATUS-WAITING} to yaml value "waiting-status" from file "{@messages-loc}"	
+	set {THEBRIDGE::MESSAGES::STATUS-INGAME} to yaml value "ingame-status" from file "{@messages-loc}"	
+	set {THEBRIDGE::MESSAGES::STATUS-STARTING} to yaml value "ingame-status" from file "{@messages-loc}"		
+	set {THEBRIDGE::MESSAGES::NOT-IN-GAME} to yaml value "not-in-game" from file "{@messages-loc}"		
+	set {THEBRIDGE::MESSAGES::KILL-MESSAGE} to yaml value "kill-message" from file "{@messages-loc}"				
+	set {THEBRIDGE::MESSAGES::STARTING-IN} to yaml value "starting-message" from file "{@messages-loc}"	
+	loop {THEBRIDGE::CONFIG::*}:
+		replace all "&" with "§" in {THEBRIDGE::CONFIG::%loop-index%}
+		replace all "{arrow-right}" with "»" in {THEBRIDGE::CONFIG::%loop-index%}			
+	loop {THEBRIDGE::MESSAGES::*}:		
+		replace all "&" with "§" in {THEBRIDGE::MESSAGES::%loop-index%}	
+		replace all "{arrow-right}" with "»" in {THEBRIDGE::MESSAGES::%loop-index%}	
+	
+	
+	
+	
+	
+#
+# \\ CODE //
+#
+
+
+
+command /bridge [<text>] [<text>] [<text>]:
+	executable by: players
+	trigger:
+		if arg-1 is "help" or "createarena" or "setspawn" or "join" or "leave" or "setlobby" or "deleteArena" or "list" or "autojoin" or "savearena" or "setPortalPos1" or "setPortalPos2" or "autojoin" or "stats" or "SetMaxBuildHeight":
+			if arg 1 is "help":
+				if player's world is "bridge-maps":
+					if player have permission "bridge.player":
+						send "&7&l----------------&8[ %{THEBRIDGE::MESSAGES::PREFIX}% &8]&7&l----------------"
+						send "<tooltip:§a §7bridge list><suggest command:/bridge list>&7/bridge list"
+						send "<tooltip:§a §7bridge join><suggest command:/bridge join>&7/bridge join &8(&7arena_name&8)"
+						send "<tooltip:§a §7bridge autojoin><suggest command:/bridge autojoin>&7/bridge autojoin"
+						send "<tooltip:§a §7bridge leave><suggest command:/bridge leave>&7/bridge leave"
+					if player have permission "bridge.admin":
+						send "<tooltip:§a §7bridge resetstats><suggest command:/bridge resetstats>&7/bridge resetstats &8(&7player_name&8)"				
+						send "<tooltip:§a §7bridge setlobby><suggest command:/bridge setlobby>&7/bridge setlobby"
+						send "<tooltip:§a §7bridge createarena><suggest command:/bridge createArena>&7/bridge createArena &8(&7arena_name&8)                "
+						send "<tooltip:§a §7bridge savearena><suggest command:/bridge savearena>&7/bridge savearena &8(&7arena_name&8)                   "					
+						send "<tooltip:§a §7bridge deletearena><suggest command:/bridge deleteArena>&7/bridge deleteArena &8(&7arena_name&8)            "
+						send "<tooltip:§a §7bridge setspawn><suggest command:/bridge setspawn>&7/bridge setspawn &8(&7arena_name&8) &cred&7/&3blue&7/&alobby"	
+						send "<tooltip:§a §7bridge setpotalpos1><suggest command:/bridge setPortalPos1>&7/bridge setPortalPos1 &8(&7arena_name&8) &cred&7/&3blue&7"				
+						send "<tooltip:§a §7bridge setpotalpos2><suggest command:/bridge setPortalPos2>&7/bridge setPortalPos2 &8(&7arena_name&8) &cred&7/&3blue&7"
+						send "<tooltip:§a §7bridge SetMaxBuildHeight><suggest command:/bridge setMaxBuildHeight>&7/bridge SetMaxBuildHeight &8(&7arena_name&8), optional"					
+						send "&7&l---------------------------------------------"
+						stop
+			if arg 1 is "join":		
+				if player's world is "bridge-maps":
+					if {bridge.player::%uuid of player%.state} is not set:
+						if {bridge.arena.%arg-2%.saved} is true:
+							if {bridge.arena.%arg-2%.status} is "WAITING":
+								if size of {bridge.arena.%arg-2%.ninjas::*} < 2:
+									bridge_clear_player(player)
+									bridge_tag(player, "clear")
+									deleteBoard(player)
+									set {bridge.player::%uuid of player%.state} to "in-game"
+									set {bridge.player::%uuid of player%.arena} to arg-2
+									set {bridge.player::%uuid of player%.kills} to 0
+									set slot 8 of player to {THEBRIDGE::CONFIG::LEAVE-ITEM} named "%{THEBRIDGE::CONFIG::LEAVE-ITEM-NAME}%"
+									add player to {bridge.arena.%arg-2%.ninjas::*}		
+									if size of {bridge.arena.%arg-2%.ninjas::*} = 2:
+										bridge_start_countdown(arg-2)											
+									set {_x} to {THEBRIDGE::MESSAGES::JOIN}
+									replace all "{player}" in {_x} with player's displayname
+									replace all "{players-count}" in {_x} with "%size of {bridge.arena.%arg-2%.ninjas::*}%"
+									send "%{THEBRIDGE::MESSAGES::PREFIX}% %{_x}%" to {bridge.arena.%arg-2%.ninjas::*}
+									teleport player to {bridge.arena.%arg-2%.spawn.lobby}
+									bridge_waiting_scoreboard(player)
+								else:
+									send "%{THEBRIDGE::MESSAGES::PREFIX}% &7This arena is full"
+									stop
+							else:
+								send "%{THEBRIDGE::MESSAGES::PREFIX}% &7This game is running"
+								stop
+						else:
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &7This arena not exists"
+							stop
+					else:
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% %{THEBRIDGE::MESSAGES::IN-GAME}%"
+						stop
+			if arg 1 is "list":		
+				if player's world is "bridge-maps":
+					if {bridge.player::%uuid of player%.state} is not set:	
+						open virtual chest inventory with size 6 named "&8&l» &7THE BRIDGE - ARENAS" to player
+						set {_slot} to 10					
+						wait 2 ticks
+						make a gui slot 0, 1, 2, 3, 4, 5, 6, 7, 17, 26, 35, 44, 18, 27, 36, 9, 45, 46, 47, 48, 49, 50, 51, 52, 53 and 8 of player with green glass pane named "&8 " to do nothing					
+						loop {bridge.arenas::*}:
+							make a gui slot {_slot} of player with green clay named "&7" with lore "&8&l» &7NAME: &c&l%loop-value%||||&8&l» &7PLAYING: &3%size of {bridge.arena.%loop-value%.ninjas::*}%||||&8&l» &7STATE: &a%{bridge.arena.%loop-value%.status}%" to run player command "bridge join %loop-value%"
+							add 1 to {_slot}
+							if {_slot} is 17 or 26 or 35:
+								add 2 to {_slot}						
+			if arg 1 is "leave":	
+				if {bridge.player::%uuid of player%.state} is "in-game":
+					set {_x} to {THEBRIDGE::MESSAGES::LEFT}
+					replace all "{player}" in {_x} with player's displayname
+					send "%{THEBRIDGE::MESSAGES::PREFIX}% %{_x}%" to {bridge.arena.%{bridge.player::%uuid of player%.arena}%.ninjas::*}		
+					remove player from {bridge.arena.%{bridge.player::%uuid of player%.arena}%.ninjas::*}
+					if {bridge.arena.%{bridge.player::%uuid of player%.arena}%.status} is "INGAME":
+						if {bridge.player::%uuid of player%.team} is "BLUE":
+							bridge_winner({bridge.arena.%{bridge.player::%uuid of player%.arena}%.red}, {bridge.player::%uuid of player%.arena})	
+						if {bridge.player::%uuid of player%.team} is "RED":
+							bridge_winner({bridge.arena.%{bridge.player::%uuid of player%.arena}%.blue}, {bridge.player::%uuid of player%.arena})	
+					delete {bridge.player::%uuid of player%.arena}
+					delete {bridge.player::%uuid of player%.team}
+					delete {bridge.player::%uuid of player%.state}
+					bridge_tag(player, "clear")
+					send_player_to(player, "bridge")					
+					teleport player to {bridge.lobby}		
+			if arg 1 is "autojoin":		
+				if player's world is "bridge-maps":
+					if {bridge.player::%uuid of player%.state} is not set:
+						loop {bridge.arenas::*}:
+							if {bridge.arena.%loop-value%.status} is "WAITING":
+								make player execute command "bridge join %loop-value%"
+								stop
+			if arg-1 is "stats":
+				if player's world is "bridge-maps":
+					send "&8&l●&7&l&m----------------------&8&l●"
+					send ""
+					send "&3&l» &7&lWINS &c%{bridge.stats.wins::%uuid of player%}%"	
+					send "&3&l» &7&lKILLS &c%{bridge.stats.kills::%uuid of player%}%"	
+					send "&3&l» &7&lGOALS &c%{bridge.stats.goals::%uuid of player%}%"	
+					send "&3&l» &7&lDEATHS &c%{bridge.stats.deaths::%uuid of player%}%"				
+					send ""
+					send "&8&l●&7&l&m----------------------&8&l●"
+			if arg 1 is "createarena":	
+				if player has permission "bridge.admin":		
+					if arg-2 is set:
+						if {bridge.arena.%arg-2%.created} is not set:
+							set {bridge.arena.%arg-2%.created} to true
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &aArena &c%arg-2% &ahas been created!"
+						else:
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &aThis arena already exists!"	
+					else:
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% &aSpecify Arena!"				
+			if arg 1 is "setspawn":
+				if player has permission "bridge.admin":		
+					if {bridge.arena.%arg-2%.created} is true:
+						if arg-3 is "RED" or "BLUE" or "lobby":
+							set {bridge.arena.%arg-2%.spawn.%arg-3%} to location of player
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &aSpawn for &e%arg-3% &aon Arena &3%arg-2% &ahas been set!"
+						else:
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &aSpecify team."							
+					else:
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% &aThis arena not exists"						
+			if arg 1 is "setPortalPos1":
+				if player has permission "bridge.admin":
+					if {bridge.arena.%arg-2%.created} is true:
+						if arg-3 is "RED" or "BLUE":
+							set {bridge.arena.%arg-2%.portal.%arg-3%.pos1} to location of player
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &aPos&8(&c1&8) &c%arg-3% &aon Arena &3%arg-2% &ahas been set!"	
+						else:
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &aSpecify team."						
+					else:
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% &aThis arena not exists"		
+			if arg 1 is "SetMaxBuildHeight":
+				if player has permission "bridge.admin":		
+					if {bridge.arena.%arg-2%.created} is true:
+						set {bridge.arena.%arg-2%.Y-COORDS} to y-coords of player
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% &aMax Build Height For Arena &3%arg-2% &ahas been set!"						
+					else:
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% &aThis arena not exists"								
+			if arg 1 is "setPortalPos2":
+				if player has permission "bridge.admin":		
+					if {bridge.arena.%arg-2%.created} is true:
+						if arg-3 is "RED" or "BLUE":
+							set {bridge.arena.%arg-2%.portal.%arg-3%.pos2} to location of player
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &aPos&8(&c2&8) &c%arg-3% &aon Arena &3%arg-2% &ahas been set!"	
+						else:
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &aSpecify team."							
+					else:
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% &aThis arena not exists"						
+			if arg 1 is "setlobby":	
+				if player has permission "bridge.admin":
+					set {bridge.lobby} to location of player
+					send "%{THEBRIDGE::MESSAGES::PREFIX}% &aLobby set."	
+			if arg 1 is "resetstats":	
+				if player has permission "bridge.admin":		
+					set {_p} to arg-2 parsed as player
+					bridge_reset_stats({_p})
+					send "%{THEBRIDGE::MESSAGES::PREFIX}% &cReseted Stats for &a%{_p}%"	
+			if arg 1 is "savearena":	
+				if player has permission "bridge.admin":		
+					if {bridge.arena.%arg-2%.created} is true:
+						if {bridge.arena.%arg-2%.spawn.red} is set:
+							if {bridge.arena.%arg-2%.spawn.blue} is set:
+								if {bridge.arena.%arg-2%.spawn.lobby} is set:
+									if {bridge.arena.%arg-2%.portal.RED.pos2} is set:
+										if {bridge.arena.%arg-2%.portal.RED.pos1} is set:
+											if {bridge.arena.%arg-2%.portal.BLUE.pos2} is set:
+												if {bridge.arena.%arg-2%.portal.BLUE.pos1} is set:									
+													delete {bridge.arena.%arg-2%.created}
+													set {bridge.arena.%arg-2%.saved} to true
+													add arg-2 to {bridge.arenas::*}
+													send "%{THEBRIDGE::MESSAGES::PREFIX}% &aArena &c%arg-2% &ahas been saved."
+													bridge_resetarena(arg-2)	
+												else:
+													send "%{THEBRIDGE::MESSAGES::PREFIX}% &aPortal Pos1 For team &1blue is not set!"												
+											else:
+												send "%{THEBRIDGE::MESSAGES::PREFIX}% &aPortal Pos2 For team &1blue is not set!"														
+										else:
+											send "%{THEBRIDGE::MESSAGES::PREFIX}% &aPortal Pos1 For team &cred is not set!"												
+									else:
+										send "%{THEBRIDGE::MESSAGES::PREFIX}% &aPortal Pos2 For team &cred is not set!"											
+								else:
+									send "%{THEBRIDGE::MESSAGES::PREFIX}% &aLobby is not set!"						
+							else:
+								send "%{THEBRIDGE::MESSAGES::PREFIX}% &aSpawn &3blue &a is not set!"						
+						else:
+							send "%{THEBRIDGE::MESSAGES::PREFIX}% &aSpawn &cred &a is not set!"
+					else:
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% &aThis arena not exists"
+			if arg 1 is "deletearena":	
+				if player has permission "bridge.admin":		
+					if {bridge.arena.%arg-2%.created} or {bridge.arena.%arg-2%.saved} is true:
+						delete {bridge.arena.%arg-2%.spawn.red}
+						delete {bridge.arena.%arg-2%.spawn.blue}
+						delete {bridge.arena.%arg-2%.spawn.lobby}
+						delete {bridge.arena.%arg-2%.goals.red}
+						delete {bridge.arena.%arg-2%.goals.blue}
+						delete {bridge.arena.%arg-2%.seconds}
+						delete {bridge.arena.%arg-2%.status}
+						delete {bridge.arena.%arg-2%.ninjas::*}
+						delete {bridge.arena.%arg-2%::OMAE-MO-SHINDEIRU::*}
+						delete {bridge.arena.%arg-2%.KILLMEPLS::*}
+						remove arg-2 from {bridge.arenas::*}
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% &aArena &c%arg-2% &ahas been deleted."
+					else:
+						send "%{THEBRIDGE::MESSAGES::PREFIX}% &aThis arena not exists"
+		else:
+			make player execute command "bridge help"
+		
+	
+	
+on chat:
+	if {bridge.player::%uuid of player%.state} is "in-game":
+		cancel event
+		set {_x} to {THEBRIDGE::CONFIG::CHAT-FORMAT}
+		replace all "{player}" in {_x} with player's displayname
+		replace all "&" with " " in message	
+		replace all "{message}" with message in {_x} 			
+		if {bridge.arena.%{_arena}%.status} is "INGAME":
+			if {bridge.player::%uuid of player%.team} is "red":
+				replace all "{team}" in {_x} with "&c&lRED"
+			if {bridge.player::%uuid of player%.team} is "blue":
+				replace all "{team}" in {_x} with "&1&lBLUE"	
+		else:
+			replace all "{team}" in {_x} with ""
+		send {_x} to {bridge.arena.%{bridge.player::%uuid of player%.arena}%.ninjas::*}	
+
+on hunger bar change:	
+	if {bridge.player::%uuid of player%.state} is "in-game":
+		set player's hunger to 20
+		
+		
+on damage of player:
+	if {bridge.player::%uuid of victim%.state} is "in-game":
+		if {bridge.arena.%{bridge.player::%uuid of victim%.arena}%.status} is "STARTING" or "WAITING":
+			cancel event
+			if damage cause is void:
+				teleport victim to {bridge.arena.%{bridge.player::%uuid of victim%.arena}%.spawn.lobby}
+		if {bridge.arena.%{bridge.player::%uuid of victim%.arena}%.status} is "INGAME":	
+			if attacker is player:
+				if attacker is not victim:
+					set metadata value "LAST-HIT" of victim to attacker	
+			if damage cause is fall:
+				cancel event
+			if damage cause is void:
+				cancel event
+				kill victim
+
+on load:
+	delete {bridge.player::*}
+	
+on death of player:
+	if {bridge.player::%uuid of victim%.state} is "in-game":		
+		set death message to ""
+		add 1 to {bridge.stats.deaths::%uuid of victim%}
+		cancel drops
+		if metadata value "LAST-HIT" of victim is not set:
+			set {_y} to "void"
+		else:
+			set {_y} to metadata value "LAST-HIT" of victim
+			set {_uuid} to uuid of {_y}
+			add 1 to {bridge.stats.kills::%{_uuid}%}
+			add 1 to {bridge.player::%{_uuid}%.kills}	
+			set {_o-o} to {THEBRIDGE::CONFIG::KILL-CMD}
+			replace all "{player}" in {_o-o} with "%{_y}%"
+			make console execute command "%{_o-o}%"
+		set {_x} to {THEBRIDGE::MESSAGES::KILL-MESSAGE}
+		replace all "{victim}" in {_x} with "%victim%"
+		replace all "{killer}" in {_x} with "%{_y}%"				
+		send "%{THEBRIDGE::MESSAGES::PREFIX}% %{_x}%" to {bridge.arena.%{bridge.player::%uuid of victim%.arena}%.ninjas::*}	
+		delete metadata value "PORTAL" of victim
+		wait 0.2 seconds
+		force victim to respawn	
+		wait 0.2 seconds
+		teleport victim to {bridge.arena.%{bridge.player::%uuid of victim%.arena}%.spawn.%{bridge.player::%uuid of victim%.team}%}	
+		bridge_equip(victim, {bridge.player::%uuid of victim%.team})
+	
+on place:
+	if {bridge.player::%uuid of player%.state} is "in-game":
+		if {bridge.arena.%{bridge.player::%uuid of player%.arena}%.status} is "INGAME":
+			if {bridge.arena.%{bridge.player::%uuid of player%.arena}%.Y-COORDS} is set:
+				if y-coords of location of event-block < {bridge.arena.%{bridge.player::%uuid of player%.arena}%.Y-COORDS}:
+					if {bridge.arena.%{bridge.player::%uuid of player%.arena}%.KILLMEPLS::%location of event-block%} is not set:
+						set {bridge.arena.%{bridge.player::%uuid of player%.arena}%.KILLMEPLS::%location of event-block%} to location of event-block
+				else:
+					cancel event
+			else:
+				if {bridge.arena.%{bridge.player::%uuid of player%.arena}%.KILLMEPLS::%location of event-block%} is not set:
+					set {bridge.arena.%{bridge.player::%uuid of player%.arena}%.KILLMEPLS::%location of event-block%} to location of event-block
+		else:
+			cancel event
+			
+on load:
+	send "&7&l--------------------------------------------" to console
+	send " " to console
+	send "%{THEBRIDGE::MESSAGES::PREFIX}% &aLoading &ev.{@plugin-version}&a..." to console
+	wait 1 tick
+	send "%{THEBRIDGE::MESSAGES::PREFIX}% &a&lPlugin loaded!" to console
+	send " " to console
+	send "&7&l--------------------------------------------" to console
+	loop {bridge.arenas::*}:
+		delete {bridge.arena.%loop-value%.ninjas::*}
+		bridge_resetarena(loop-value)
+
+on unload:
+	send "&7&l--------------------------------------------" to console
+	send " " to console
+	send "%{THEBRIDGE::MESSAGES::PREFIX}% &aDisabling &ev.{@plugin-version}&a..." to console
+	send "%{THEBRIDGE::MESSAGES::PREFIX}% &ev.{@plugin-version} &adisabled!" to console
+	send " " to console
+	send "&7&l--------------------------------------------" to console
+	stop
+	
+on portal:
+	if {bridge.player::%uuid of player%.state} is "in-game":
+		if {bridge.arena.%{bridge.player::%uuid of player%.arena}%.status} is "INGAME":
+			metadata value "PORTAL" of player is not set
+			set metadata value "PORTAL" of player to "true"
+			if {bridge.player::%uuid of player%.team} is "RED":
+				if location of player is within {bridge.arena.%{bridge.player::%uuid of player%.arena}%.portal.BLUE.pos1} to {bridge.arena.%{bridge.player::%uuid of player%.arena}%.portal.BLUE.pos2}:
+					bridge_goal(player, {bridge.player::%uuid of player%.arena})
+			if {bridge.player::%uuid of player%.team} is "BLUE":
+				if location of player is within {bridge.arena.%{bridge.player::%uuid of player%.arena}%.portal.RED.pos1} to {bridge.arena.%{bridge.player::%uuid of player%.arena}%.portal.RED.pos2}:
+					bridge_goal(player, {bridge.player::%uuid of player%.arena})
+			wait 5 seconds
+			delete metadata value "PORTAL" of player					
+		
+
+on consume of golden_apple:	
+	if {bridge.player::%uuid of player%.state} is "in-game":
+		heal player
+		
+on inventory click:
+	if {bridge.player::%uuid of player%.state} is "in-game":
+		if name of event-item is "%{THEBRIDGE::CONFIG::LEAVE-ITEM-NAME}%":
+			cancel event
+		if event-item is any chestplate or any helmet or any boots or any leggings:
+			cancel event
+		
+on drop:
+	if {bridge.player::%uuid of player%.state} is "in-game":
+		cancel event
+			
+on right click with anything:
+	if {bridge.player::%uuid of player%.state} is "in-game":
+		if name of event-item is {THEBRIDGE::CONFIG::LEAVE-ITEM-NAME}:
+			cancel event
+			make player execute command "bridge leave"
+	
+on quit:
+	if {bridge.player::%uuid of player%.state} is "in-game":
+		make player execute command "bridge leave"
+		stop
+
+	
+on break:
+	if {bridge.player::%uuid of player%.state} is "in-game":	
+		if {bridge.arena.%{bridge.player::%uuid of player%.arena}%.KILLMEPLS::%location of event-block%} is set:
+			delete {bridge.arena.%{bridge.player::%uuid of player%.arena}%.KILLMEPLS::%location of event-block%}
+			stop
+		else:
+			if event-block is clay:
+				if {bridge.arena.%{bridge.player::%uuid of player%.arena}%::PLACEBLOCKS::%location of event-block%} is not set:
+					set {bridge.arena.%{bridge.player::%uuid of player%.arena}%::OMAE-MO-SHINDEIRU::%location of event-block%} to location of event-block
+					set {bridge.arena.%{bridge.player::%uuid of player%.arena}%::NANI?!::%location of event-block%} to "%event-block%" parsed as item
+			else:
+				cancel event
+				
+				
+function bridge_reset_stats(p: player):
+	set {_uuid} to uuid of {_p}
+	set {bridge.stats.kills::%{_uuid}%} to 0
+	set {bridge.stats.deaths::%{_uuid}%} to 0
+	set {bridge.stats.wins::%{_uuid}%} to 0
+	set {bridge.stats.goals::%{_uuid}%} to 0	
+
+function bridge_cage_timer(arena: text):	
+	set {_x.%{_arena}%} to 3
+	loop 4 times:
+		if {bridge.arena.%{_arena}%.status} is "INGAME":
+			{_x.%{_arena}%} = 3 or 2 or 1:
+				send {bridge.arena.%{_arena}%.ninjas::*} title "&e&lCAGES OPEN IN &a&l%{_x.%{_arena}%}% &e&lSECONDS" for 1 seconds
+			remove 1 from {_x.%{_arena}%} 
+			wait 1 seconds
+			{_x.%{_arena}%} = 0:
+				bridge_setcage({bridge.arena.%{_arena}%.spawn.blue}, "AIR")
+				bridge_setcage({bridge.arena.%{_arena}%.spawn.red}, "AIR")	
+				send {bridge.arena.%{_arena}%.ninjas::*} title "&3&lFIGHT!" for 1 second
+		else:
+			stop
+			
+function bridge_tag(p: player, do: text):
+	set {_uuid} to uuid of {_p}
+	if {_do} is "setteam":
+		if {bridge.player::%{_uuid}%.team} is "RED":
+			set {_team} to "&c&lRED"
+		if {bridge.player::%{_uuid}%.team} is "BLUE":
+			set {_team} to "&1&lBLUE"	
+		make console execute command "nte player %{_p}% prefix %{_team}% &7"
+	if {_do} is "clear":		
+		make console execute command "nte player %{_p}% prefix %{_p}'s prefix%"		
+		
+function bridge_setcage(loc: location, team: text):
+	if {_team} is "RED": 
+		set {_b} to red glass block
+
+	if {_team} is "BLUE": 
+		set {_b} to blue glass block
+		
+	if {_team} is "AIR": 
+		set {_b} to air	
+	loop blocks within block at block 2 above west 3 east 3 south {_loc} to block at block 1 under east 3 west 3 north {_loc}:
+		set loop-block to {_b}
+	loop blocks within block at block 2 above west 2 east 2 south {_loc} to block at block 0 under east 2 west 2 north {_loc}:
+		set loop-block to air
+	
+	
+	
+function bridge_equip(p: player, team: text):
+	bridge_clear_player({_p})
+	wait 0.5 seconds
+	equip {_p} with all leather armor
+	set slot 0 of {_p} to iron_sword
+	set slot 1 of {_p} to bow
+	set slot 2 of {_p} to diamond_pickaxe of efficiency 2
+	set slot 5 of {_p} to 8 golden_apple
+	set slot 8 of {_p} to arrow
+	if {_team} is "RED":		
+		set {_p}'s helmet to air
+		dye {_p}'s chestplate red
+		dye {_p}'s boots red		
+		dye {_p}'s leggings red
+		set slot 3 of {_p} to 64 red clay		
+		set slot 4 of {_p} to 64 red clay			
+	if {_team} is "BLUE":	
+		set {_p}'s helmet to air
+		dye {_p}'s chestplate blue
+		dye {_p}'s boots blue		
+		dye {_p}'s leggings blue	
+		set slot 3 of {_p} to 64 blue clay	
+		set slot 4 of {_p} to 64 blue clay		
+
+on shoot:
+	if {bridge.player::%uuid of shooter%.state} is "in-game":		
+		if projectile is arrow:
+			set metadata value "GAME" of projectile to "bridge"
+		set {_x} to 3
+		loop {_x} times:
+			set shooter's level to {_x}
+			wait 1 seconds
+			remove 1 from {_x}
+			{_x} = 0:
+				if {bridge.player::%uuid of shooter%.state} is "in-game":	
+					give 1 arrow to shooter
+			
+			
+on projectile hit:
+	if metadata value "GAME" of projectile is "bridge":
+		delete projectile
+			
+function bridge_put_in_team(p: player, arena: text):
+	set {_uuid} to uuid of {_p}
+	if {bridge.arena.%{_arena}%.red} is not set:	
+		set {bridge.arena.%{_arena}%.red} to {_p}
+		set {bridge.player::%{_uuid}%.team} to "RED"
+		stop
+	if {bridge.arena.%{_arena}%.blue} is not set:	
+		set {bridge.arena.%{_arena}%.blue} to {_p}
+		set {bridge.player::%{_uuid}%.team} to "BLUE"
+		stop
+						
+function bridge_start_countdown(arena: text):
+	set {bridge.arena.%{_arena}%.status} to "STARTING"
+	while {bridge.arena.%{_arena}%.seconds} > 0:
+		if size of {bridge.arena.%{_arena}%.ninjas::*} = 2:
+			wait 1 seconds
+			remove 1 from {bridge.arena.%{_arena}%.seconds}	
+			if {bridge.arena.%{_arena}%.seconds} = 1 or 2 or 3 or 4 or 5 or 10:
+				set {_x} to {THEBRIDGE::MESSAGES::STARTING-IN}
+				replace all "{seconds}" in {_x} with "%{bridge.arena.%{_arena}%.seconds}%"
+				send "%{THEBRIDGE::MESSAGES::PREFIX}% %{_x}%" to {bridge.arena.%{_arena}%.ninjas::*}					
+			if {bridge.arena.%{_arena}%.seconds} = 1:
+				set {bridge.arena.%{_arena}%.status} to "INGAME"	
+				loop {bridge.arena.%{_arena}%.ninjas::*}:
+					bridge_put_in_team(loop-value, {_arena})
+					delete stylish scoreboard "BR2-%loop-value%"
+					bridge_game_scoreboard(loop-value)
+				set {bridge.arena.%{_arena}%.goals.red} to 0
+				set {bridge.arena.%{_arena}%.goals.blue} to 0				
+				bridge_setcage({bridge.arena.%{_arena}%.spawn.blue}, "BLUE")
+				bridge_setcage({bridge.arena.%{_arena}%.spawn.red}, "RED")		
+				teleport {bridge.arena.%{_arena}%.red} to {bridge.arena.%{_arena}%.spawn.red}
+				teleport {bridge.arena.%{_arena}%.blue} to {bridge.arena.%{_arena}%.spawn.blue}
+				bridge_equip({bridge.arena.%{_arena}%.red}, "RED")	
+				bridge_equip({bridge.arena.%{_arena}%.blue}, "BLUE")
+				bridge_tag({bridge.arena.%{_arena}%.red}, "setteam")
+				bridge_tag({bridge.arena.%{_arena}%.blue}, "setteam")
+				bridge_cage_timer({_arena})	
+				stop	
+		else:
+			set {bridge.arena.%{_arena}%.status} to "WAITING"
+			set {bridge.arena.%{_arena}%.seconds} to 10
+			stop
+	
+function bridge_goal(p: player, arena: text):	
+	set {_uuid} to uuid of {_p}
+	add 1 to {bridge.arena.%{_arena}%.goals.%{bridge.player::%{_uuid}%.team}%}
+	add 1 to {bridge.stats.goals::%{_uuid}%}
+	set {_o-o} to {THEBRIDGE::CONFIG::GOAL-CMD}
+	replace all "{player}" in {_o-o} with "%{_p}%"
+	make console execute command "%{_o-o}%"		
+	if {bridge.player::%{_uuid}%.team} is "RED":
+		set {_team} to "&3&lRED"
+	if {bridge.player::%{_uuid}%.team} is "BLUE":
+		set {_team} to "&1&lBLUE"			
+	send "&a&l■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■" to {bridge.arena.%{_arena}%.ninjas::*}	
+	send " " to {bridge.arena.%{_arena}%.ninjas::*}	
+	send "                 &e%{_p}% &7(&a%{_p}'s health% &c&l❤&7) &escored! &7(&6%{bridge.arena.%{_arena}%.goals.%{bridge.player::%{_uuid}%.team}%}%&6th goal&7)" to {bridge.arena.%{_arena}%.ninjas::*}		
+	send "                               &c&l%{bridge.arena.%{_arena}%.goals.red}% &7- &1&l%{bridge.arena.%{_arena}%.goals.blue}%" to {bridge.arena.%{_arena}%.ninjas::*}	
+	send " " to {bridge.arena.%{_arena}%.ninjas::*}	
+	send " " to {bridge.arena.%{_arena}%.ninjas::*}	
+	send "&a&l■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■" to {bridge.arena.%{_arena}%.ninjas::*}	
+	teleport {bridge.arena.%{_arena}%.red} to {bridge.arena.%{_arena}%.spawn.red}
+	teleport {bridge.arena.%{_arena}%.blue} to {bridge.arena.%{_arena}%.spawn.blue}	
+	if {bridge.arena.%{_arena}%.goals.%{bridge.player::%{_uuid}%.team}%} is not 5:
+		bridge_setcage({bridge.arena.%{_arena}%.spawn.blue}, "BLUE")
+		bridge_setcage({bridge.arena.%{_arena}%.spawn.red}, "RED")		
+		bridge_cage_timer({_arena})
+		bridge_equip({bridge.arena.%{_arena}%.blue}, "BLUE")			
+		bridge_equip({bridge.arena.%{_arena}%.red}, "RED")	
+	if {bridge.arena.%{_arena}%.goals.%{bridge.player::%{_uuid}%.team}%} is 5:
+		bridge_winner({_p}, {_arena})
+		
+	
+function bridge_winner(p: player, arena: text):
+	set {_uuid} to uuid of {_p}
+	if {bridge.player::%{_uuid}%.team} is "RED":
+		set {_team} to "&c&lRED"
+	if {bridge.player::%{_uuid}%.team} is "BLUE":
+		set {_team} to "&1&lBLUE"		
+	send "&a&l■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■" to {bridge.arena.%{_arena}%.ninjas::*}	
+	send " " to {bridge.arena.%{_arena}%.ninjas::*}	
+	send "                          &f&lTHE BRIDGE &a&l1v1" to {bridge.arena.%{_arena}%.ninjas::*}		
+	send " " to {bridge.arena.%{_arena}%.ninjas::*}	
+	send "                            %{_team}% &7&lWINS" to {bridge.arena.%{_arena}%.ninjas::*}	
+	send "                               &c&l%{bridge.arena.%{_arena}%.goals.red}% &7- &1&l%{bridge.arena.%{_arena}%.goals.blue}%" to {bridge.arena.%{_arena}%.ninjas::*}		
+	send " " to {bridge.arena.%{_arena}%.ninjas::*}	
+	send "&a&l■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■" to {bridge.arena.%{_arena}%.ninjas::*}		
+	add 1 to {bridge.stats.wins::%{_uuid}%}
+	set {_o-o} to {THEBRIDGE::CONFIG::WIN-CMD}
+	replace all "{player}" in {_o-o} with "%{_p}%"
+	make console execute command "%{_o-o}%"	
+	loop 10 times:
+		if {bridge.player::%{_uuid}%.state} is "in-game":
+			launch trailing flickering star coloured purple and red fading to yellow at {_p}'s location timed 1
+			wait 10 ticks					
+	bridge_resetarena({_arena})
+
+
+		
+function bridge_resetarena(arena: text):
+	loop {bridge.arena.%{_arena}%.ninjas::*}:
+		delete {bridge.player::%uuid of loop-value%.state}
+		delete {bridge.player::%uuid of loop-value%.arena}
+		bridge_clear_player(loop-value-1)
+		bridge_tag(loop-value, "clear")
+		send_player_to(loop-value, "bridge")
+	loop {bridge.arena.%{_arena}%.KILLMEPLS::*}:
+		set block at loop-value to air
+		wait 1 tick
+	loop {bridge.arena.%{_arena}%::OMAE-MO-SHINDEIRU::*}:
+		set block at location of {bridge.arena.%{_arena}%::OMAE-MO-SHINDEIRU::%loop-index%} to {bridge.arena.%{_arena}%::NANI?!::%loop-index%}
+		wait 1 ticks
+	delete {bridge.arena.%{_arena}%::OMAE-MO-SHINDEIRU::*}
+	delete {bridge.arena.%{_arena}%::NANI?!::*}		
+	delete {bridge.arena.%{_arena}%.KILLMEPLS::*}	
+	delete {bridge.arena.%{_arena}%.ninjas::*}	
+	delete {bridge.arena.%{_arena}%.red}
+	delete {bridge.arena.%{_arena}%.blue}	
+	loop all entities in radius 500 around {bridge.arena.%{_arena}%.spawn.blue}:
+		clear loop-entity		
+	bridge_setcage({bridge.arena.%{_arena}%.spawn.blue}, "AIR")
+	bridge_setcage({bridge.arena.%{_arena}%.spawn.red}, "AIR")				
+	set {bridge.arena.%{_arena}%.goals.red} to 0
+	set {bridge.arena.%{_arena}%.goals.blue} to 0	
+	set {bridge.arena.%{_arena}%.seconds} to 10
+	set {bridge.arena.%{_arena}%.status} to "WAITING"
+		
+		
+						
+function bridge_clear_player(p: player):						
+	remove REGENERATION, SPEED, FIRE RESISTANCE, POISON, WEAKNESS, INCREASE DAMAGE, SLOW, WATER BREATHING, INVISIBILITY, DAMAGE RESISTANCE and ABSORPTION from {_p}
+	heal {_p}
+	extinguish {_p}
+	set {_p}'s food to 20	
+	clear {_p}'s level
+	clear {_p}'s inventory
+	set {_p}'s gamemode to survival
+	set {_p}'s flight mode to false						
+	delete metadata value "PORTAL" of {_p}	
+	delete metadata value "LAST-HIT" of {_p}
+			
+			
+			
+			
+function bridge_waiting_scoreboard(p: player):
+	set {_uuid} to uuid of {_p}
+	if stylish scoreboard "BR1-%{_p}%" does not exist:
+		create new stylish scoreboard named "BR1-%{_p}%"	
+		loop 10 times:
+			create a new id based score "BR1-%{_p}%Slot%loop-number%" with text "&%loop-number%" slot loop-number for stylish scoreboard "BR1-%{_p}%"	
+	while {bridge.arena.%{bridge.player::%{_uuid}%.arena}%.status} is "WAITING" or "STARTING":	
+		if stylish scoreboard "BR1-%{_p}%" exists:
+			set stylish scoreboard of {_p} to "BR1-%{_p}%"				
+			set title of stylish scoreboard "BR1-%{_p}%" to "&e&lTHE BRIDGE" 
+			set the text of id "BR1-%{_p}%Slot10" to "&7%now%" 
+			set the text of id "BR1-%{_p}%Slot9" to "&9&2"
+			set the text of id "BR1-%{_p}%Slot8" to "&8&fPlayers: &a%size of {bridge.arena.%{bridge.player::%{_uuid}%.arena}%.ninjas::*}%"				
+			set the text of id "BR1-%{_p}%Slot7" to "&7&2"				
+			set the text of id "BR1-%{_p}%Slot6" to "&6&fStarting in &a%{bridge.arena.%{bridge.player::%{_uuid}%.arena}%.seconds}%s" 
+			set the text of id "BR1-%{_p}%Slot5" to "&5&2"	
+			set the text of id "BR1-%{_p}%Slot4" to "&4&fMode: &e1v1"	
+			set the text of id "BR1-%{_p}%Slot3" to "&3&fMap: &a%{bridge.player::%{_uuid}%.arena}%"								
+			set the text of id "BR1-%{_p}%Slot2" to "&2&2"
+			set the text of id "BR1-%{_p}%Slot1" to "&1&e&lMC.SERVER.ORG"
+		else:
+			stop			
+		wait 1 seconds
+
+function bridge_game_scoreboard(p: player):
+	set {_uuid} to uuid of {_p}
+	if stylish scoreboard "BR2-%{_p}%" does not exist:
+		create new stylish scoreboard named "BR2-%{_p}%"	
+		loop 12 times:
+			create a new id based score "BR2-%{_p}%Slot%loop-number%" with text "&%loop-number%" slot loop-number for stylish scoreboard "BR2-%{_p}%"	
+	while {bridge.arena.%{bridge.player::%{_uuid}%.arena}%.status} is "INGAME":
+		if stylish scoreboard "BR2-%{_p}%" exists:
+			set stylish scoreboard of {_p} to "BR2-%{_p}%"				
+			set title of stylish scoreboard "BR2-%{_p}%" to "&e&lTHE BRIDGE" 
+			set the text of id "BR2-%{_p}%Slot12" to "&c&7%now%" 
+			set the text of id "BR2-%{_p}%Slot11" to "&d&2"
+			set the text of id "BR2-%{_p}%Slot10" to "&e&1&lBlue Team: &e%{bridge.arena.%{bridge.player::%{_uuid}%.arena}%.goals.blue}%&7/5" 		
+			set the text of id "BR2-%{_p}%Slot9" to "&9&c&lRed Team: &e%{bridge.arena.%{bridge.player::%{_uuid}%.arena}%.goals.red}%&7/5" 
+			set the text of id "BR2-%{_p}%Slot8" to "&8&2"
+			set the text of id "BR2-%{_p}%Slot7" to "&7&fKills: &a%{bridge.player::%{_uuid}%.kills}%"	
+			set the text of id "BR2-%{_p}%Slot6" to "&6&fGoals: &a%{bridge.arena.%{bridge.player::%{_uuid}%.arena}%.goals.%{bridge.player::%{_uuid}%.team}%}%"
+			set the text of id "BR2-%{_p}%Slot5" to "&5&2"
+			set the text of id "BR2-%{_p}%Slot4" to "&4&fMode: &e1v1"	
+			set the text of id "BR2-%{_p}%Slot3" to "&3&fMap: &a%{bridge.player::%{_uuid}%.arena}%"			
+			set the text of id "BR2-%{_p}%Slot2" to "&2&2"
+			set the text of id "BR2-%{_p}%Slot1" to "&1&e&lMC.SERVER.ORG"	
+		else:
+			stop
+		wait 1 seconds
+				
+				
+
+
+
+
+
+
+
+
+
+
+					
+					
+				
+				
+				
+				
+		
+				

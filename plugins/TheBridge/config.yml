@@ -1,0 +1,7 @@
+chat-format: '{team} &3{player} &8&l- &7{message}'
+auto-join-on-end: false
+kill-cmd: eco give {player} 5
+win-cmd: eco give {player} 20
+goal-cmd: eco give {player} 10
+leave-item: bed_item
+leave-item-name: '&c&lLEAVE'
